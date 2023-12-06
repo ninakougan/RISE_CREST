@@ -1,7 +1,12 @@
-             
+%%Create SPM timing files for first-level analyses
+%Author: Nina Kougan (ninakougan@northwestern.edu)
+%Last updated: 12/6/2023
+
+basedir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports';
+
 %% MID Timing Files         
-MIDfnames = filenames(fullfile(basedir,'test_bids/sub-*/ses-1/beh/3_MID*txt'));
-txt = readtable(MIDfnames{1});
+MIDfnames = filenames(fullfile(basedir,'bids/sub-*/ses-1/func/mid*events*tsv'));
+tsv = readtable(MIDfnames{1});
 
 
 t = readtable("sub-50001_ses-1_task-mid_run-01_events.tsv", "FileType","text",'Delimiter', '\t');
