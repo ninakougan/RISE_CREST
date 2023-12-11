@@ -2,10 +2,10 @@
 %Author: Nina Kougan (ninakougan@northwestern.edu)
 %Last updated: 12/6/2023
 
-basedir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/'; %make this wherever your bids dataset is%
+basedir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/behavioral'; %make this wherever your behavioral dataset is%
 
 %% Events.tsv files that don't make my brain hurt
-MIDfnames = filenames(fullfile(basedir,'test_bids/sub-*/ses-1/beh/3_MID*txt')); %swap session here%
+MIDfnames = filenames(fullfile(basedir,'sub-*/ses-1/beh/3_MID*txt')); %swap session here%
 txt = readtable(MIDfnames{1});
 
 pid = txt.Var2(matches(txt.Var1, 'Subject'));

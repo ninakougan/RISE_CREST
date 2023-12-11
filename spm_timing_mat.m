@@ -1,4 +1,4 @@
-basedir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/events';
+basedir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/events_files';
 
 % load in tsv file for events
 txt = readtable("sub-50001_ses-1_task-mid_run-01_events.txt", "FileType","text",'Delimiter', '\t');
