@@ -103,7 +103,7 @@ for sub = 1:length(CRfnames_csv)
     events.Properties.VariableNames = {'onset', 'duration', 'block_number'}
     events = ([events, block_agent, topic, player_selected]);
     events_cont = array2table([jitter, response_time, feedback_dur]);
-    events_cont.Properties.VariableNames = {'jitter', 'RT', 'feedback_duration'}
+    events_cont.Properties.VariableNames = {'ITIj', 'RT', 'feedback_duration'}
     events = ([events, events_cont])
     
     %write to tsv file
@@ -148,12 +148,12 @@ for sub = 1:length(CRfnames_txt)
     feedback_onset = txt.Var2(matches(txt.Var1,'ShwT.OnsetTime')) ./ 1000;
     feedback_dur = 
    
-    cr_events = array2table
-    cr_events.Properties.VariableNames = {'onset', 'duration', 'block_number',...
-        'block_agent', 'topic', 'player_selected', 'jitter', 'reaction_time', 'feedback_duration'}
+    cr_events = array2table([onset, duration, trial_type2, block_num, block_agent, rt2, fbk_on2, fbk_dur2, acc2])
+    mid_events2.Properties.VariableNames = {'onset', 'duration', 'block_number',...
+        'block_agent', 'topic', 'reaction_time', 'feedback_onset', 'feedback_duration', 'accuracy'}
     
-    cr_txt = fullfile(basedir, "behavioral/", strcat('sub-',pid,'/ses-',ses,'/func/sub-',pid,'_ses-',ses,'_task-chatroom_run-01_events.txt'));
-        writetable(cr_events,cr_txt,'delimiter','tab')
+    mid_txt = fullfile(basedir, "behavioral/", strcat('sub-',pid,'/ses-',ses,'/func/sub-',pid,'_ses-',ses,'_task-mid_run-02_events.txt'));
+        writetable(mid_events2,mid_txt,'delimiter','tab')
 
 
 % %% MID events.tsv files that do make my brain hurt!
