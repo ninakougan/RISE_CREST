@@ -1,7 +1,7 @@
-fldir = '/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/contrast_to_transfer';
-datadir = '/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/final_mats';
+fldir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports';
+datadir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/final_data';
 
-remake_data_obj = 0;
+remake_data_obj = 1;
 
 if remake_data_obj == 1
 
@@ -83,6 +83,7 @@ if remake_data_obj == 1
     final_sub_count = 1;
     for sub=1:length(fmidant_s1_run2_c1) % start with run2 because there are fewer files
         pid = fmidant_s1_run2_c1{sub}(5:9);
+        keyboard
         
         if sum(contains(fmidant_s1_run1_c1(:),pid))~=0
             pid_midant_s1{sub} = fmidant_s1_run2_c1{sub}(5:9);
@@ -464,7 +465,7 @@ if redo_regions == 1
     % chatroom accrej ses1
     T_chats1accrej = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -481,7 +482,7 @@ if redo_regions == 1
     % chatroom acc ses1
     T_chats1acc = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -498,7 +499,7 @@ if redo_regions == 1
     % chatroom rej ses1
     T_chats1rej = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -515,7 +516,7 @@ if redo_regions == 1
     % chatroom accrej ses2
     T_chats2accrej = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -532,7 +533,7 @@ if redo_regions == 1
     % chatroom acc ses2
     T_chats2acc = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -549,7 +550,7 @@ if redo_regions == 1
     % chatroom rej ses2
     T_chats2rej = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -566,7 +567,7 @@ if redo_regions == 1
     % mid ant ses1 c1
     T_midants1_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -583,7 +584,7 @@ if redo_regions == 1
     % mid ant ses1 c2
     T_midants1_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -600,7 +601,7 @@ if redo_regions == 1
     % mid ant ses1 c3
     T_midants1_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -618,7 +619,7 @@ if redo_regions == 1
     % mid out ses1 c1
     T_midouts1_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -636,7 +637,7 @@ if redo_regions == 1
     % mid out ses1 c2
     T_midouts1_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -654,7 +655,7 @@ if redo_regions == 1
     % mid out ses1 c3
     T_midouts1_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -673,7 +674,7 @@ if redo_regions == 1
     % mid ant ses2 c1
     T_midants2_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -690,7 +691,7 @@ if redo_regions == 1
     % mid ant ses2 c2
     T_midants2_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -707,7 +708,7 @@ if redo_regions == 1
     % mid ant ses2 c3
     T_midants2_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -725,7 +726,7 @@ if redo_regions == 1
     % mid out ses2 c1
     T_midouts2_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -743,7 +744,7 @@ if redo_regions == 1
     % mid out ses2 c2
     T_midouts2_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -761,7 +762,7 @@ if redo_regions == 1
     % mid out ses2 c3
     T_midouts2_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/*.nii'));
+    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -778,8 +779,8 @@ if redo_regions == 1
 
     % AAL3 atlas for all
     clear names
-    atl = fmri_data('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/aal3/AAL3v1.nii');
-    labels = readtable('/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/roi/aal3/AAL3v1.nii.txt');
+    atl = fmri_data('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/aal3/AAL3v1.nii');
+    labels = readtable('/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/roi/aal3/AAL3v1.nii.txt');
     labels(isnan(labels.Var3),:) = [];
 
     aal_chat_accrej_s1 = extract_roi_averages(final_data_chatroom_ses1_accrej,atl);
@@ -944,6 +945,10 @@ if redo_regions == 1
     save T_aal_mid_out_s2_c3.mat T_aal_mid_out_s2_c3
 
 end
+
+%%write out to csvs
+
+%writetable(T_aal_chat_acc_s1, 'AAL_chat_acc_s1.txt', 'Delimiter',' \t')
 
 
 
