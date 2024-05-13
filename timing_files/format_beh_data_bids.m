@@ -1,5 +1,5 @@
-basedir = '/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/behavioral';
-savedir = '/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/timing_files';
+basedir = '/Users/ninakougan/Documents/acnl/rise/behavioral';
+savedir = '/Users/ninakougan/Documents/acnl/rise/timing_files';
 
 mid = 0;
 chat = 1;

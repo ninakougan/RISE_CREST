@@ -1,7 +1,7 @@
 fldir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports';
 datadir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports/final_data';
 
-remake_data_obj = 1;
+remake_data_obj = 0;
 
 if remake_data_obj == 1
 
@@ -458,7 +458,7 @@ thresh_chatroom_ses1_rej = threshold(stat_chatroom_ses1_rej.t,0.05,'fdr','k',10)
 thresh_chatroom_ses2_rej = threshold(stat_chatroom_ses2_rej.t,0.05,'fdr','k',10);
 
 %%
-redo_regions = 1;
+redo_regions = 0;
 
 if redo_regions == 1
     
@@ -948,8 +948,47 @@ end
 
 %%write out to csvs
 
-%writetable(T_aal_chat_acc_s1, 'AAL_chat_acc_s1.txt', 'Delimiter',' \t')
+writetable(T_aal_chat_acc_s1, 'AAL_chat_acc_s1.txt', 'Delimiter','\t');
+writetable(T_aal_chat_acc_s2, 'AAL_chat_acc_s2.txt', 'Delimiter','\t');
+writetable(T_aal_chat_rej_s1, 'AAL_chat_rej_s1.txt', 'Delimiter','\t');
+writetable(T_aal_chat_rej_s2, 'AAL_chat_rej_s2.txt', 'Delimiter','\t');
+writetable(T_aal_chat_accrej_s1, 'AAL_chat_accrej_s1.txt', 'Delimiter','\t');
+writetable(T_aal_chat_accrej_s2, 'AAL_chat_accrej_s2.txt', 'Delimiter','\t');
 
+writetable(T_chats1acc, 'chat_acc_s1.txt', 'Delimiter','\t');
+writetable(T_chats2acc, 'chat_acc_s2.txt', 'Delimiter','\t');
+writetable(T_chats1rej, 'chat_rej_s1.txt', 'Delimiter','\t');
+writetable(T_chats2rej, 'chat_rej_s2.txt', 'Delimiter','\t');
+writetable(T_chats1accrej, 'chat_accrej_s1.txt', 'Delimiter','\t');
+writetable(T_chats2accrej, 'chat_accrej_s2.txt', 'Delimiter','\t');
+
+writetable(T_aal_mid_ant_s1_c1, 'AAL_MID_ant_S1C1.txt', 'Delimiter','\t');
+writetable(T_aal_mid_ant_s1_c2, 'AAL_MID_ant_S1C2.txt', 'Delimiter','\t');
+writetable(T_aal_mid_ant_s1_c3, 'AAL_MID_ant_S1C3.txt', 'Delimiter','\t');
+writetable(T_aal_mid_ant_s2_c1, 'AAL_MID_ant_S2C1.txt', 'Delimiter','\t');
+writetable(T_aal_mid_ant_s2_c2, 'AAL_MID_ant_S2C2.txt', 'Delimiter','\t');
+writetable(T_aal_mid_ant_s2_c3, 'AAL_MID_ant_S2C3.txt', 'Delimiter','\t');
+
+writetable(T_aal_mid_out_s1_c1, 'AAL_MID_out_S1C1.txt', 'Delimiter','\t');
+writetable(T_aal_mid_out_s1_c2, 'AAL_MID_out_S1C2.txt', 'Delimiter','\t');
+writetable(T_aal_mid_out_s1_c3, 'AAL_MID_out_S1C3.txt', 'Delimiter','\t');
+writetable(T_aal_mid_out_s2_c1, 'AAL_MID_out_S2C1.txt', 'Delimiter','\t');
+writetable(T_aal_mid_out_s2_c2, 'AAL_MID_out_S2C2.txt', 'Delimiter','\t');
+writetable(T_aal_mid_out_s2_c3, 'AAL_MID_out_S2C3.txt', 'Delimiter','\t');
+
+writetable(T_midants1_c1, 'MID_ant_S1C1.txt', 'Delimiter','\t');
+writetable(T_midants1_c2, 'MID_ant_S1C2.txt', 'Delimiter','\t');
+writetable(T_midants1_c3, 'MID_ant_S1C3.txt', 'Delimiter','\t');
+writetable(T_midants2_c1, 'MID_ant_S2C1.txt', 'Delimiter','\t');
+writetable(T_midants2_c2, 'MID_ant_S2C2.txt', 'Delimiter','\t');
+writetable(T_midants2_c3, 'MID_ant_S2C3.txt', 'Delimiter','\t');
+
+writetable(T_midouts1_c1, 'MID_out_S1C1.txt', 'Delimiter','\t');
+writetable(T_midouts1_c2, 'MID_out_S1C2.txt', 'Delimiter','\t');
+writetable(T_midouts1_c3, 'MID_out_S1C3.txt', 'Delimiter','\t');
+writetable(T_midouts2_c1, 'MID_out_S2C1.txt', 'Delimiter','\t');
+writetable(T_midouts2_c2, 'MID_out_S2C2.txt', 'Delimiter','\t');
+writetable(T_midouts2_c3, 'MID_out_S2C3.txt', 'Delimiter','\t');
 
 
 

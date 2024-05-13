@@ -4,7 +4,7 @@
 % clunky and IT WILL CHANGE EVERYTIME YOU MOVE FILES AROUND. But since
 % we're in BIDS format... Maybe I can actually make this more dynamic. 
 
-scriptdir = '/projects/b1108/studies/rise/data/processed/neuroimaging/scriptdir';
+scriptdir = '/projects/b1108/studies/rise/scripts';
 basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
 % What run of your task are you looking at?
 run = 2;
@@ -21,7 +21,7 @@ contrast = 'outcome'; % anticipation, outcome, chatroom
 fnames = filenames(fullfile(basedir,strcat('/smoothed_data/ssub*ses-',num2str(ses),'*mid*run-0',num2str(run),'*')));
 
 if overwrite == 0
-    fl_list = filenames(fullfile(basedir,'/fl/*/',strcat('ses-',num2str(ses),'/'),contrast,strcat('run-',num2str(run)),'SPM.mat'));
+    fl_list = filenames(fullfile(basedir,'/first_levels/*/',strcat('ses-',num2str(ses),'/'),contrast,strcat('run-',num2str(run)),'SPM.mat'));
     counter = 1;
     for sub = 1:length(fnames)
         
@@ -37,18 +37,14 @@ if overwrite == 0
 end
 
 % Run/submit first level script
-repodir = '/home/zaz3744/repo';
+repodir = '/home/nck1870/repos';
 cd(scriptdir)
 keyboard
 for sub = 1:length(new_list)
     ids = new_list(sub);
-%    ses = 2;
-%    run = 1;
-%    overwrite = 0;
-%     run_subject_firstlevel_BrainMAPD_PPI_run2(num2str(ids))
 
         s = ['#!/bin/bash\n\n'...
-     '#SBATCH -A p30954\n'...
+     '#SBATCH -A p31589\n'...
      '#SBATCH -p short\n'...
      '#SBATCH -t 00:20:00\n'...  
      '#SBATCH --mem=20G\n\n'...
