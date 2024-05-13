@@ -1,4 +1,4 @@
-# TempleCrestandRise
+# Projects RISE and CREST
 
 This repository contains code related to collaborations with Dr. Lauren Alloy at Temple University. Both grants focus in on reward processing at a variety of age groups. 
 Their team will collect data that  will be transferred and processed at Northwestern University
