@@ -17,7 +17,7 @@ overwrite = 0;
 ID_length = 5;
 
 
-file_list = filenames(fullfile(directories,strcat('ses-1',num2str(ses),'/*/ses-',num2str(ses),'/sub*preproc_bold.nii')));
+file_list = filenames(fullfile(directories,strcat('ses-',num2str(ses),'/*/ses-',num2str(ses),'/sub*preproc_bold.nii')));
 for i = 1:length(file_list)
     sublist{i} = file_list{i}(106:110);
 end
