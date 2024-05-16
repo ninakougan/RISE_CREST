@@ -3,12 +3,12 @@ scriptdir = '/home/nck1870/repos/RISE_CREST';
 repodir = '/home/nck1870/repos';
 
 % next is where the preprocessed data is
-directories = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
+directories = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-2';
 
 % What run of your task are you looking at?
 run = 1;
 % What session appears in your raw filenames when in BIDS format?
-ses = 1;
+ses = ;
 % Do you want to overwrite previously estimated first levels or just add to
 % what you have? 1 overwrites, 0 adds
 overwrite = 0;
