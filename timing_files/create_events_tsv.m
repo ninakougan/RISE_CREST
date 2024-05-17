@@ -35,14 +35,12 @@ if mid == 1
         
             tgt_onset1 = ((txt.Var2(matches(txt.Var1, 'Run1Tgt.OnsetTime'))) - (txt.Var2(matches(txt.Var1, 'Run1Fix.OnsetTime')))) ./1000; %motor period
             tgt_onset2 = ((txt.Var2(matches(txt.Var1, 'Run2Tgt.OnsetTime'))) - (txt.Var2(matches(txt.Var1, 'Run2Fix.OnsetTime')))) ./1000;
-            tgt_dur1 = txt.Var2(matches(txt.Var1,'Run1Tgt.Duration')) ./100;
-            tgt_dur2 = txt.Var2(matches(txt.Var1,'Run2Tgt.Duration')) ./100;
+            tgt_dur = repmat("2",[48 1]);
        
             if length(cue_onset1) == length(cue_onset2)
                 %cue_rt1 = ((txt.Var2(find(contains(txt.Var1,'Run1Cue.RTTime')))) - (txt.Var2(strcmp(txt.Var1,'Run1Fix.OnsetTime')))) ./ 1000;
                 %cue_rt2 = ((txt.Var2(find(contains(txt.Var1,'Run2Cue.RTTime')))) - (txt.Var2(strcmp(txt.Var1,'Run2Fix.OnsetTime')))) ./ 1000;
-                cue_dur1 = txt.Var2(matches(txt.Var1,'Run1Cue.Duration')) ./ 1000;
-                cue_dur2 = txt.Var2(matches(txt.Var1,'Run2Cue.Duration')) ./ 1000;
+                cue_dur = repmat("4",[48 1]);
         
                 %ITI
                 %cue_iti1 = txt.Var2(find(contains(txt.Var1,'Run1Dly3.OnsetTime')));
@@ -53,8 +51,7 @@ if mid == 1
                 %feedback
                 fbk_on1 = ((txt.Var2(matches(txt.Var1,'Run1Fbk.OnsetTime'))) - (txt.Var2(strcmp(txt.Var1,'Run1Fix.OnsetTime')))) ./ 1000;
                 fbk_on2 = ((txt.Var2(matches(txt.Var1,'Run2Fbk.OnsetTime'))) - (txt.Var2(strcmp(txt.Var1,'Run2Fix.OnsetTime')))) ./ 1000;
-                fbk_dur1 = txt.Var2(matches(txt.Var1,'Run1Fbk.Duration')) ./ 1000;
-                fbk_dur2 = txt.Var2(matches(txt.Var1,'Run2Fbk.Duration')) ./ 1000;
+                fbk_dur = repmat("4",[48 1]);
         
     %           %RT and accuracy
                 rt1 = txt.Var2(matches(txt.Var1, 'Run1Tgt.RT')) ./ 1000;
@@ -107,20 +104,19 @@ if mid == 1
         
                 %compile variables into events.tsv file
                 onset1 = [cue_onset1;tgt_onset1;fbk_on1];
-                duration1 = [cue_dur1;tgt_dur1;fbk_dur1];
+                duration = [cue_dur;tgt_dur;fbk_dur];
                 type1 = [cue_type1;motor;fbk_type1];
                 
                 onset2 = [cue_onset2;tgt_onset2;fbk_on2];
-                duration2 = [cue_dur2;tgt_dur2;fbk_dur2];
                 type2 = [cue_type2;motor;fbk_type2];
 
-                mid_events1 = array2table([onset1,duration1,type1]);
+                mid_events1 = array2table([onset1,duration,type1]);
                 mid_events1.Properties.VariableNames = {'onset', 'duration', 'trial_type'};
         
                 mid_txt1 = fullfile(func_dir, strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-01_events.txt'));
                     writetable(mid_events1,mid_txt1,'delimiter','tab')
         
-                mid_events2 = array2table([onset2,duration2,type2]);
+                mid_events2 = array2table([onset2,duration,type2]);
                 mid_events2.Properties.VariableNames = {'onset', 'duration', 'trial_type'};
                 
                 mid_txt2 = fullfile(func_dir, strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-02_events.txt'));
