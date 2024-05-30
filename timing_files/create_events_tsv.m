@@ -15,6 +15,7 @@ mid = 1;
 %% %MID files
 if mid == 1
     MIDfnames = filenames(fullfile(strcat(basedir,'/behavioral/sub-*/ses-',num2str(ses),'/beh/3_MID*txt')));
+    %keyboard
 
     for sub = 1:length(MIDfnames)
         % Load in the text file
