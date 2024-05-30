@@ -53,7 +53,7 @@ if mid==1
         names{5} = {'Motor'};
         
         %save onsets, durations, and names to .mat file
-        curr_filename = fullfile(savedir, strcat('/ses-',num2str(ses),'/spm_timing_files/'), strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_anticipation.mat'));   
+        curr_filename = fullfile(savedir, strcat('/ses) strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_anticipation.mat'));   
             save(curr_filename,'onsets','durations','names')
 
         %keyboard
@@ -79,7 +79,7 @@ if mid==1
         durations{5} = ones(1,length(onsets)) .* 2;
         names{5} = {'Motor'};
 
-        curr_filename = fullfile(savedir, strcat('/ses-',num2str(ses),'/spm_timing_files/'),strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_outcome.mat'));   
+        curr_filename = fullfile(savedir, strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_outcome.mat'));   
             save(curr_filename,'onsets','durations','names')
             clear onsets durations names
     end
