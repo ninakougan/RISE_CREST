@@ -37,7 +37,7 @@ if isempty(in{2}{1})
 end
 
 % onset files
-in{3} = filenames(fullfile(basedir,'june2024/spm_timing/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-',num2str(run), 'timing_anticipation.mat')));
+in{3} = filenames(fullfile(basedir,'june2024/spm_timing/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-0',num2str(run), '_timing_anticipation.mat')));
 %keyboard
 
 if isempty(in{3})
@@ -47,7 +47,8 @@ end
 %% nuisance covs
 
 % fmriprep output
-confound_fname = filenames(fullfile(basedir, 'june2024/spm_confounds/', strcat(numPID,'_ses-',num2str(ses),'_mid_run-0',num2str(run),'.mat')));
+confound_fname = filenames(fullfile(basedir, 'june2024/spm_confounds', strcat(PID,'_ses-',num2str(ses),'_mid_run-0',num2str(run),'.mat')));
+%keyboard 
 
 in{4} = {confound_fname{1}};
 
