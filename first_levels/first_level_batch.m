@@ -4,24 +4,24 @@
 % clunky and IT WILL CHANGE EVERYTIME YOU MOVE FILES AROUND. But since
 % we're in BIDS format... Maybe I can actually make this more dynamic. 
 
-scriptdir = '/projects/b1108/studies/rise/scripts';
+scriptdir = '/home/nck1870/repos/RISE_CREST';
 basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
 % What run of your task are you looking at?
-run = 2;
+run = 1;
 % What session appears in your raw filenames when in BIDS format?
-ses = 2;
+ses = 1;
 % Do you want to overwrite previously estimated first levels or just add to
 % what you have? 1 overwrites, 0 adds
 overwrite = 0;
 
 % rest, consumption, anticipation
-contrast = 'outcome'; % anticipation, outcome, chatroom
+contrast = 'anticipation'; % anticipation, outcome, chatroom
 
 %%
-fnames = filenames(fullfile(basedir,strcat('/smoothed_data/ssub*ses-',num2str(ses),'*mid*run-0',num2str(run),'*')));
+fnames = filenames(fullfile(basedir,strcat('/fmriprep/ses-',num2str(ses),'/smoothed_data/ssub*ses-',num2str(ses),'*mid*run-0',num2str(run),'*')));
 
 if overwrite == 0
-    fl_list = filenames(fullfile(basedir,'/first_levels/*/',strcat('ses-',num2str(ses),'/'),contrast,strcat('run-',num2str(run)),'SPM.mat'));
+    fl_list = filenames(fullfile(basedir,'/june2024/fl/*/',strcat('ses-',num2str(ses),'/'),contrast,strcat('run-0',num2str(run)),'SPM.mat'));
     counter = 1;
     for sub = 1:length(fnames)
         

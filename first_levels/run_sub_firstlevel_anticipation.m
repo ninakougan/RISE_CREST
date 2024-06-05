@@ -2,7 +2,7 @@ function run_sub_firstlevel_anticipation(PID)
 %% var set up
 if nargin==0 % defaults just for testing 
     % Define some 
-    PID = "100001"; 
+    PID = "50001"; 
     
 end
 
@@ -14,9 +14,9 @@ ndummies = 0;
 contrast = 'anticipation'; % consumption
 
 % Define some paths
-basedir = '/Users/ninakougan/Documents/acnl/rise_crest/progress_reports';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/';
 
-preproc_dir = fullfile(basedir,'preproc_data/');
+preproc_dir = fullfile(basedir, strcat('fmriprep/ses-',num2str(ses),'/smoothed_data/'));
 
 numPID = num2str(PID);
 PID = strcat('sub-',numPID);
@@ -26,7 +26,7 @@ fprintf(['Preparing 1st level model for ' PID ' / ' ses], ['Overwrite = ' num2st
 
 %% Model for MID task. First pass at first levels --> activation
 % FL directory for saving 1st level results: beta images, SPM.mat, contrasts, etc.
-in{1} = {fullfile(basedir, '/fl/', PID, strcat('ses-',num2str(ses)), 'anticipation/', strcat('run-', num2str(run)))};
+in{1} = {fullfile(basedir, 'june2024/fl/', PID, strcat('ses-',num2str(ses)), 'anticipation/', strcat('run-0', num2str(run)))};
 
 % preproc images
 in{2} = cellstr(spm_select('ExtFPList', preproc_dir, strcat('^ssub-',num2str(numPID),'_ses-',num2str(ses),'_task-mid_run-0',num2str(run),'_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'), ndummies+1:9999));
@@ -37,7 +37,7 @@ if isempty(in{2}{1})
 end
 
 % onset files
-in{3} = filenames(fullfile(basedir,'/timing_files/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-',num2str(run), '_anticipation_timing.mat')));
+in{3} = filenames(fullfile(basedir,'june2024/spm_timing/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-',num2str(run), 'timing_anticipation.mat')));
 %keyboard
 
 if isempty(in{3})
@@ -47,7 +47,7 @@ end
 %% nuisance covs
 
 % fmriprep output
-confound_fname = filenames(fullfile(basedir, 'spm_confounds/', strcat(numPID,'_ses-',num2str(ses),'_mid_run-',num2str(run),'.mat')));
+confound_fname = filenames(fullfile(basedir, 'june2024/spm_confounds/', strcat(numPID,'_ses-',num2str(ses),'_mid_run-0',num2str(run),'.mat')));
 
 in{4} = {confound_fname{1}};
 
