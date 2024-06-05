@@ -1,13 +1,13 @@
-basedir = '/Users/ninakougan/Documents/acnl/rise_crest/rise/ses-1/raw_confounds_fmriprep';
-savedir = '/Users/ninakougan/Documents/acnl/rise_crest/rise/ses-1/spm_confounds';
+basedir = '/Users/ninakougan/Documents/acnl/rise/raw_confounds_fmriprep/';
+savedir = '/Users/ninakougan/Documents/acnl/rise/spm_confounds/';
 
-fnames = filenames(fullfile(basedir,'sub*ses-1*mid*run-01*txt'));
+fnames = filenames(fullfile(strcat(basedir,'sub*ses-2*mid*run-01*txt')));
 ndummies = 0;
 ex1 = 33;
 for sub = 1:length(fnames)
     T = readtable(fnames{sub});
     
-    pid = fnames{sub}(83:87);
+    pid = fnames{sub}(66:70);
     outliers = table2array(T(:,contains(T.Properties.VariableNames,'motion')));
     transx = table2array(T(:,contains(T.Properties.VariableNames,'trans_x')));
     transy = table2array(T(:,contains(T.Properties.VariableNames,'trans_y')));
@@ -21,16 +21,16 @@ for sub = 1:length(fnames)
     fd(sub) = nanmean(T.framewise_displacement);
 
     R = [transx(:,1:2),transy(:,1:2),transz(:,1:2),rotx(:,1:2),roty(:,1:2),rotz(:,1:2),gs(:,1:2),outliers]; %change for incl derivatives, check w break first
-    keyboard
+    %keyboard
     R(isnan(R)) = 0;
     R = R(ndummies+1:size(R,1),:);
 
     if nanmean(T.framewise_displacement) > 0.5 
         pid_exclude_list{ex1,1} = pid;
-        pid_exclude_list{ex1,2} = 'ses-1_mid_run-01';
+        pid_exclude_list{ex1,2} = 'ses-2_mid_run-01';
         ex1 = ex1 + 1;
     end
 
-    save_name = fullfile(savedir,strcat(pid,'_ses-1_mid_run-01.mat'));
+    save_name = fullfile(savedir,strcat('sub-',pid,'_ses-2_mid_run-01.mat'));
     save(save_name,"R")
 end

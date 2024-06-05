@@ -1,15 +1,15 @@
-basedir = 'projects/b1108/studies/rise/data/raw/neuroimaging/bids'; %make this wherever your bids directory is%
-savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep';
+%basedir = 'projects/b1108/studies/rise/data/raw/neuroimaging/bids'; %make this wherever your bids directory is%
+%savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep';
 
-%basedir = '/Users/ninakougan/Documents/acnl/rise/timing_files'; %make this wherever your bids directory is%
-%savedir = '/Users/ninakougan/Documents/acnl/rise/timing_files/SPM';
+basedir = '/Users/ninakougan/Documents/acnl/rise/timing_files'; %make this wherever your bids directory is%
+savedir = '/Users/ninakougan/Documents/acnl/rise/timing_files/SPM';
 
 mid = 1;
 chat = 0;
 chat_mat = 0;
 
 if mid==1
-    MIDfnames = filenames(fullfile(basedir,'/sub*/ses*/func/sub*events.txt')); %swap session here%
+    MIDfnames = filenames(fullfile(basedir,'sub*events.txt')); %swap session here%
     % load in tsv file for events
     %txt = readtable("sub-50001_ses-1_task-mid_run-01_events.txt", "FileType","text",'Delimiter', '\t');
     
@@ -33,53 +33,53 @@ if mid==1
         motor = contains(txt.trial_type,"motor");
         
         onsets{1} = txt.onset(antgainidx);
-        durations{1} = ones(1,length(onsets)) .* 4;
+        durations{1} = ones(length(onsets{1}),1) .*4;
         names{1} = {'GainAnticipation'};
-        
+
         onsets{2} = txt.onset(antgainzeroidx);
-        durations{2} = ones(1,length(onsets)) .* 4;
+        durations{2} = ones(length(onsets{2}),1) .*4;
         names{2} = {'GainZeroAnticipation'};
         
         onsets{3} = txt.onset(antlossidx);
-        durations{3} = ones(1,length(onsets)) .* 4;
+        durations{3} = ones(length(onsets{3}),1) .*4;
         names{3} = {'LossAnticipation'};
         
         onsets{4} = txt.onset(outlosszeroidx);
-        durations{4} = ones(1,length(onsets)) .* 4;
+        durations{4} = ones(length(onsets{4}),1) .*4;
         names{4} = {'LossZeroAnticipation'};
        
         onsets{5} = txt.onset(motor);
-        durations{5} = ones(1,length(onsets)) .* 2;
+        durations{5} = ones(length(onsets{5}),1) .*2;
         names{5} = {'Motor'};
         
         %save onsets, durations, and names to .mat file
-        curr_filename = fullfile(savedir, strcat('/ses-',num2str(ses),'/spm_timing_files/'), strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_anticipation.mat'));   
+        curr_filename = fullfile(savedir, strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_anticipation.mat'));   
             save(curr_filename,'onsets','durations','names')
 
         %keyboard
         clear onsets durations names
 
         onsets{1} = txt.onset(outgainidx);
-        durations{1} = ones(1,length(onsets)) .* 4;
+        durations{1} = ones(length(onsets{1}),1) .*4;
         names{1} = {'GainOutcome'};
         
         onsets{2} = txt.onset(outgainzeroidx);
-        durations{2} = ones(1,length(onsets)) .* 4;
+        durations{2} = ones(length(onsets{2}),1) .*4;
         names{2} = {'GainZeroOutcome'};
         
         onsets{3} = txt.onset(outlossidx);
-        durations{3} = ones(1,length(onsets)) .* 4;
+        durations{3} = ones(length(onsets{3}),1) .*4;
         names{3} = {'LossOutcome'};
         
         onsets{4} = txt.onset(outlosszeroidx);
-        durations{4} = ones(1,length(onsets)) .* 4;
+        durations{4} = ones(length(onsets{4}),1) .*4;
         names{4} = {'LossZeroOutcome'};
         
         onsets{5} = txt.onset(motor);
-        durations{5} = ones(1,length(onsets)) .* 2;
+        durations{5} = ones(length(onsets{5}),1) .*2;
         names{5} = {'Motor'};
 
-        curr_filename = fullfile(savedir, strcat('/ses-',num2str(ses),'/spm_timing_files/'),strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_outcome.mat'));   
+        curr_filename = fullfile(savedir, strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_outcome.mat'));   
             save(curr_filename,'onsets','durations','names')
             clear onsets durations names
     end

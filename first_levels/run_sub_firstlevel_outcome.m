@@ -7,15 +7,15 @@ if nargin==0 % defaults just for testing
 end
 
 overwrite = 1;
-ses = 2;
-run = 2;
+ses = 1;
+run = 1;
 ndummies = 0;
 
 
 % Define some paths
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/';
 
-preproc_dir = fullfile(basedir,'smoothed_data/');
+preproc_dir = fullfile(basedir, strcat('fmriprep/ses-',num2str(ses),'/smoothed_data/');
 
 numPID = num2str(PID);
 PID = strcat('sub-',numPID);
@@ -25,7 +25,7 @@ fprintf(['Preparing 1st level model for ' PID ' / ' ses], ['Overwrite = ' num2st
 
 %% Model for MID task. First pass at first levels --> activation
 % FL directory for saving 1st level results: beta images, SPM.mat, contrasts, etc.
-in{1} = {fullfile(basedir, '/fl/', PID, strcat('ses-',num2str(ses)), 'outcome/', strcat('run-', num2str(run)))};
+in{1} = {fullfile(basedir, '/june2024/fl/', PID, strcat('ses-',num2str(ses)), 'outcome/', strcat('run-', num2str(run)))};
 
 % preproc images
 in{2} = cellstr(spm_select('ExtFPList', preproc_dir, strcat('^ssub-',num2str(numPID),'_ses-',num2str(ses),'_task-mid_run-0',num2str(run),'_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'), ndummies+1:9999));
@@ -36,7 +36,7 @@ if isempty(in{2}{1})
 end
 
 % onset files
-in{3} = filenames(fullfile(basedir,'/timing_files/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-',num2str(run), '_outcome_timing.mat')));
+in{3} = filenames(fullfile(basedir,'/june2024/spm_timing/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-',num2str(run), '_outcome.mat')));
 
 if isempty(in{3})
     warning('No modeling found (behav data might be missing)')
