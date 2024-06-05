@@ -30,8 +30,8 @@ in{1} = {fullfile(basedir, 'june2024/fl/', PID, strcat('ses-',num2str(ses)), 'an
 
 % preproc images
 smoothed = spm_select('ExtFPList', preproc_dir, strcat('^ssub-',num2str(numPID),'_ses-',num2str(ses),'_task-mid_run-0',num2str(run),'_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'), ndummies+1:9999);
-in{2} = cellstr(smoothed);
-%keyboard
+in{2} = smoothed;
+keyboard
 
 if isempty(in{2}{1})
     warning('No preprocd functional found')
