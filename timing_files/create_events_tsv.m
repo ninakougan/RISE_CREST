@@ -1,12 +1,12 @@
 %%Create BIDS-compliant events.tsv files for functional scans
 %Author: Nina Kougan (ninakougan@northwestern.edu)
-%Last updated: 12/11/23
+%Last updated: 07/11/24
 
-basedir = '/Users/ninakougan/Documents/acnl/rise';
+basedir = '/Users/ninakougan/Documents/acnl/rise_crest/nda/crest';
 % quest path '/projects/b1108/studies/rise/data/raw/neuroimaging'
 
 %Which session are you looking at?
-ses = 1;
+ses = 2;
 
 %which task? switch these to 1 if running, 0 if not
 chatroom = 0;
@@ -20,7 +20,8 @@ if mid == 1
     for sub = 1:length(MIDfnames)
         % Load in the text file
         txt = readtable(MIDfnames{sub});
-        pid{sub} =  MIDfnames{sub}(54:58); % RISE %(72:77);% CREST (71:75); %
+        pid{sub} =  MIDfnames{sub}(70:75); % RISE %(72:77);% CREST (70:75); %
+        %keyboard
         func_dir = fullfile(basedir,'bids',strcat('sub-',pid{sub},'/ses-',num2str(ses),'/func/'));
         mkdir(func_dir);
         if isempty(txt) == 0
@@ -135,87 +136,101 @@ if mid == 1
 
 end
 
-% %% CHATROOM TASK
-% if chatroom == 1
-%     CRfnames_txt = filenames(fullfile(basedir,'/behavioral/sub-*/ses-',num2str(ses),'/beh/chzc*txt'));
-%     CRfnames_csv = filenames(fullfile(basedir,'/behavioral/sub-*/ses-',num2str(ses),'/beh/chzc*csv')); 
-%     
-%     %% PsychToolbox version of Chatroom, csv file
-%     for sub = 1:length(CRfnames_csv)
-%         csv = readtable(CRfnames_csv{1});
-%         pid = csv.subjectID(1);
-%         %ses = CRfnames_csv{1}(87); %RISE 87
-%     
-%         %pull onset, duration, trial type , and response time variables into events.tsv file
-%         onset = csv.trialOnset;
-%         duration = (csv.trialOffset - csv.trialOnset); %should be 4
-%         block_num = csv.blockNumber; %1 is participant, 2 and 3 are acc/rej, 4 is control
-%         block_agent = cell2table(csv.blockAgent); %who is making selections
-%         block_agent.Properties.VariableNames = {'block_agent'};
-%         topic = cell2table(csv.trialTopic);
-%         topic.Properties.VariableNames = {'topic'};
-%         
-%         player_selected = cell2table(csv.trialPlayerSelected); %need logic to address NaNs/when P doesn't make a selection
-%         player_selected.Properties.VariableNames = {'player_selected'};
-%         
-%         jitter = csv.trialITIj;
-%         response_time = csv.trialRT;
-%         feedback_dur = (csv.trialFeedbackOffset - csv.trialFeedbackOnset); %should be 8
-%     
-%         events = array2table([onset, duration, block_num]);
-%         events.Properties.VariableNames = {'onset', 'duration', 'block_number'}
-%         events = ([events, block_agent, topic, player_selected]);
-%         events_cont = array2table([jitter, response_time, feedback_dur]);
-%         events_cont.Properties.VariableNames = {'jitter', 'RT', 'feedback_duration'}
-%         events = ([events, events_cont])
-%     
-%         %write to tsv file
-%         curr_filename = fullfile(basedir, "behavioral/", strcat('sub-',pid,'/ses-',ses,'/func/sub-',pid,'_ses-',ses,'_task-chatroom_run-01_events.tsv')); 
-%                 writetable(events,curr_filename,'delimiter','tab')
-%     end
-%     
-%     %% E-Prime version of Chatroom, txt file
-%     for sub = 1:length(CRfnames_txt)
-%         txt = readtable(CRfnames_txt{1});
-%         pid = txt.Var2(matches(txt.Var1, 'Subject'));
-%         pid = pid(1)
-%         ses = txt.Var2(matches(txt.Var1, 'Session'));
-%         ses = ses(1)
-%     
-%         onset = txt.Var2(matches(txt.Var1,'ChzT.OnsetTime')) ./ 1000;
-%         duration =  %should be 4
-%         block_num =  %not sure where I'm pulling this from in the output
-%         block_agent = txt.Var2(matches(txt.Var1,'List1.Sample')) %I think this is one of the List vars but idk my head hurts
-%     
-%         topic = strcat(string(txt.Var2(matches(txt.Var1,'TopicNumber'))));
-%         topic = replace(trial_type1,'10','Computers');
-%         topic = replace(trial_type1,'11','Pets');
-%         topic = replace(trial_type1,'12','Books');
-%         topic = replace(trial_type1,'13','Friends');
-%         topic = replace(trial_type1,'14','Family');
-%         topic = replace(trial_type1,'15','Sports');
-%         topic = replace(trial_type1,'1','School');
-%         topic = replace(trial_type1,'2','Parties');
-%         topic = replace(trial_type1,'3','Vacations');
-%         topic = replace(trial_type1,'4','Hobbies');
-%         topic = replace(trial_type1,'5','Music');
-%         topic = replace(trial_type1,'6','TV');
-%         topic = replace(trial_type1,'7','Movies');
-%         topic = replace(trial_type1,'8','Food');
-%         topic = replace(trial_type1,'9','Shopping');
-%     
-%         player_selected = txt.Var2(matches(txt.Var1,'ChzT.RESP'))
-%         jitter = txt.Var2(matches(txt.Var1,'ITIj')) ./ 1000;
-%         response_time = txt.Var2(matches(txt.Var1,'ChzT.RT')) ./ 1000;
-%     
-%         feedback_onset = txt.Var2(matches(txt.Var1,'ShwT.OnsetTime')) ./ 1000;
-%         feedback_dur = 
-%     
-%         cr_events = array2table
-%         cr_events.Properties.VariableNames = {'onset', 'duration', 'block_number',...
-%             'block_agent', 'topic', 'player_selected', 'jitter', 'reaction_time', 'feedback_duration'}
-%     
-%         cr_txt = fullfile(basedir, "behavioral/", strcat('sub-',pid,'/ses-',ses,'/func/sub-',pid,'_ses-',ses,'_task-chatroom_run-01_events.txt'));
-%             writetable(cr_events,cr_txt,'delimiter','tab')
-%     end
-% end
+%%CHATROOM TASK
+if chatroom == 1
+    CRfnames_txt = filenames(fullfile(basedir, '/behavioral/sub-*/ses-', num2str(ses), '/beh/chzc*txt'));
+    CRfnames_csv = filenames(fullfile(strcat(basedir, '/behavioral/sub-*/ses-', num2str(ses), '/beh/chzc*csv'))); 
+
+    % PsychToolbox version of Chatroom, csv file
+    for sub = 1:length(CRfnames_csv)
+        csv_filename = CRfnames_csv{sub};
+        csv = readtable(csv_filename);
+
+        % Assuming csv.subjectID(1) retrieves the first participant ID
+        pid = csv.subjectID(1); 
+
+        func_dir = fullfile(basedir,'bids',strcat('sub-',num2str(pid),'/ses-',num2str(ses),'/func/'));
+        if ~exist(func_dir, 'dir')
+            mkdir(func_dir);
+        end
+
+        % % Check if all trialPlayerSelected are missing values
+        % if all(ismissing(csv.trialPlayerSelected))
+        %     disp(['Error with data for sub-', num2str(pid)]);
+        %     continue; % Skip to the next iteration
+        % end
+
+        % Pull onset, duration, and trial type into events.tsv file
+        onset = csv.trialOnset;
+        duration = repmat("4", [height(csv), 1]);
+        trial_type = strings(height(csv), 1);
+        topic = csv.trialTopic;
+        rt = csv.trialRT;
+        
+        for i = 1:height(csv)
+            if csv.blockNumber(i) == 2 || csv.blockNumber(i) == 3
+                if strcmp(csv.trialCorrectSelection(i), csv.blockAgent(1))
+                    trial_type(i) = 'acceptance';
+                else
+                    trial_type(i) = 'rejection';
+                end
+            elseif csv.blockNumber(i) == 1
+                trial_type(i) = 'player_selects';
+            elseif csv.blockNumber(i) == 4
+                trial_type(i) = 'control';
+            else
+                disp(['Error: Unexpected blockNumber for sub-', num2str(pid), ', ses-', num2str(ses)]);
+            end
+        end
+        
+        cr_events = table(onset, duration, trial_type);
+        cr_events.Properties.VariableNames = {'onset', 'duration', 'trial_type'};
+        
+        % Write to txt file
+        cr_txt_filename = fullfile(func_dir, ['sub-', num2str(pid), '_ses-', num2str(ses), '_task-chatroom_run-01_events.txt']);
+        writetable(cr_events, cr_txt_filename, 'Delimiter', 'tab');
+    end
+
+    %% E-Prime version of Chatroom, txt file
+    % for sub = 1:length(CRfnames_txt)
+    %     txt = readtable(CRfnames_txt{1});
+    %     pid = txt.Var2(matches(txt.Var1, 'Subject'));
+    %     pid = pid(1)
+    %     ses = txt.Var2(matches(txt.Var1, 'Session'));
+    %     ses = ses(1)
+    % 
+    %     onset = txt.Var2(matches(txt.Var1,'ChzT.OnsetTime')) ./ 1000;
+    %     duration = repmat("4", [height(csv), 1]);
+    %     trial_type = strings(height(csv), 1);
+    % 
+    %     topic = strcat(string(txt.Var2(matches(txt.Var1,'TopicNumber'))));
+    %     topic = replace(trial_type1,'10','Computers');
+    %     topic = replace(trial_type1,'11','Pets');
+    %     topic = replace(trial_type1,'12','Books');
+    %     topic = replace(trial_type1,'13','Friends');
+    %     topic = replace(trial_type1,'14','Family');
+    %     topic = replace(trial_type1,'15','Sports');
+    %     topic = replace(trial_type1,'1','School');
+    %     topic = replace(trial_type1,'2','Parties');
+    %     topic = replace(trial_type1,'3','Vacations');
+    %     topic = replace(trial_type1,'4','Hobbies');
+    %     topic = replace(trial_type1,'5','Music');
+    %     topic = replace(trial_type1,'6','TV');
+    %     topic = replace(trial_type1,'7','Movies');
+    %     topic = replace(trial_type1,'8','Food');
+    %     topic = replace(trial_type1,'9','Shopping');
+    % 
+    %     player_selected = txt.Var2(matches(txt.Var1,'ChzT.RESP'))
+    %     %jitter = txt.Var2(matches(txt.Var1,'ITIj')) ./ 1000;
+    %     %response_time = txt.Var2(matches(txt.Var1,'ChzT.RT')) ./ 1000;
+    % 
+    %     %feedback_onset = txt.Var2(matches(txt.Var1,'ShwT.OnsetTime')) ./ 1000;
+    %     &feedback_dur = 
+    % 
+    %     cr_events = array2table
+    %     cr_events.Properties.VariableNames = {'onset', 'duration', 'trial_type'}
+    % 
+    %     cr_txt = fullfile(basedir, "behavioral/", strcat('sub-',pid,'/ses-',ses,'/func/sub-',pid,'_ses-',ses,'_task-chatroom_run-01_events.txt'));
+    %         writetable(cr_events,cr_txt,'delimiter','tab')
+    % end
+end

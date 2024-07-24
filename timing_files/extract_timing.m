@@ -34,23 +34,23 @@ if mid==1
         
         onsets{1} = txt.onset(antgainidx)';
         durations{1} = (ones(length(onsets{1}),1) .*4)';
-        names{1} = {'GainAnticipation'};
+        names{1} = 'GainAnticipation';
 
         onsets{2} = txt.onset(antgainzeroidx)';
         durations{2} = (ones(length(onsets{2}),1) .*4)';
-        names{2} = {'GainZeroAnticipation'};
+        names{2} = 'GainZeroAnticipation';
         
         onsets{3} = txt.onset(antlossidx)';
         durations{3} = (ones(length(onsets{3}),1) .*4)';
-        names{3} = {'LossAnticipation'};
+        names{3} = 'LossAnticipation';
         
         onsets{4} = txt.onset(antlosszeroidx)';
         durations{4} = (ones(length(onsets{4}),1) .*4)';
-        names{4} = {'LossZeroAnticipation'};
+        names{4} = 'LossZeroAnticipation';
        
         onsets{5} = txt.onset(motor)';
         durations{5} = (ones(length(onsets{5}),1) .*2)';
-        names{5} = {'Motor'};
+        names{5} = 'Motor';
         
         %save onsets, durations, and names to .mat file
         curr_filename = fullfile(savedir, strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_anticipation.mat'));   
@@ -60,23 +60,23 @@ if mid==1
 
         onsets{1} = txt.onset(outgainidx)';
         durations{1} = (ones(length(onsets{1}),1) .*4)';
-        names{1} = {'GainOutcome'};
+        names{1} = 'GainOutcome';
         
         onsets{2} = txt.onset(outgainzeroidx)';
         durations{2} = (ones(length(onsets{2}),1) .*4)';
-        names{2} = {'GainZeroOutcome'};
+        names{2} = 'GainZeroOutcome';
         
         onsets{3} = txt.onset(outlossidx)';
         durations{3} = (ones(length(onsets{3}),1) .*4)';
-        names{3} = {'LossOutcome'};
+        names{3} = 'LossOutcome';
         
         onsets{4} = txt.onset(outlosszeroidx)';
         durations{4} = (ones(length(onsets{4}),1) .*4)';
-        names{4} = {'LossZeroOutcome'};
+        names{4} = 'LossZeroOutcome';
         
         onsets{5} = txt.onset(motor)';
         durations{5} = (ones(length(onsets{5}),1) .*2)';
-        names{5} = {'Motor'};
+        names{5} = 'Motor';
 
         curr_filename = fullfile(savedir, strcat('sub-',pid{sub},'_ses-',num2str(ses),'_task-mid_run-',num2str(run),'_timing_outcome.mat'));   
             save(curr_filename,'onsets','durations','names')
