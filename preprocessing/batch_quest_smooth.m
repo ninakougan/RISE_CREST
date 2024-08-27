@@ -1,5 +1,5 @@
-% Define the directory containing the preprocessed data
-directories = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep';
+% Define the top directory containing the preprocessed data
+top_directory = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep';
 
 % Specify the session and run numbers
 ses = 1;  % Adjust the session number as needed
@@ -10,15 +10,23 @@ file_list = {};
 smoothed_list = {};
 new_list = {};
 
+% Construct the search pattern for the .nii.gz files
+search_pattern = fullfile(top_directory, ['ses-', num2str(ses)], 'sub-*', ['ses-', num2str(ses)], 'func', ['*run-0', num2str(run), '*bold.nii.gz']);
+disp(['Looking for files with pattern: ', search_pattern]);
+
 % Get a list of all .nii.gz files in the func/ folders for the specified session and run
-file_list = filenames(fullfile(directories, ['ses-', num2str(ses)], '*/func/*run-0', num2str(run), '*.nii.gz'));
+file_list = dir(search_pattern);
 
 % Iterate over each file in the list to categorize subjects
 for i = 1:length(file_list)
+    % Extract the full path and filename
+    fullpath = fullfile(file_list(i).folder, file_list(i).name);
+    [~, filename, ext] = fileparts(fullpath);
+    filepath = file_list(i).folder;
+    
     % Extract the subject ID from the file path
-    [filepath, filename, ext] = fileparts(file_list{i});
-    parts = strsplit(filepath, '/');
-    subject_id = parts{end-3};  % Extracts the subject folder name, e.g., 'sub-50000'
+    parts = strsplit(filepath, filesep);
+    subject_id = parts{end-2};  % Extracts the subject folder name, e.g., 'sub-50001'
 
     if startsWith(filename, 'ssub-')
         % If the file starts with "ssub-", mark the subject as smoothed
