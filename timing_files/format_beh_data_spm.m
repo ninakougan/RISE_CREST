@@ -1,8 +1,8 @@
 basedir = '/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/behavioral';
 savedir = '/Users/zacharyanderson/Documents/ACNlab/RISECREST/RISE/timing_files';
 
-mid = 0;
-chat = 1;
+mid = 1;
+chat = 0;
 chat_matlab = 0;
 cd(basedir)
 

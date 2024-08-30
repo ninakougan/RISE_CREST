@@ -4,7 +4,7 @@ if nargin==0 % defaults just for testing
     PID = 50027;  
     overwrite = 1;
     ses = 1;
-    run = 1;
+    run = 2;
 end
 
 preproc_dir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
@@ -21,7 +21,7 @@ ndummies=0;
 rundir = fullfile(preproc_dir, strcat(PID, strcat('/ses-', num2str(ses)), '/func'));
 %keyboard
 
-in{1} = cellstr(spm_select('ExtFPList', rundir, strcat('.*task-chatroom_run-0',num2str(run),'_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'), ndummies+1:9999));
+in{1} = cellstr(spm_select('ExtFPList', rundir, strcat('.*task-mid_run-0',num2str(run),'_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'), ndummies+1:9999));
 %keyboard
 
 if isempty(in{1}{1})

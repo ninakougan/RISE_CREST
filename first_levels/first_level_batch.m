@@ -4,10 +4,10 @@
 % clunky and IT WILL CHANGE EVERYTIME YOU MOVE FILES AROUND. But since
 % we're in BIDS format... Maybe I can actually make this more dynamic. 
 
-scriptdir = '/home/nck1870/repos/RISE_CREST';
+scriptdir = '/home/nck1870/repos/RISE_CREST/first_levels';
 basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
 % What run of your task are you looking at?
-run = 1;
+run = 2;
 % What session appears in your raw filenames when in BIDS format?
 ses = 1;
 % Do you want to overwrite previously estimated first levels or just add to
@@ -15,17 +15,18 @@ ses = 1;
 overwrite = 0;
 
 % rest, consumption, anticipation
-contrast = 'anticipation'; % anticipation, outcome, chatroom
+contrast = 'outcome'; % anticipation, outcome, chatroom
 
 %%
 fnames = filenames(fullfile(basedir,strcat('/fmriprep/ses-',num2str(ses),'/smoothed_data/ssub*ses-',num2str(ses),'*mid*run-0',num2str(run),'*')));
 
 if overwrite == 0
-    fl_list = filenames(fullfile(basedir,'/june2024/fl/*/',strcat('ses-',num2str(ses),'/'),contrast,strcat('run-0',num2str(run)),'SPM.mat'));
+    fl_list = filenames(fullfile(basedir,'/august24_T1/fl/sub-*/',strcat('ses-',num2str(ses),'/'),contrast,strcat('run-0',num2str(run)),'SPM.mat'));
     counter = 1;
     for sub = 1:length(fnames)
         
-        curr_sub = fnames{sub}(77:81);
+        curr_sub = fnames{sub}(92:96);
+        %keyboard
 
         if isempty(find(contains(fl_list,curr_sub)))
             new_list(counter) = str2num(curr_sub);

@@ -1,5 +1,5 @@
-fldir = '/Users/ninakougan/Documents/acnl/rise_crest/iris/fl';
-datadir = '/Users/ninakougan/Documents/acnl/rise_crest/iris/final_data';
+fldir = '/projects/b1108/studies/rise/data/processed/neuroimaging/august24_T1/fl';
+datadir = '/projects/b1108/studies/rise/data/processed/neuroimaging/august24_T1/final_data';
 
 remake_data_obj = 1;
 
@@ -23,18 +23,18 @@ if remake_data_obj == 1
     %fchat_s1_acc = filenames(fullfile('sub-*/ses-1/chatroom/run-01/con_0002.nii'));
     %fchat_s1_rej = filenames(fullfile('sub-*/ses-1/chatroom/run-01/con_0003.nii'));
         
-    fmidant_s2_run1_c1 = filenames(fullfile('sub-*/ses-2/anticipation/run-01/con_0001.nii'));
-    fmidant_s2_run1_c2 = filenames(fullfile('sub-*/ses-2/anticipation/run-01/con_0002.nii'));
-    fmidant_s2_run1_c3 = filenames(fullfile('sub-*/ses-2/anticipation/run-01/con_0003.nii'));
-    fmidant_s2_run2_c1 = filenames(fullfile('sub-*/ses-2/anticipation/run-02/con_0001.nii'));
-    fmidant_s2_run2_c2 = filenames(fullfile('sub-*/ses-2/anticipation/run-02/con_0002.nii'));
-    fmidant_s2_run2_c3 = filenames(fullfile('sub-*/ses-2/anticipation/run-02/con_0003.nii'));
-    fmidout_s2_run1_c1 = filenames(fullfile('sub-*/ses-2/outcome/run-01/con_0001.nii'));
-    fmidout_s2_run1_c2 = filenames(fullfile('sub-*/ses-2/outcome/run-01/con_0002.nii'));
-    fmidout_s2_run1_c3 = filenames(fullfile('sub-*/ses-2/outcome/run-01/con_0003.nii'));
-    fmidout_s2_run2_c1 = filenames(fullfile('sub-*/ses-2/outcome/run-02/con_0001.nii'));
-    fmidout_s2_run2_c2 = filenames(fullfile('sub-*/ses-2/outcome/run-02/con_0002.nii'));
-    fmidout_s2_run2_c3 = filenames(fullfile('sub-*/ses-2/outcome/run-02/con_0003.nii'));
+    %fmidant_s2_run1_c1 = filenames(fullfile('sub-*/ses-2/anticipation/run-01/con_0001.nii'));
+    %fmidant_s2_run1_c2 = filenames(fullfile('sub-*/ses-2/anticipation/run-01/con_0002.nii'));
+    %fmidant_s2_run1_c3 = filenames(fullfile('sub-*/ses-2/anticipation/run-01/con_0003.nii'));
+    %fmidant_s2_run2_c1 = filenames(fullfile('sub-*/ses-2/anticipation/run-02/con_0001.nii'));
+    %fmidant_s2_run2_c2 = filenames(fullfile('sub-*/ses-2/anticipation/run-02/con_0002.nii'));
+    %fmidant_s2_run2_c3 = filenames(fullfile('sub-*/ses-2/anticipation/run-02/con_0003.nii'));
+    %fmidout_s2_run1_c1 = filenames(fullfile('sub-*/ses-2/outcome/run-01/con_0001.nii'));
+    %fmidout_s2_run1_c2 = filenames(fullfile('sub-*/ses-2/outcome/run-01/con_0002.nii'));
+    %fmidout_s2_run1_c3 = filenames(fullfile('sub-*/ses-2/outcome/run-01/con_0003.nii'));
+    %fmidout_s2_run2_c1 = filenames(fullfile('sub-*/ses-2/outcome/run-02/con_0001.nii'));
+    %fmidout_s2_run2_c2 = filenames(fullfile('sub-*/ses-2/outcome/run-02/con_0002.nii'));
+    %fmidout_s2_run2_c3 = filenames(fullfile('sub-*/ses-2/outcome/run-02/con_0003.nii'));
     %fchat_s2_accrej = filenames(fullfile('sub-*/ses-2/chatroom/run-01/con_0001.nii'));
     %fchat_s2_acc = filenames(fullfile('sub-*/ses-2/chatroom/run-01/con_0002.nii'));
     %fchat_s2_rej = filenames(fullfile('sub-*/ses-2/chatroom/run-01/con_0003.nii'));
@@ -567,7 +567,7 @@ if redo_regions == 1
     % mid ant ses1 c1
     T_midants1_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -584,7 +584,7 @@ if redo_regions == 1
     % mid ant ses1 c2
     T_midants1_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -601,7 +601,7 @@ if redo_regions == 1
     % mid ant ses1 c3
     T_midants1_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -619,7 +619,7 @@ if redo_regions == 1
     % mid out ses1 c1
     T_midouts1_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -637,7 +637,7 @@ if redo_regions == 1
     % mid out ses1 c2
     T_midouts1_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -655,7 +655,7 @@ if redo_regions == 1
     % mid out ses1 c3
     T_midouts1_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -674,7 +674,7 @@ if redo_regions == 1
     % mid ant ses2 c1
     T_midants2_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -691,7 +691,7 @@ if redo_regions == 1
     % mid ant ses2 c2
     T_midants2_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -708,7 +708,7 @@ if redo_regions == 1
     % mid ant ses2 c3
     T_midants2_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -726,7 +726,7 @@ if redo_regions == 1
     % mid out ses2 c1
     T_midouts2_c1 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -744,7 +744,7 @@ if redo_regions == 1
     % mid out ses2 c2
     T_midouts2_c2 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -762,7 +762,7 @@ if redo_regions == 1
     % mid out ses2 c3
     T_midouts2_c3 = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/acnl/rise_crest/roi/*.nii'));
+    all_regions = filenames(fullfile('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
@@ -779,8 +779,8 @@ if redo_regions == 1
 
     % AAL3 atlas for all
     clear names
-    atl = fmri_data('/Users/ninakougan/Documents/acnl/rise_crest/roi/aal3/AAL3v1.nii');
-    labels = readtable('/Users/ninakougan/Documents/acnl/rise_crest/roi/aal3/AAL3v1.nii.txt');
+    atl = fmri_data('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/aal3/AAL3v1.nii');
+    labels = readtable('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/aal3/AAL3v1.nii.txt');
     labels(isnan(labels.Var3),:) = [];
 
     % aal_chat_accrej_s1 = extract_roi_averages(final_data_chatroom_ses1_accrej,atl);
@@ -989,6 +989,3 @@ writetable(T_midouts1_c3, 'MID_out_S1C3.txt', 'Delimiter','\t');
 writetable(T_midouts2_c1, 'MID_out_S2C1.txt', 'Delimiter','\t');
 writetable(T_midouts2_c2, 'MID_out_S2C2.txt', 'Delimiter','\t');
 writetable(T_midouts2_c3, 'MID_out_S2C3.txt', 'Delimiter','\t');
-
-
-

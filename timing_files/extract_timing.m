@@ -1,23 +1,25 @@
-%basedir = 'projects/b1108/studies/rise/data/raw/neuroimaging/bids'; %make this wherever your bids directory is%
-%savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep';
+basedir = '/projects/b1108/studies/rise/data/raw/neuroimaging/bids'; %make this wherever your bids directory is%
+savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/spm_timing_files';
 
-basedir = '/Users/ninakougan/Documents/acnl/rise/timing_files'; %make this wherever your bids directory is%
-savedir = '/Users/ninakougan/Documents/acnl/rise/timing_files/SPM';
+%basedir = '/Users/ninakougan/Documents/acnl/rise/timing_files'; %make this wherever your bids directory is%
+%savedir = '/Users/ninakougan/Documents/acnl/rise/timing_files/SPM';
 
 mid = 1;
 chat = 0;
 chat_mat = 0;
 
 if mid==1
-    MIDfnames = filenames(fullfile(basedir,'sub*events.txt')); %swap session here%
+    MIDfnames = filenames(fullfile(strcat(basedir,'/events_files/sub*/ses-*/*/sub*events.txt')));
     % load in tsv file for events
     %txt = readtable("sub-50001_ses-1_task-mid_run-01_events.txt", "FileType","text",'Delimiter', '\t');
-    
+    keyboard
+
     for sub = 1:length(MIDfnames);
         txt = readtable(MIDfnames{1});
-        pid{sub} = MIDfnames{sub}(56:60); %local 56:60, quest
-        run = MIDfnames{sub}(81:82); %local 81:82, quest
-        ses = MIDfnames{sub}(66:66); %local 66:66, quest
+        pid{sub} = MIDfnames{sub}(74:78); %local 56:60, quest 74:78
+        run = MIDfnames{sub}(120:121); %local 81:82, quest 120:121
+        ses = MIDfnames{sub}(84); %local 66:66, quest 84
+        %keyboard
 
         % sort based on events
         antgainidx = contains(txt.trial_type,"ant_Win5") | contains(txt.trial_type,"ant_Win1.5");
