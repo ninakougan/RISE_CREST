@@ -936,13 +936,13 @@ if redo_regions == 1
     save T_aal_mid_out_s1_c2.mat T_aal_mid_out_s1_c2
     save T_aal_mid_out_s1_c3.mat T_aal_mid_out_s1_c3
 
-    %save T_aal_mid_ant_s2_c1.mat T_aal_mid_ant_s2_c1
-    %save T_aal_mid_ant_s2_c2.mat T_aal_mid_ant_s2_c2
-    %save T_aal_mid_ant_s2_c3.mat T_aal_mid_ant_s2_c3
+    save T_aal_mid_ant_s2_c1.mat T_aal_mid_ant_s2_c1
+    save T_aal_mid_ant_s2_c2.mat T_aal_mid_ant_s2_c2
+    save T_aal_mid_ant_s2_c3.mat T_aal_mid_ant_s2_c3
 
-    %save T_aal_mid_out_s2_c1.mat T_aal_mid_out_s2_c1
-    %save T_aal_mid_out_s2_c2.mat T_aal_mid_out_s2_c2
-    %save T_aal_mid_out_s2_c3.mat T_aal_mid_out_s2_c3
+    save T_aal_mid_out_s2_c1.mat T_aal_mid_out_s2_c1
+    save T_aal_mid_out_s2_c2.mat T_aal_mid_out_s2_c2
+    save T_aal_mid_out_s2_c3.mat T_aal_mid_out_s2_c3
 
 end
 
@@ -981,11 +981,11 @@ writetable(T_midants1_c2, 'MID_ant_S1C2.txt', 'Delimiter','\t');
 writetable(T_midants1_c3, 'MID_ant_S1C3.txt', 'Delimiter','\t');
 %writetable(T_midants2_c1, 'MID_ant_S2C1.txt', 'Delimiter','\t');
 %writetable(T_midants2_c2, 'MID_ant_S2C2.txt', 'Delimiter','\t');
-%writetable(T_midants2_c3, 'MID_ant_S2C3.txt', 'Delimiter','\t');
+writetable(T_midants2_c3, 'MID_ant_S2C3.txt', 'Delimiter','\t');
 
 writetable(T_midouts1_c1, 'MID_out_S1C1.txt', 'Delimiter','\t');
 writetable(T_midouts1_c2, 'MID_out_S1C2.txt', 'Delimiter','\t');
 writetable(T_midouts1_c3, 'MID_out_S1C3.txt', 'Delimiter','\t');
-%writetable(T_midouts2_c1, 'MID_out_S2C1.txt', 'Delimiter','\t');
-%writetable(T_midouts2_c2, 'MID_out_S2C2.txt', 'Delimiter','\t');
-%writetable(T_midouts2_c3, 'MID_out_S2C3.txt', 'Delimiter','\t');
+writetable(T_midouts2_c1, 'MID_out_S2C1.txt', 'Delimiter','\t');
+writetable(T_midouts2_c2, 'MID_out_S2C2.txt', 'Delimiter','\t');
+writetable(T_midouts2_c3, 'MID_out_S2C3.txt', 'Delimiter','\t');
