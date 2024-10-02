@@ -1,7 +1,7 @@
 fldir = '/projects/b1108/studies/rise/data/processed/neuroimaging/august24_T1/fl';
-datadir = '/projects/b1108/studies/rise/data/processed/neuroimaging/august24_T1/final_data';
+datadir = '/users/ninakougan/Downloads';
 
-remake_data_obj = 1;
+remake_data_obj = 0;
 
 if remake_data_obj == 1
 
@@ -458,7 +458,7 @@ thresh_midout_ses1_c3 = threshold(stat_midout_ses1_c3.t,0.05,'fdr','k',10);
 % thresh_chatroom_ses2_rej = threshold(stat_chatroom_ses2_rej.t,0.05,'fdr','k',10);
 
 %%
-redo_regions = 1;
+redo_regions = 0;
 
 if redo_regions == 1
 % 
