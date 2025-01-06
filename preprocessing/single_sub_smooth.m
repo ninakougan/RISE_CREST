@@ -1,10 +1,10 @@
 function smooth_single_sub(PID,ses,run,overwrite)
 %% var set up
 if nargin==0 % defaults just for testing
-    PID = 50027;  
+    PID = 50282;  
     overwrite = 1;
     ses = 1;
-    run = 2;
+    run = 1;
 end
 
 preproc_dir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
@@ -29,10 +29,10 @@ if isempty(in{1}{1})
     return
 end
 
-jobfile = {'/home/nck1870/repos/dissertation_analyses/run_first_levels/smooth_template.m'};
+jobfile = {'/home/nck1870/repos/RISE_CREST/preprocessing/smooth_template.m'};
 jobs = 'smooth_template.m';
 
-
+%keyboard
 spm('defaults', 'FMRI');
 spm_jobman('run', jobs, in{:});
 
