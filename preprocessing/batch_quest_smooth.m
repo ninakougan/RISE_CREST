@@ -6,7 +6,7 @@ repodir = '/home/nck1870/repos';
 directories = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
 
 % What run of your task are you looking at?
-run = 2;
+run = 1;
 % What session appears in your raw filenames when in BIDS format?
 ses = 1;
 % Do you want to overwrite previously estimated first levels or just add to
@@ -22,7 +22,7 @@ for i = 1:length(file_list)
     sublist{i} = file_list{i}(98:102);
 end
 
-keyboard
+%keyboard
 if overwrite == 0
     smooth_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/ssub*mid_run-0',num2str(run),'*preproc_bold.nii')));
     counter = 1;
