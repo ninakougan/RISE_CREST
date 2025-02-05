@@ -8,10 +8,10 @@ end
 
 overwrite = 1;
 ses = 1;
-run = 2;
+run = 1;
 ndummies = 0;
 
-contrast = 'anticipation'; % consumption
+contrast = 'anticipation'; % outcome
 
 % Define some paths
 basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';

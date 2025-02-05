@@ -36,7 +36,7 @@ if isempty(in{2}{1})
 end
 
 % onset files
-in{3} = filenames(fullfile(basedir,'/timing_files/', strcat(PID,'_ses-',num2str(ses),'_task-chatroom2_run-',num2str(run), '_timing.mat')));
+in{3} = filenames(fullfile(basedir,'/timing_files/', strcat(PID,'_ses-',num2str(ses),'_task-chatroom_run-',num2str(run), '_timing.mat')));
 
 if isempty(in{3})
     warning('No modeling found (behav data might be missing)')
