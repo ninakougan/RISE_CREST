@@ -10,7 +10,7 @@ run_chat = 1;
 
 % Define directories
 fldir = '/projects/b1108/studies/rise/data/processed/neuroimaging/august24_T1/fl';
-datadir = '/projects/b1108/studies/rise/data/processed/neuroimaging/T1_nina';
+datadir = '/users/ninakougan/Downloads';
 
 % Load exclusion list
 load('/projects/b1108/studies/rise/data/processed/neuroimaging/exclusions_based_on_motion.mat');
