@@ -1,5 +1,5 @@
 basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/behavioral';
-savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/timing_files';
+savedir = '/projects/p31589/studies/rise/timing_files';
 
 mid = 1;
 chat = 1;
