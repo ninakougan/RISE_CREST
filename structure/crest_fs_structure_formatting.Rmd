@@ -1,0 +1,336 @@
+---
+title: "CREST_structure_data_org"
+author: "Anna Cichocki, edited by Nina Kougan"
+date: "03/19/2024"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+#READ IN DATA TABLES
+```{r}
+library(readxl)
+library(dplyr)
+
+crest_freesurfer_data <-read_excel("~/Documents/acnl/rise_crest/crest/structure/crest_t1_sMRI_04092025_NK.xlsx")
+crest_data <- crest_freesurfer_data
+
+
+#exclusions <-read_excel("~/Documents/acnl/rise_crest/crest/structure/crest_t1_exclusions.xlsx")
+#crest_data <- merge(crest_freesurfer_data,crest_exclusions,by="PID")
+
+View(crest_data)
+
+```
+
+#make ROI files
+##crest
+```{r}
+crest_roi <- crest_data
+names(crest_roi)
+
+crest_roi$GrayVol_bilat_hippocampus <- (crest_roi$"Left-Hippocampus" + crest_roi$"Right-Hippocampus")
+crest_roi$GrayVol_bilat_amygdala <- (crest_roi$"Left-Amygdala" + crest_roi$"Right-Amygdala")
+crest_roi$GrayVol_bilat_nacc <- (crest_roi$"Left-Accumbens-area" + crest_roi$"Right-Accumbens-area")
+crest_roi$GrayVol_bilat_caudate <- (crest_roi$"Left-Caudate" + crest_roi$"Right-Caudate")
+crest_roi$GrayVol_bilat_putamen <- (crest_roi$"Left-Putamen" + crest_roi$"Right-Putamen")
+crest_roi$GrayVol_bilat_pallidum <- (crest_roi$"Left-Pallidum" + crest_roi$"Right-Pallidum")
+crest_roi$GrayVol_bilat_thalamus <- (crest_roi$"Left-Thalamus" + crest_roi$"Right-Thalamus")
+
+#GrayVol
+crest_roi$GrayVol_bilat_insula <- (crest_roi$GrayVol_right_insula + crest_roi$GrayVol_left_insula)
+
+crest_roi$GrayVol_right_ACC <- (crest_roi$GrayVol_right_rostralanteriorcingulate + crest_roi$GrayVol_right_caudalanteriorcingulate + crest_roi$GrayVol_right_posteriorcingulate)
+crest_roi$GrayVol_left_ACC <- (crest_roi$GrayVol_left_rostralanteriorcingulate + crest_roi$GrayVol_left_caudalanteriorcingulate + crest_roi$GrayVol_left_posteriorcingulate)
+crest_roi$GrayVol_bilat_ACC <- (crest_roi$GrayVol_left_ACC + crest_roi$GrayVol_right_ACC)
+
+crest_roi$GrayVol_bilat_rostralACC <- (crest_roi$GrayVol_right_rostralanteriorcingulate + crest_roi$GrayVol_left_rostralanteriorcingulate)
+crest_roi$GrayVol_bilat_caudalACC <- (crest_roi$GrayVol_right_caudalanteriorcingulate + crest_roi$GrayVol_left_caudalanteriorcingulate)
+crest_roi$GrayVol_bilat_posteriorACC <- (crest_roi$GrayVol_right_posteriorcingulate + crest_roi$GrayVol_left_posteriorcingulate)
+
+crest_roi$GrayVol_right_OFC <- (crest_roi$GrayVol_right_medialorbitofrontal + crest_roi$GrayVol_right_lateralorbitofrontal)
+crest_roi$GrayVol_left_OFC <- (crest_roi$GrayVol_left_medialorbitofrontal + crest_roi$GrayVol_left_lateralorbitofrontal)
+crest_roi$GrayVol_bilat_OFC <- (crest_roi$GrayVol_left_OFC + crest_roi$GrayVol_right_OFC)
+
+crest_roi$GrayVol_bilat_medialOFC <- (crest_roi$GrayVol_right_medialorbitofrontal + crest_roi$GrayVol_left_medialorbitofrontal)
+crest_roi$GrayVol_bilat_lateralOFC <- (crest_roi$GrayVol_right_lateralorbitofrontal + crest_roi$GrayVol_left_lateralorbitofrontal)
+
+crest_roi$GrayVol_right_VLPFC <- (crest_roi$GrayVol_right_parstriangularis + crest_roi$GrayVol_right_parsorbitalis)
+crest_roi$GrayVol_left_VLPFC <- (crest_roi$GrayVol_left_parstriangularis + crest_roi$GrayVol_left_parsorbitalis)
+crest_roi$GrayVol_bilat_VLPFC <- (crest_roi$GrayVol_left_VLPFC + crest_roi$GrayVol_right_VLPFC)
+
+crest_roi$GrayVol_bilat_parstriangularis <- (crest_roi$GrayVol_right_parstriangularis + crest_roi$GrayVol_left_parstriangularis)
+crest_roi$GrayVol_bilat_parsorbitalis <- (crest_roi$GrayVol_right_parsorbitalis + crest_roi$GrayVol_left_parsorbitalis)
+
+crest_roi$GrayVol_bilat_DLPFC <- (crest_roi$GrayVol_right_rostralmiddlefrontal + crest_roi$GrayVol_left_rostralmiddlefrontal)
+crest_roi$GrayVol_bilat_superiorfrontal <- (crest_roi$GrayVol_right_superiorfrontal + crest_roi$GrayVol_left_superiorfrontal)
+
+#ThickAvg
+crest_roi$ThickAvg_bilat_insula <- (crest_roi$ThickAvg_right_insula + crest_roi$ThickAvg_left_insula)
+
+crest_roi$ThickAvg_right_ACC <- (crest_roi$ThickAvg_right_rostralanteriorcingulate + crest_roi$ThickAvg_right_caudalanteriorcingulate + crest_roi$ThickAvg_right_posteriorcingulate)
+crest_roi$ThickAvg_left_ACC <- (crest_roi$ThickAvg_left_rostralanteriorcingulate + crest_roi$ThickAvg_left_caudalanteriorcingulate + crest_roi$ThickAvg_left_posteriorcingulate)
+crest_roi$ThickAvg_bilat_ACC <- (crest_roi$ThickAvg_left_ACC + crest_roi$ThickAvg_right_ACC)
+
+crest_roi$ThickAvg_bilat_rostralACC <- (crest_roi$ThickAvg_right_rostralanteriorcingulate + crest_roi$ThickAvg_left_rostralanteriorcingulate)
+crest_roi$ThickAvg_bilat_caudalACC <- (crest_roi$ThickAvg_right_caudalanteriorcingulate + crest_roi$ThickAvg_left_caudalanteriorcingulate)
+crest_roi$ThickAvg_bilat_posteriorACC <- (crest_roi$ThickAvg_right_posteriorcingulate + crest_roi$ThickAvg_left_posteriorcingulate)
+
+crest_roi$ThickAvg_right_OFC <- (crest_roi$ThickAvg_right_medialorbitofrontal + crest_roi$ThickAvg_right_lateralorbitofrontal)
+crest_roi$ThickAvg_left_OFC <- (crest_roi$ThickAvg_left_medialorbitofrontal + crest_roi$ThickAvg_left_lateralorbitofrontal)
+crest_roi$ThickAvg_bilat_OFC <- (crest_roi$ThickAvg_left_OFC + crest_roi$ThickAvg_right_OFC)
+
+crest_roi$ThickAvg_bilat_medialOFC <- (crest_roi$ThickAvg_right_medialorbitofrontal + crest_roi$ThickAvg_left_medialorbitofrontal)
+crest_roi$ThickAvg_bilat_lateralOFC <- (crest_roi$ThickAvg_right_lateralorbitofrontal + crest_roi$ThickAvg_left_lateralorbitofrontal)
+
+crest_roi$ThickAvg_right_VLPFC <- (crest_roi$ThickAvg_right_parstriangularis + crest_roi$ThickAvg_right_parsorbitalis)
+crest_roi$ThickAvg_left_VLPFC <- (crest_roi$ThickAvg_left_parstriangularis + crest_roi$ThickAvg_left_parsorbitalis)
+crest_roi$ThickAvg_bilat_VLPFC <- (crest_roi$ThickAvg_left_VLPFC + crest_roi$ThickAvg_right_VLPFC)
+
+crest_roi$ThickAvg_bilat_parstriangularis <- (crest_roi$ThickAvg_right_parstriangularis + crest_roi$ThickAvg_left_parstriangularis)
+crest_roi$ThickAvg_bilat_parsorbitalis <- (crest_roi$ThickAvg_right_parsorbitalis + crest_roi$ThickAvg_left_parsorbitalis)
+
+crest_roi$ThickAvg_bilat_DLPFC <- (crest_roi$ThickAvg_right_rostralmiddlefrontal + crest_roi$ThickAvg_left_rostralmiddlefrontal)
+crest_roi$ThickAvg_bilat_superiorfrontal <- (crest_roi$ThickAvg_right_superiorfrontal + crest_roi$ThickAvg_left_superiorfrontal)
+
+#SurfArea
+crest_roi$SurfArea_bilat_insula <- (crest_roi$SurfArea_right_insula + crest_roi$SurfArea_left_insula)
+
+crest_roi$SurfArea_right_ACC <- (crest_roi$SurfArea_right_rostralanteriorcingulate + crest_roi$SurfArea_right_caudalanteriorcingulate + crest_roi$SurfArea_right_posteriorcingulate)
+crest_roi$SurfArea_left_ACC <- (crest_roi$SurfArea_left_rostralanteriorcingulate + crest_roi$SurfArea_left_caudalanteriorcingulate + crest_roi$SurfArea_left_posteriorcingulate)
+crest_roi$SurfArea_bilat_ACC <- (crest_roi$SurfArea_left_ACC + crest_roi$SurfArea_right_ACC)
+
+crest_roi$SurfArea_bilat_rostralACC <- (crest_roi$SurfArea_right_rostralanteriorcingulate + crest_roi$SurfArea_left_rostralanteriorcingulate)
+crest_roi$SurfArea_bilat_caudalACC <- (crest_roi$SurfArea_right_caudalanteriorcingulate + crest_roi$SurfArea_left_caudalanteriorcingulate)
+crest_roi$SurfArea_bilat_posteriorACC <- (crest_roi$SurfArea_right_posteriorcingulate + crest_roi$SurfArea_left_posteriorcingulate)
+
+crest_roi$SurfArea_right_OFC <- (crest_roi$SurfArea_right_medialorbitofrontal + crest_roi$SurfArea_right_lateralorbitofrontal)
+crest_roi$SurfArea_left_OFC <- (crest_roi$SurfArea_left_medialorbitofrontal + crest_roi$SurfArea_left_lateralorbitofrontal)
+crest_roi$SurfArea_bilat_OFC <- (crest_roi$SurfArea_left_OFC + crest_roi$SurfArea_right_OFC)
+
+crest_roi$SurfArea_bilat_medialOFC <- (crest_roi$SurfArea_right_medialorbitofrontal + crest_roi$SurfArea_left_medialorbitofrontal)
+crest_roi$SurfArea_bilat_lateralOFC <- (crest_roi$SurfArea_right_lateralorbitofrontal + crest_roi$SurfArea_left_lateralorbitofrontal)
+
+crest_roi$SurfArea_right_VLPFC <- (crest_roi$SurfArea_right_parstriangularis + crest_roi$SurfArea_right_parsorbitalis)
+crest_roi$SurfArea_left_VLPFC <- (crest_roi$SurfArea_left_parstriangularis + crest_roi$SurfArea_left_parsorbitalis)
+crest_roi$SurfArea_bilat_VLPFC <- (crest_roi$SurfArea_left_VLPFC + crest_roi$SurfArea_right_VLPFC)
+
+crest_roi$SurfArea_bilat_parstriangularis <- (crest_roi$SurfArea_right_parstriangularis + crest_roi$SurfArea_left_parstriangularis)
+crest_roi$SurfArea_bilat_parsorbitalis <- (crest_roi$SurfArea_right_parsorbitalis + crest_roi$SurfArea_left_parsorbitalis)
+
+crest_roi$SurfArea_bilat_DLPFC <- (crest_roi$SurfArea_right_rostralmiddlefrontal + crest_roi$SurfArea_left_rostralmiddlefrontal)
+crest_roi$SurfArea_bilat_superiorfrontal <- (crest_roi$SurfArea_right_superiorfrontal + crest_roi$SurfArea_left_superiorfrontal)
+
+
+crest_roi_ordered <-crest_roi[,c("PID", "icvVol",
+                                      "Left-Hippocampus", 
+                                      "Left-Amygdala", 
+                                      "Left-Accumbens-area", 
+                                      "Left-Caudate", 
+                                      "Left-Putamen", 
+                                      "Left-Pallidum", 
+                                      "Left-Thalamus", 
+                                      "GrayVol_left_insula",
+                                      "GrayVol_left_ACC",
+                                      "GrayVol_left_rostralanteriorcingulate", 
+                                      "GrayVol_left_caudalanteriorcingulate", 
+                                      "GrayVol_left_posteriorcingulate",
+                                      "GrayVol_left_OFC",
+                                      "GrayVol_left_medialorbitofrontal",
+                                      "GrayVol_left_lateralorbitofrontal",
+                                      "GrayVol_left_VLPFC",
+                                      "GrayVol_left_parstriangularis",
+                                      "GrayVol_left_parsorbitalis",
+                                      "GrayVol_left_rostralmiddlefrontal",
+                                      "GrayVol_left_superiorfrontal",
+                                      "ThickAvg_left_insula",
+                                      "ThickAvg_left_ACC",
+                                      "ThickAvg_left_rostralanteriorcingulate", 
+                                      "ThickAvg_left_caudalanteriorcingulate", 
+                                      "ThickAvg_left_posteriorcingulate",
+                                      "ThickAvg_left_OFC",
+                                      "ThickAvg_left_medialorbitofrontal",
+                                      "ThickAvg_left_lateralorbitofrontal",
+                                      "ThickAvg_left_VLPFC",
+                                      "ThickAvg_left_parstriangularis",
+                                      "ThickAvg_left_parsorbitalis",
+                                      "ThickAvg_left_rostralmiddlefrontal",
+                                      "ThickAvg_left_superiorfrontal",
+                                      "SurfArea_left_insula",
+                                      "SurfArea_left_ACC",
+                                      "SurfArea_left_rostralanteriorcingulate", 
+                                      "SurfArea_left_caudalanteriorcingulate", 
+                                      "SurfArea_left_posteriorcingulate",
+                                      "SurfArea_left_OFC",
+                                      "SurfArea_left_medialorbitofrontal",
+                                      "SurfArea_left_lateralorbitofrontal",
+                                      "SurfArea_left_VLPFC",
+                                      "SurfArea_left_parstriangularis",
+                                      "SurfArea_left_parsorbitalis",
+                                      "SurfArea_left_rostralmiddlefrontal",
+                                      "SurfArea_left_superiorfrontal",
+                                      "Right-Hippocampus", 
+                                      "Right-Amygdala", 
+                                      "Right-Accumbens-area", 
+                                      "Right-Caudate", 
+                                      "Right-Putamen", 
+                                      "Right-Pallidum", 
+                                      "Right-Thalamus", 
+                                      "GrayVol_right_insula",
+                                      "GrayVol_right_ACC",
+                                      "GrayVol_right_rostralanteriorcingulate", 
+                                      "GrayVol_right_caudalanteriorcingulate", 
+                                      "GrayVol_right_posteriorcingulate",
+                                      "GrayVol_right_OFC",
+                                      "GrayVol_right_medialorbitofrontal",
+                                      "GrayVol_right_lateralorbitofrontal",
+                                      "GrayVol_right_VLPFC",
+                                      "GrayVol_right_parstriangularis",
+                                      "GrayVol_right_parsorbitalis",
+                                      "GrayVol_right_rostralmiddlefrontal",
+                                      "GrayVol_right_superiorfrontal",
+                                      "ThickAvg_right_insula",
+                                      "ThickAvg_right_ACC",
+                                      "ThickAvg_right_rostralanteriorcingulate", 
+                                      "ThickAvg_right_caudalanteriorcingulate", 
+                                      "ThickAvg_right_posteriorcingulate",
+                                      "ThickAvg_right_OFC",
+                                      "ThickAvg_right_medialorbitofrontal",
+                                      "ThickAvg_right_lateralorbitofrontal",
+                                      "ThickAvg_right_VLPFC",
+                                      "ThickAvg_right_parstriangularis",
+                                      "ThickAvg_right_parsorbitalis",
+                                      "ThickAvg_right_rostralmiddlefrontal",
+                                      "ThickAvg_right_superiorfrontal",
+                                      "SurfArea_right_insula",
+                                      "SurfArea_right_ACC",
+                                      "SurfArea_right_rostralanteriorcingulate", 
+                                      "SurfArea_right_caudalanteriorcingulate", 
+                                      "SurfArea_right_posteriorcingulate",
+                                      "SurfArea_right_OFC",
+                                      "SurfArea_right_medialorbitofrontal",
+                                      "SurfArea_right_lateralorbitofrontal",
+                                      "SurfArea_right_VLPFC",
+                                      "SurfArea_right_parstriangularis",
+                                      "SurfArea_right_parsorbitalis",
+                                      "SurfArea_right_rostralmiddlefrontal",
+                                      "SurfArea_right_superiorfrontal",
+                                      "GrayVol_bilat_hippocampus", 
+                                      "GrayVol_bilat_amygdala", 
+                                      "GrayVol_bilat_nacc", 
+                                      "GrayVol_bilat_caudate", 
+                                      "GrayVol_bilat_putamen", 
+                                      "GrayVol_bilat_pallidum", 
+                                      "GrayVol_bilat_thalamus", 
+                                      "GrayVol_bilat_insula",
+                                      "GrayVol_bilat_ACC",
+                                      "GrayVol_bilat_rostralACC", 
+                                      "GrayVol_bilat_caudalACC", 
+                                      "GrayVol_bilat_posteriorACC",
+                                      "GrayVol_bilat_OFC",
+                                      "GrayVol_bilat_medialOFC",
+                                      "GrayVol_bilat_lateralOFC",
+                                      "GrayVol_bilat_VLPFC",
+                                      "GrayVol_bilat_parstriangularis",
+                                      "GrayVol_bilat_parsorbitalis",
+                                      "GrayVol_bilat_DLPFC",
+                                      "GrayVol_bilat_superiorfrontal",
+                                      "ThickAvg_bilat_insula",
+                                      "ThickAvg_bilat_ACC",
+                                      "ThickAvg_bilat_rostralACC", 
+                                      "ThickAvg_bilat_caudalACC", 
+                                      "ThickAvg_bilat_posteriorACC",
+                                      "ThickAvg_bilat_OFC",
+                                      "ThickAvg_bilat_medialOFC",
+                                      "ThickAvg_bilat_lateralOFC",
+                                      "ThickAvg_bilat_VLPFC",
+                                      "ThickAvg_bilat_parstriangularis",
+                                      "ThickAvg_bilat_parsorbitalis",
+                                      "ThickAvg_bilat_DLPFC",
+                                      "ThickAvg_bilat_superiorfrontal",
+                                      "SurfArea_bilat_insula",
+                                      "SurfArea_bilat_ACC",
+                                      "SurfArea_bilat_rostralACC", 
+                                      "SurfArea_bilat_caudalACC", 
+                                      "SurfArea_bilat_posteriorACC",
+                                      "SurfArea_bilat_OFC",
+                                      "SurfArea_bilat_medialOFC",
+                                      "SurfArea_bilat_lateralOFC",
+                                      "SurfArea_bilat_VLPFC",
+                                      "SurfArea_bilat_parstriangularis",
+                                      "SurfArea_bilat_parsorbitalis",
+                                      "SurfArea_bilat_DLPFC",
+                                      "SurfArea_bilat_superiorfrontal")]
+names(crest_data)
+names(crest_roi)
+names(crest_roi_ordered)
+
+View(crest_roi)
+names(crest_roi_ordered)
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_left_rostralmiddlefrontal'] <- 'GrayVol_left_DLPFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_left_rostralmiddlefrontal'] <- 'ThickAvg_left_DLPFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_left_rostralmiddlefrontal'] <- 'SurfArea_left_DLPFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_right_rostralmiddlefrontal'] <- 'GrayVol_right_DLPFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_right_rostralmiddlefrontal'] <- 'ThickAvg_right_DLPFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_right_rostralmiddlefrontal'] <- 'SurfArea_right_DLPFC'
+
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_left_medialorbitofrontal'] <- 'GrayVol_left_medialOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_left_medialorbitofrontal'] <- 'ThickAvg_left_medialOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_left_medialorbitofrontal'] <- 'SurfArea_left_medialOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_right_medialorbitofrontal'] <- 'GrayVol_right_medialOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_right_medialorbitofrontal'] <- 'ThickAvg_right_medialOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_right_medialorbitofrontal'] <- 'SurfArea_right_medialOFC'
+
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_left_lateralorbitofrontal'] <- 'GrayVol_left_lateralOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_left_lateralorbitofrontal'] <- 'ThickAvg_left_lateralOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_left_lateralorbitofrontal'] <- 'SurfArea_left_lateralOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_right_lateralorbitofrontal'] <- 'GrayVol_right_lateralOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_right_lateralorbitofrontal'] <- 'ThickAvg_right_lateralOFC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_right_lateralorbitofrontal'] <- 'SurfArea_right_lateralOFC'
+
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_left_rostralanteriorcingulate'] <- 'GrayVol_left_rostralACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_left_rostralanteriorcingulate'] <- 'ThickAvg_left_rostralACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_left_rostralanteriorcingulate'] <- 'SurfArea_left_rostralACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_right_rostralanteriorcingulate'] <- 'GrayVol_right_rostralACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_right_rostralanteriorcingulate'] <- 'ThickAvg_right_rostralACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_right_rostralanteriorcingulate'] <- 'SurfArea_right_rostralACC'
+
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_left_caudalanteriorcingulate'] <- 'GrayVol_left_caudalACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_left_caudalanteriorcingulate'] <- 'ThickAvg_left_caudalACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_left_caudalanteriorcingulate'] <- 'SurfArea_left_caudalACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_right_caudalanteriorcingulate'] <- 'GrayVol_right_caudalACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_right_caudalanteriorcingulate'] <- 'ThickAvg_right_caudalACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_right_caudalanteriorcingulate'] <- 'SurfArea_right_caudalACC'
+
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_left_posteriorcingulate'] <- 'GrayVol_left_posteriorACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_left_posteriorcingulate'] <- 'ThickAvg_left_posteriorACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_left_posteriorcingulate'] <- 'SurfArea_left_posteriorACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_right_posteriorcingulate'] <- 'GrayVol_right_posteriorACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'ThickAvg_right_posteriorcingulate'] <- 'ThickAvg_right_posteriorACC'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'SurfArea_right_posteriorcingulate'] <- 'SurfArea_right_posteriorACC'
+
+#SUBCORTICAL
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Left-Hippocampus'] <- 'GrayVol_left_hippocampus'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Left-Amygdala'] <- 'GrayVol_left_amygdala'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Left-Caudate'] <- 'GrayVol_left_caudate'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Left-Putamen'] <- 'GrayVol_left_putamen'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Left-Accumbens-area'] <- 'GrayVol_left_NAcc'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Left-Pallidum'] <- 'GrayVol_left_pallidum'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Left-Thalamus'] <- 'GrayVol_left_thalamus'
+
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Right-Hippocampus'] <- 'GrayVol_right_hippocampus'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Right-Amygdala'] <- 'GrayVol_right_amygdala'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Right-Caudate'] <- 'GrayVol_right_caudate'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Right-Putamen'] <- 'GrayVol_right_putamen'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Right-Accumbens-area'] <- 'GrayVol_right_NAcc'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Right-Pallidum'] <- 'GrayVol_right_pallidum'
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'Right-Thalamus'] <- 'GrayVol_right_thalamus'
+
+names(crest_roi_ordered)[names(crest_roi_ordered) == 'GrayVol_bilat_nacc'] <- 'GrayVol_bilat_NAcc'
+
+write.csv(crest_roi_ordered, file="~/Documents/acnl/rise_crest/crest/structure/crest_sMRI_fs_ROIs_data.csv", row.names=FALSE)
+write.csv(crest_roi, file="~/Documents/acnl/rise_crest/crest/structure/crest_sMRI_fs_all_data.csv", row.names=FALSE)
+
+
+
+```

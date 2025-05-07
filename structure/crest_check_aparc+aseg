@@ -1,0 +1,20 @@
+#! /bin/tcsh
+#
+# Usage: crest_checkAseg subjID MR#
+# argv1=subjID 5 digits (ie 100001)
+# argv2= session number (ie MR3)
+
+setenv SUBJECTS_DIR ~/Documents/acnl/rise_crest/crest/structure/freesurfer
+set bin = ~/Documents/acnl/rise_crest/crest/structure/freesurfer
+
+foreach sub ($argv[1])
+
+	echo "----------------------------------------------"
+	echo
+	echo "Checking segmentation for "$sub
+	echo
+	freeview -viewport x -zoom 1.70 -v $SUBJECTS_DIR/sub-${sub}/mri/brainmask.mgz -v $SUBJECTS_DIR/sub-${sub}/mri/aparc+aseg.mgz:colormap=lut:opacity=.15 &
+	echo
+	echo "----------------------------------------------"
+
+end
