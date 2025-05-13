@@ -3,6 +3,7 @@ run_MID = 1;      % Run MID analysis
 run_chat = 0;     % Run Chatroom analysis
 wholebrain = 0;   % Run whole-brain analysis
 
+session = 1;
 base_dir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
 fl_dir = fullfile(base_dir, 'fl');
 roi_dir = fullfile(base_dir, 'rois');
