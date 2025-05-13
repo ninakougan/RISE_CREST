@@ -26,7 +26,7 @@ fprintf(['Preparing 1st level model for ' PID ' / ' ses], ['Overwrite = ' num2st
 
 %% Model for MID task. First pass at first levels --> activation
 % FL directory for saving 1st level results: beta images, SPM.mat, contrasts, etc.
-in{1} = {fullfile(basedir, '/august24_T1/fl/', PID, strcat('ses-',num2str(ses)), 'anticipation/', strcat('run-0', num2str(run)))};
+in{1} = {fullfile(basedir, '/fl/', PID, strcat('ses-',num2str(ses)), 'anticipation/', strcat('run-0', num2str(run)))};
 %keyboard
 
 % preproc images
