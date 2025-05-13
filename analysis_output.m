@@ -31,10 +31,10 @@ if run_MID == 1
     end
 
     % Apply exclusions for MID (using pid_exclude_list)
-    mid_exclude = pid_exclude_list(contains(pid_exclude_list(:,2), ['ses-', num2str(session), '_mid']));
-    for c = 1:length(mid_contrasts)
-        mid_files.(mid_contrasts{c}) = mid_files.(mid_contrasts{c})(~contains(mid_files.(mid_contrasts{c}), mid_exclude));
-    end
+    %mid_exclude = pid_exclude_list(contains(pid_exclude_list(:,2), ['ses-', num2str(session), '_mid']));
+    %for c = 1:length(mid_contrasts)
+        %mid_files.(mid_contrasts{c}) = mid_files.(mid_contrasts{c})(~contains(mid_files.(mid_contrasts{c}), mid_exclude));
+    %end
 
     % Average data across runs exactly as in the original QA script:
     % (1) avg_mid will contain the averaged data matrix for ROI analysis.
