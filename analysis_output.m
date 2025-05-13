@@ -1,11 +1,11 @@
 %% Setup: Define control variables and directories
 run_MID = 1;      % Run MID analysis
-run_chat = 1;     % Run Chatroom analysis
-wholebrain = 1;   % Run whole-brain analysis
+run_chat = 0;     % Run Chatroom analysis
+wholebrain = 0;   % Run whole-brain analysis
 
 base_dir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
 fl_dir = fullfile(base_dir, 'fl');
-roi_dir = fullfile(base_dir, 'roi');
+roi_dir = fullfile(base_dir, 'rois');
 
 %% ========================= MID Analysis =========================
 if run_MID == 1
