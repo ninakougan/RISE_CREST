@@ -2,7 +2,7 @@ function run_sub_firstlevel_outcome(PID)
 %% var set up
 if nargin==0 % defaults just for testing 
     % Define some 
-    PID = "50001"; 
+    PID = "50002"; 
     
 end
 
@@ -13,9 +13,9 @@ ndummies = 0;
 
 
 % Define some paths
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
 
-preproc_dir = fullfile(basedir, '/fmriprep/ses-1/smoothed_data');
+preproc_dir = fullfile(basedir, '/smoothed_data');
 
 numPID = num2str(PID);
 PID = strcat('sub-',numPID);
@@ -25,7 +25,7 @@ fprintf(['Preparing 1st level model for ' PID ' / ' ses], ['Overwrite = ' num2st
 
 %% Model for MID task. First pass at first levels --> activation
 % FL directory for saving 1st level results: beta images, SPM.mat, contrasts, etc.
-in{1} = {fullfile(basedir, '/august24_T1/fl/', PID, strcat('ses-',num2str(ses)), 'outcome/', strcat('run-0', num2str(run)))};
+in{1} = {fullfile(basedir, '/fl/', PID, strcat('ses-',num2str(ses)), 'outcome/', strcat('run-0', num2str(run)))};
 
 % preproc images
 in{2} = cellstr(spm_select('ExtFPList', preproc_dir, strcat('^ssub-',num2str(numPID),'_ses-',num2str(ses),'_task-mid_run-0',num2str(run),'_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'), ndummies+1:9999));
@@ -36,7 +36,7 @@ if isempty(in{2}{1})
 end
 
 % onset files
-in{3} = filenames(fullfile(basedir,'/fmriprep/ses-1/spm_timing/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-0',num2str(run), '_timing_outcome.mat')));
+in{3} = filenames(fullfile(basedir,'/timing_files/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-0',num2str(run), '_outcome_timing.mat')));
 %keyboard
 
 if isempty(in{3})
@@ -46,7 +46,7 @@ end
 %% nuisance covs
 
 % fmriprep output
-confound_fname = filenames(fullfile(basedir, '/fmriprep/ses-1/spm_confounds/', strcat(PID,'_ses-',num2str(ses),'_mid_run-0',num2str(run),'.mat')));
+confound_fname = filenames(fullfile(basedir, '/spm_confounds/', strcat(PID,'_ses-',num2str(ses),'_mid_run-0',num2str(run),'_confounds.mat')));
 %keyboard
 
 in{4} = {confound_fname{1}};

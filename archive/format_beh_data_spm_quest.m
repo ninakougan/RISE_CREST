@@ -1,9 +1,9 @@
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/behavioral';
-savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/timing_files';
+basedir = '/projects/b1108/studies/rise/data/raw/neuroimaging/behavioral';
+savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/timing_files';
 
-mid = 0;
+mid = 1;
 chat = 0;
-chat_matlab = 1;
+chat_matlab = 0;
 make_plot = 0;
 
 if chat == 1
@@ -74,26 +74,31 @@ if chat == 1
     end
 end
 
-
 if mid == 1
     fnames = filenames(fullfile(basedir,'sub-*/ses-1/beh/3_*txt'));
     keyboard
     for sub = 1:length(fnames)
         % Load in the text file
         txt = readtable(fnames{sub});
-        pid{sub} =  fnames{sub}(71:75); % RISE %(72:77);% CREST (71:75); %
-        
+        pid{sub} =  fnames{sub}(67:71); % RISE %(72:77);% CREST (71:75); %
+        %keyboard
+
         if isempty(txt) == 0
-            
-            % create vars for all time points of interest
-            % target response
-            tgt_on = txt.Var2(find(contains(txt.Var1,'Run1Tgt.OnsetTime')));
-            tgt_dur = txt.Var2(find(contains(txt.Var1,'TgtDur')));
-            % cue onset and duration
-            cue_on1 = txt.Var2(find(contains(txt.Var1,'Run1Cue.OnsetTime')));
-            cue_on1 = (cue_on1 - txt.Var2(strcmp(txt.Var1,'Run1Fix.OnsetTime'))) ./ 1000;
-            cue_on2 = txt.Var2(find(contains(txt.Var1,'Run2Cue.OnsetTime')));
-            cue_on2 = (cue_on2 - txt.Var2(strcmp(txt.Var1,'Run2Fix.OnsetTime'))) ./ 1000;
+            try
+                % create vars for all time points of interest
+                % target response
+                tgt_on = txt.Var2(find(contains(txt.Var1,'Run1Tgt.OnsetTime')));
+                tgt_dur = txt.Var2(find(contains(txt.Var1,'TgtDur')));
+                % cue onset and duration
+                cue_on1 = txt.Var2(find(contains(txt.Var1,'Run1Cue.OnsetTime')));
+                cue_on1 = (cue_on1 - txt.Var2(strcmp(txt.Var1,'Run1Fix.OnsetTime'))) ./ 1000;
+                cue_on2 = txt.Var2(find(contains(txt.Var1,'Run2Cue.OnsetTime')));
+                cue_on2 = (cue_on2 - txt.Var2(strcmp(txt.Var1,'Run2Fix.OnsetTime'))) ./ 1000;
+            catch ME
+                fprintf(strcat('Error for: ',pid{sub},'\n'))
+                continue;
+            end
+
             if length(cue_on1)==length(cue_on2)                
                 fbk_on1 = txt.Var2(find(contains(txt.Var1,'Run1Fbk.OnsetTime')));
                 fbk_on1 = (fbk_on1 - txt.Var2(strcmp(txt.Var1,'Run1Fix.OnsetTime'))) ./ 1000;
@@ -141,7 +146,7 @@ if mid == 1
                 names{1} = 'GainAnticipation';names{2} = 'Gain0Anticipation';
                 names{3} = 'LossAnticipation';names{4} = 'Loss0Anticipation';
                 names{5} = 'Motor';
-                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-1_anticipation_timing.mat'));   
+                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-01_anticipation_timing.mat'));   
                 save(tempfname,'onsets','durations','names')
                 clear onsets durations names
 
@@ -157,7 +162,7 @@ if mid == 1
                 names{1} = 'GainAnticipation';names{2} = 'Gain0Anticipation';
                 names{3} = 'LossAnticipation';names{4} = 'Loss0Anticipation';
                 names{5} = 'Motor';
-                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-2_anticipation_timing.mat'));   
+                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-02_anticipation_timing.mat'));   
                 save(tempfname,'onsets','durations','names')
                 clear onsets durations names
 
@@ -176,7 +181,7 @@ if mid == 1
                 names{1} = 'SuccessWin';names{2} = 'UnsuccessWin';
                 names{3} = 'SuccessLoss';names{4} = 'UnsuccessLoss';
                 names{5} = 'Motor';
-                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-1_outcome_timing.mat'));   
+                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-01_outcome_timing.mat'));   
                 save(tempfname,'onsets','durations','names')
                 clear onsets durations names corrfbk1 corrtype1 incorrfbk1 incorrtype1
                 
@@ -195,15 +200,13 @@ if mid == 1
                 names{1} = 'SuccessWin';names{2} = 'UnsuccessWin';
                 names{3} = 'SuccessLoss';names{4} = 'UnsuccessLoss';
                 names{5} = 'Motor';
-                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-2_outcome_timing.mat'));   
+                tempfname = fullfile(savedir, strcat('sub-',pid{sub},'_ses-1_task-mid_run-02_outcome_timing.mat'));   
                 save(tempfname,'onsets','durations','names')
                 clear onsets durations names corrfbk2 corrtype2 incorrfbk2 incorrtype2
                 
             else
                 fprintf(strcat('Only one run for: ',pid{sub},'\n'))
             end
-            
-            %target_RTs_all(sub,:) = [target_RT1',target_RT2'];
         else
             fprintf(strcat('No MID data for: ',fnames{sub},'\n'))
             
@@ -243,5 +246,3 @@ if chat_matlab == 1
         save(curr_filename,'onsets','durations','names')
     end
 end
-
-

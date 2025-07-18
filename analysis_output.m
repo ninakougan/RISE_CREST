@@ -3,10 +3,11 @@ run_MID = 1;      % Run MID analysis
 run_chat = 0;     % Run Chatroom analysis
 wholebrain = 0;   % Run whole-brain analysis
 
-session = 1;
-base_dir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
-fl_dir = fullfile(base_dir, 'fl');
-roi_dir = fullfile(base_dir, 'rois');
+ses = 1;
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
+fl_dir = fullfile(basedir, 'fl');
+roi_dir = fullfile(basedir, 'rois');
+output_dir = fullfile(basedir, 'roi_output')
 
 %% ========================= MID Analysis =========================
 if run_MID == 1
@@ -17,21 +18,21 @@ if run_MID == 1
     % For anticipation contrasts (contrasts 1-3)
     for c = 1:3
         mid_files.(mid_contrasts{c}) = {
-            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(session), '/anticipation/run-01/con_00', num2str(c), '.nii'])), ...
-            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(session), '/anticipation/run-02/con_00', num2str(c), '.nii']))
+            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(ses), '/anticipation/run-01/con_00', num2str(c), '.nii'])), ...
+            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(ses), '/anticipation/run-02/con_00', num2str(c), '.nii']))
         };
     end
 
     % For outcome contrasts (contrasts 4-6; note the index shift)
     for c = 4:6
         mid_files.(mid_contrasts{c}) = {
-            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(session), '/outcome/run-01/con_00', num2str(c-3), '.nii'])), ...
-            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(session), '/outcome/run-02/con_00', num2str(c-3), '.nii']))
+            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(ses), '/outcome/run-01/con_00', num2str(c-3), '.nii'])), ...
+            filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(ses), '/outcome/run-02/con_00', num2str(c-3), '.nii']))
         };
     end
 
     % Apply exclusions for MID (using pid_exclude_list)
-    %mid_exclude = pid_exclude_list(contains(pid_exclude_list(:,2), ['ses-', num2str(session), '_mid']));
+    %mid_exclude = pid_exclude_list(contains(pid_exclude_list(:,2), ['ses-', num2str(ses), '_mid']));
     %for c = 1:length(mid_contrasts)
         %mid_files.(mid_contrasts{c}) = mid_files.(mid_contrasts{c})(~contains(mid_files.(mid_contrasts{c}), mid_exclude));
     %end
@@ -62,14 +63,14 @@ if run_MID == 1
     % For anticipation contrasts
     for c = 1:3
         roi_results = extract_roi_averages(avg_mid.(mid_contrasts{c}), filenames(roi_mid_ant));
-        save(['MID_ROI_', mid_contrasts{c}, '_session', num2str(session), '.mat'], 'roi_results');
-        writetable(array2table(roi_results), ['MID_ROI_', mid_contrasts{c}, '_session', num2str(session), '.csv'], 'Delimiter', '\t');
+        save(['MID_ROI_', mid_contrasts{c}, '_ses-', num2str(ses), '.mat'], 'roi_results');
+        writetable(array2table(roi_results), fullfile(output_dir, ['MID_ROI_', mid_contrasts{c}, '_ses-', num2str(ses), '.csv'], 'Delimiter', '\t'));
     end
     % For outcome contrasts
     for c = 4:6
         roi_results = extract_roi_averages(avg_mid.(mid_contrasts{c}), filenames(roi_mid_out));
-        save(['MID_ROI_', mid_contrasts{c}, '_session', num2str(session), '.mat'], 'roi_results');
-        writetable(array2table(roi_results), ['MID_ROI_', mid_contrasts{c}, '_session', num2str(session), '.csv'], 'Delimiter', '\t');
+        save(['MID_ROI_', mid_contrasts{c}, '_ses-', num2str(ses), '.mat'], 'roi_results');
+        writetable(array2table(roi_results), fullfile(output_dir, ['MID_ROI_', mid_contrasts{c}, '_ses-', num2str(ses), '.csv'], 'Delimiter', '\t'));
     end
 
     % ----- Whole-Brain Analysis for MID (if enabled) -----
@@ -84,8 +85,8 @@ if run_MID == 1
             % Threshold the t-statistic map at FDR < 0.05 and with a cluster extent of 10 voxels.
             wb_thresh = threshold(stat.t, 0.05, 'fdr', 'k', 10);
             % Save the whole-brain results.
-            save(['WB_MID_', mid_contrasts{c}, '_session', num2str(session), '.mat'], 'wb_thresh');
-            writetable(array2table(wb_thresh), ['WB_MID_', mid_contrasts{c}, '_session', num2str(session), '.csv'], 'Delimiter', '\t');
+            save(['WB_MID_', mid_contrasts{c}, '_ses-', num2str(ses), '.mat'], 'wb_thresh');
+            writetable(array2table(wb_thresh), ['WB_MID_', mid_contrasts{c}, '_ses-', num2str(ses), '.csv'], 'Delimiter', '\t');
         end
     end
 end
@@ -96,12 +97,12 @@ if run_chat == 1
     chat_contrasts = {'acc_rej', 'acceptance', 'rejection'};
     
     chat_files = struct();
-    chat_files.acc_rej    = filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(session), '/chatroom/run-01/con_001.nii']));
-    chat_files.acceptance = filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(session), '/chatroom/run-01/con_002.nii']));
-    chat_files.rejection  = filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(session), '/chatroom/run-01/con_003.nii']));
+    chat_files.acc_rej    = filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(ses), '/chatroom/run-01/con_001.nii']));
+    chat_files.acceptance = filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(ses), '/chatroom/run-01/con_002.nii']));
+    chat_files.rejection  = filenames(fullfile(fl_dir, ['sub-*/ses-', num2str(ses), '/chatroom/run-01/con_003.nii']));
     
     % Apply exclusions for chat files.
-    chat_exclude = pid_exclude_list(contains(pid_exclude_list(:,2), ['ses-', num2str(session), '_chat']));
+    chat_exclude = pid_exclude_list(contains(pid_exclude_list(:,2), ['ses-', num2str(ses), '_chat']));
     chat_files.acc_rej    = chat_files.acc_rej(~contains(chat_files.acc_rej, chat_exclude));
     chat_files.acceptance = chat_files.acceptance(~contains(chat_files.acceptance, chat_exclude));
     chat_files.rejection  = chat_files.rejection(~contains(chat_files.rejection, chat_exclude));
@@ -113,8 +114,8 @@ if run_chat == 1
         % Load the fmri_data object (assuming one subject per file).
         contrast_data = fmri_data(chat_files.(chat_contrasts{c}){1});
         roi_results = extract_roi_averages(contrast_data, filenames(roi_chat));
-        save(['Chatroom_ROI_', chat_contrasts{c}, '_session', num2str(session), '.mat'], 'roi_results');
-        writetable(array2table(roi_results), ['Chatroom_ROI_', chat_contrasts{c}, '_session', num2str(session), '.csv'], 'Delimiter', '\t');
+        save(['Chatroom_ROI_', chat_contrasts{c}, '_ses', num2str(ses), '.mat'], 'roi_results');
+        writetable(array2table(roi_results), ['Chatroom_ROI_', chat_contrasts{c}, '_ses', num2str(ses), '.csv'], 'Delimiter', '\t');
     end
     
     % ----- Whole-Brain Analysis for Chatroom (if enabled) -----
@@ -130,8 +131,8 @@ if run_chat == 1
             % Threshold the resulting t-map (FDR < 0.05, cluster extent = 10 voxels).
             wb_chat_thresh = threshold(stat_chat.t, 0.05, 'fdr', 'k', 10);
             % Save the whole-brain results.
-            save(['WB_Chatroom_', chat_contrasts{c}, '_session', num2str(session), '.mat'], 'wb_chat_thresh');
-            writetable(array2table(wb_chat_thresh), ['WB_Chatroom_', chat_contrasts{c}, '_session', num2str(session), '.csv'], 'Delimiter', '\t');
+            save(['WB_Chatroom_', chat_contrasts{c}, '_ses', num2str(ses), '.mat'], 'wb_chat_thresh');
+            writetable(array2table(wb_chat_thresh), ['WB_Chatroom_', chat_contrasts{c}, '_ses', num2str(ses), '.csv'], 'Delimiter', '\t');
         end
     end
 end

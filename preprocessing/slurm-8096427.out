@@ -1,0 +1,55 @@
+
+                                                                              < M A T L A B (R) >
+                                                                    Copyright 1984-2020 The MathWorks, Inc.
+                                                                    R2020b (9.9.0.1467703) 64-bit (glnxa64)
+                                                                                August 26, 2020
+
+[Warning: Unable to load Toolbox Path Cache /home/nck1870/.matlab/R2020b/toolbox_cache-9.9.0-4182220054-glnxa64.xml. The cache file is not in the correct format. It will be
+regenerated upon quitting MATLAB.] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+[Warning: Function iscolumn has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function ismatrix has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isrow has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function narginchk has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isequaln has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function contains has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function endsWith has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function newline has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function startsWith has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isfile has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isfolder has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+Initialising batch system... done.
+
+
+------------------------------------------------------------------------
+09-Jul-2025 17:32:35 - Running job #1
+------------------------------------------------------------------------
+09-Jul-2025 17:32:35 - Running 'Smooth'
+09-Jul-2025 17:46:27 - Done    'Smooth'
+09-Jul-2025 17:46:27 - Done
+

@@ -8,15 +8,15 @@ end
 
 overwrite = 1;
 ses = 1;
-run = 1;
+run = 2;
 ndummies = 0;
 
 contrast = 'anticipation'; % outcome
 
 % Define some paths
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
 
-preproc_dir = fullfile(basedir, '/fmriprep/ses-1/smoothed_data');
+preproc_dir = fullfile(basedir, '/smoothed_data');
 
 numPID = num2str(PID);
 PID = strcat('sub-',numPID);
@@ -39,7 +39,7 @@ if isempty(in{2}{1})
 end
 
 % onset files
-in{3} = filenames(fullfile(basedir, '/fmriprep/ses-1/spm_timing/', strcat(PID,'_ses-',num2str(ses),'_task-mid_run-0',num2str(run), '_timing_anticipation.mat')));
+in{3} = filenames(fullfile(basedir, '/timing_files/', strcat(PID, '_ses-',num2str(ses),'_task-mid_run-0',num2str(run), '_anticipation_timing.mat')));
 %keyboard
 
 if isempty(in{3})
@@ -49,7 +49,7 @@ end
 %% nuisance covs
 
 % fmriprep output
-confound_fname = filenames(fullfile(basedir, '/fmriprep/ses-1/spm_confounds/', strcat(PID,'_ses-',num2str(ses),'_mid_run-0',num2str(run),'.mat')));
+confound_fname = filenames(fullfile(basedir, '/spm_confounds/', strcat(PID,'_ses-',num2str(ses),'_mid_run-0',num2str(run),'_confounds.mat')));
 %keyboard 
 
 in{4} = {confound_fname{1}};

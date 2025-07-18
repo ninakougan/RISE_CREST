@@ -1,4 +1,4 @@
-scriptdir = '/home/nck1870/repos/RISE_CREST/preprocessing';
+scriptdir = '/home/nck1870/scripts/RISE_CREST/preprocessing';
 
 repodir = '/home/nck1870/repos';
 
@@ -17,14 +17,14 @@ overwrite = 0;
 ID_length = 5;
 
 %keyboard
-file_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/sub*mid_run-0',num2str(run),'*preproc_bold.nii')));
+file_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/sub*chatroom_run-0',num2str(run),'*preproc_bold.nii')));
 for i = 1:length(file_list)
     sublist{i} = file_list{i}(98:102);
 end
 
 %keyboard
 if overwrite == 0
-    smooth_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/ssub*mid_run-0',num2str(run),'*preproc_bold.nii')));
+    smooth_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/ssub*chatroom_run-0',num2str(run),'*preproc_bold.nii')));
     counter = 1;
     for sub = 1:length(sublist)
         curr_sub = sublist(sub);

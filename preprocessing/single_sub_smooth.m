@@ -1,7 +1,7 @@
 function smooth_single_sub(PID,ses,run,overwrite)
 %% var set up
 if nargin==0 % defaults just for testing
-    PID = 50282;  
+    PID = 50052;  
     overwrite = 1;
     ses = 1;
     run = 1;
@@ -29,7 +29,7 @@ if isempty(in{1}{1})
     return
 end
 
-jobfile = {'/home/nck1870/repos/RISE_CREST/preprocessing/smooth_template.m'};
+jobfile = {'/home/nck1870/scripts/RISE_CREST/preprocessing/smooth_template.m'};
 jobs = 'smooth_template.m';
 
 %keyboard

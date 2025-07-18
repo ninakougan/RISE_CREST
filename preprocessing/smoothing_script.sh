@@ -5,5 +5,5 @@
 #SBATCH -t 00:20:00
 #SBATCH --mem=30G
 
-matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('/home/nck1870/repos')); single_sub_smooth(50287, 1,1,0); quit"
+matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('/home/nck1870/repos')); single_sub_smooth(50305, 1,1,0); quit"
 

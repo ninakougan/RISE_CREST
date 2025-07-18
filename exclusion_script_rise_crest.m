@@ -1,15 +1,16 @@
 % define directories where your .tsv files are. Matlab does not like tsv
 % extension so it may be necessary to rename the files to a txt extension. 
 
-basedir = '/Users/zacharyanderson/Desktop/confounds_for_all_sessions/';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
 studydir = 'rise'; % rise crest
 studytask = 'mid'; % chatroom mid
 
 % assign a variable to contain all filenames. I'm using the 'filenames'
 % command that comes with Tor's tools. There are other ways to do wildcards
 % in matlab that you can use if needed
-cd(fullfile(basedir,studydir,studytask))
+cd(fullfile(basedir, '/raw_confounds'))
 fnames = filenames(fullfile('*.txt'));
+%keyboard
 
 % need to grab the subject ID, the session, and the task
 
@@ -22,6 +23,7 @@ if strcmp(studydir, 'rise')
         PID{sub,1} = fnames{sub}(5:9);
         session{sub,1} = fnames{sub}(15);
         task{sub,1} = studytask(1:length(studytask));
+
         if strcmp(studytask,'mid')
             run{sub,1} = fnames{sub}(31);
         elseif strcmp(studytask,'chatroom')
@@ -65,19 +67,16 @@ exclude_FD1 = zeros(length(fnames),1);exclude_FD2 = zeros(length(fnames),1);excl
 exclude_FD4 = zeros(length(fnames),1);exclude_FD5 = zeros(length(fnames),1);exclude_FD6 = zeros(length(fnames),1);
 
 % FD related exclusions: 0.2 0.3 0.5
-
 exclude_FD1(FD>0.2) = 1;
 exclude_FD2(FD>0.3) = 1;
 exclude_FD3(FD>0.5) = 1;
 
 % based on percentage of frames that are unusable: 10%, 20%, 30%
-
 exclude_FD4(spike_percentage>0.1) = 1;
 exclude_FD5(spike_percentage>0.2) = 1;
 exclude_FD6(spike_percentage>0.3) = 1;
 
 % now create a final table that contains the different exclusionary types
-
 final = [cell2table(PID),cell2table(session),cell2table(task),cell2table(run),...
     array2table([exclude_FD1,exclude_FD2,exclude_FD3,...
     exclude_FD4,exclude_FD5,exclude_FD6])];
@@ -93,4 +92,3 @@ final.Properties.VariableNames{10} = 'spike_percentage>30%';
 temp_fname = fullfile(basedir,strcat(studydir,'_',studytask,'_exclusions.txt'));
 
 writetable(final,temp_fname)
-
