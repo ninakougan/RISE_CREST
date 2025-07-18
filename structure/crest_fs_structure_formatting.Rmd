@@ -12,7 +12,7 @@ editor_options:
 library(readxl)
 library(dplyr)
 
-crest_freesurfer_data <-read_excel("~/Documents/acnl/rise_crest/crest/structure/crest_t1_sMRI_04092025_NK.xlsx")
+crest_freesurfer_data <-read_excel("~/Documents/acnl/rise_crest/crest/structure/crest_sMRI_fs_all_data.xlsx")
 crest_data <- crest_freesurfer_data
 
 
