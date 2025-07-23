@@ -1,5 +1,5 @@
-basedir = '/projects/b1108/studies/rise/data/raw/neuroimaging/behavioral';
-savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/timing_files';
+basedir = '/projects/b1108/studies/crest/data/raw/neuroimaging/behavioral';
+savedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1/timing_files';
 
 mid = 1;
 chat = 0;
@@ -12,7 +12,7 @@ if chat == 1
     for sub = 1:length(fnames)
         txt = readtable(fnames{sub});
         
-        pid{sub} = fnames{sub}(73:77); % RISE %(72:77);% CREST (71:75); %
+        pid{sub} = fnames{sub}(71:75); % RISE %(72:77);% CREST (71:75); %
         
         % remove certain fields that make indexing more difficult
          
@@ -76,11 +76,11 @@ end
 
 if mid == 1
     fnames = filenames(fullfile(basedir,'sub-*/ses-1/beh/3_*txt'));
-    keyboard
+    %keyboard
     for sub = 1:length(fnames)
         % Load in the text file
         txt = readtable(fnames{sub});
-        pid{sub} =  fnames{sub}(67:71); % RISE %(72:77);% CREST (71:75); %
+        pid{sub} =  fnames{sub}(68:73); % RISE %(72:77);% CREST (71:75); %
         %keyboard
 
         if isempty(txt) == 0

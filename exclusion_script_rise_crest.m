@@ -90,5 +90,6 @@ final.Properties.VariableNames{9} = 'spike_percentage>20%';
 final.Properties.VariableNames{10} = 'spike_percentage>30%';
 
 temp_fname = fullfile(basedir,strcat(studydir,'_',studytask,'_exclusions.txt'));
+keyboard
 
 writetable(final,temp_fname)
