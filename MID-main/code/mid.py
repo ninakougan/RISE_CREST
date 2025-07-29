@@ -956,7 +956,10 @@ while run < num_runs:
     
     if run == 0:
         # Set target durations for the average across all conditions
-        target_durs.loc[0] = target_durs.loc[0].mean()
+        if np.mean(trial_RTs) >= 0.350:
+          target_durs.loc[0] = 0.350
+        else:
+          target_durs.loc[0] = np.mean(trial_RTs)
     
     # Export target durations and run data
     if run == 0:
