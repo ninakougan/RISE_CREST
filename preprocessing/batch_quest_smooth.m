@@ -3,10 +3,10 @@ scriptdir = '/home/nck1870/scripts/RISE_CREST/preprocessing';
 repodir = '/home/nck1870/repos';
 
 % next is where the preprocessed data is
-directories = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
+directories = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
 
 % What run of your task are you looking at?
-run = 1;
+run = 2;
 % What session appears in your raw filenames when in BIDS format?
 ses = 1;
 % Do you want to overwrite previously estimated first levels or just add to
@@ -14,17 +14,17 @@ ses = 1;
 overwrite = 0;
 % Last thing is janky but bear with me. How long are your participant ID's?
 % i.e. 10234 would correspond with a 5 for this variable
-ID_length = 5;
+ID_length = 6;
 
 %keyboard
-file_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/sub*chatroom_run-0',num2str(run),'*preproc_bold.nii')));
+file_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/sub*mid_run-0',num2str(run),'*preproc_bold.nii')));
 for i = 1:length(file_list)
-    sublist{i} = file_list{i}(98:102);
+    sublist{i} = file_list{i}(100:105); %98:102 rise, 
 end
 
 %keyboard
 if overwrite == 0
-    smooth_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/ssub*chatroom_run-0',num2str(run),'*preproc_bold.nii')));
+    smooth_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/ssub*mid_run-0',num2str(run),'*preproc_bold.nii')));
     counter = 1;
     for sub = 1:length(sublist)
         curr_sub = sublist(sub);

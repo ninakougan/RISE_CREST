@@ -1,13 +1,13 @@
 function smooth_single_sub(PID,ses,run,overwrite)
 %% var set up
 if nargin==0 % defaults just for testing
-    PID = 50052;  
+    PID = 100001;  
     overwrite = 1;
     ses = 1;
-    run = 1;
+    run = 2;
 end
 
-preproc_dir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
+preproc_dir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
 
 if nargin==1
     overwrite = 1;
