@@ -1,5 +1,5 @@
-fldir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fl';
-datadir = '/projects/b1108/studies/rise/data/processed/neuroimaging/roi_output';
+fldir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1/fl';
+datadir = '/projects/b1108/studies/crest/data/processed/neuroimaging/roi_output';
 
 remake_data_obj = 1;
 
@@ -82,11 +82,11 @@ if remake_data_obj == 1
     final_data_midant_ses1_c1 = fmri_data(fmidant_s1_run2_c1{1}); % place holder that will have all the appropriate space related information about the scans
     final_sub_count = 1;
     for sub=1:length(fmidant_s1_run2_c1) % start with run2 because there are fewer files
-        pid = fmidant_s1_run2_c1{sub}(5:9);
+        pid = fmidant_s1_run2_c1{sub}(5:10);
         %keyboard
         
         if sum(contains(fmidant_s1_run1_c1(:),pid))~=0
-            pid_midant_s1{sub} = fmidant_s1_run2_c1{sub}(5:9);
+            pid_midant_s1{sub} = fmidant_s1_run2_c1{sub}(5:10);
             tempfname_run1 = fmidant_s1_run1_c1{contains(fmidant_s1_run1_c1(:),pid)};
             dat1 = fmri_data(tempfname_run1);
             dat2 = fmri_data(fmidant_s1_run2_c1{sub});
@@ -103,7 +103,7 @@ if remake_data_obj == 1
     final_data_midant_ses1_c2 = fmri_data(fmidant_s1_run2_c2{1}); % place holder that will have all the appropriate space related information about the scans
     final_sub_count = 1;
     for sub=1:length(fmidant_s1_run2_c2) % start with run2 because there are fewer files
-        pid = fmidant_s1_run2_c2{sub}(5:9);
+        pid = fmidant_s1_run2_c2{sub}(5:10);
         
         if sum(contains(fmidant_s1_run1_c2(:),pid))~=0
             tempfname_run1 = fmidant_s1_run1_c2{contains(fmidant_s1_run1_c2(:),pid)};
@@ -123,7 +123,7 @@ if remake_data_obj == 1
     final_data_midant_ses1_c3 = fmri_data(fmidant_s1_run2_c3{1}); % place holder that will have all the appropriate space related information about the scans
     final_sub_count = 1;
     for sub=1:length(fmidant_s1_run2_c3) % start with run2 because there are fewer files
-        pid = fmidant_s1_run2_c3{sub}(5:9);
+        pid = fmidant_s1_run2_c3{sub}(5:10);
         
         if sum(contains(fmidant_s1_run1_c3(:),pid))~=0
             tempfname_run1 = fmidant_s1_run1_c3{contains(fmidant_s1_run1_c3(:),pid)};
@@ -142,10 +142,10 @@ if remake_data_obj == 1
     final_data_midout_ses1_c1 = fmri_data(fmidout_s1_run2_c1{1}); % place holder that will have all the appropriate space related information about the scans
     final_sub_count = 1;
     for sub=1:length(fmidout_s1_run2_c1) % start with run2 because there are fewer files
-        pid = fmidout_s1_run2_c1{sub}(5:9);
+        pid = fmidout_s1_run2_c1{sub}(5:10);
         
         if sum(contains(fmidout_s1_run1_c1(:),pid))~=0
-            pid_midout_s1{sub} = fmidout_s1_run2_c1{sub}(5:9);
+            pid_midout_s1{sub} = fmidout_s1_run2_c1{sub}(5:10);
             tempfname_run1 = fmidout_s1_run1_c1{contains(fmidout_s1_run1_c1(:),pid)};
             dat1 = fmri_data(tempfname_run1);
             dat2 = fmri_data(fmidout_s1_run2_c1{sub});
@@ -162,7 +162,7 @@ if remake_data_obj == 1
     final_data_midout_ses1_c2 = fmri_data(fmidout_s1_run2_c2{1}); % place holder that will have all the appropriate space related information about the scans
     final_sub_count = 1;
     for sub=1:length(fmidout_s1_run2_c2) % start with run2 because there are fewer files
-        pid = fmidout_s1_run2_c2{sub}(5:9);
+        pid = fmidout_s1_run2_c2{sub}(5:10);
         
         if sum(contains(fmidout_s1_run1_c2(:),pid))~=0
             tempfname_run1 = fmidout_s1_run1_c2{contains(fmidout_s1_run1_c2(:),pid)};
@@ -181,7 +181,7 @@ if remake_data_obj == 1
     final_data_midout_ses1_c3 = fmri_data(fmidout_s1_run2_c3{1}); % place holder that will have all the appropriate space related information about the scans
     final_sub_count = 1;
     for sub=1:length(fmidout_s1_run2_c3) % start with run2 because there are fewer files
-        pid = fmidout_s1_run2_c3{sub}(5:9);
+        pid = fmidout_s1_run2_c3{sub}(5:10);
         
         if sum(contains(fmidout_s1_run1_c3(:),pid))~=0
             tempfname_run1 = fmidout_s1_run1_c3{contains(fmidout_s1_run1_c3(:),pid)};

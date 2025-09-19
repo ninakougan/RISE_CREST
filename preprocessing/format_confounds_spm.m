@@ -1,14 +1,14 @@
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/raw_confounds/';
-savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/spm_confounds/';
+basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1/raw_confounds/';
+savedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1/spm_confounds/';
 
-fnames = filenames(fullfile(strcat(basedir,'sub*ses-1*mid*run-01*txt')));
-keyboard
+fnames = filenames(fullfile(strcat(basedir,'sub*ses-1*mid*run-02*txt')));
+%keyboard
 ndummies = 0;
 ex1 = 33;
 for sub = 1:length(fnames)
     T = readtable(fnames{sub}, 'Delimiter', '\t');
     
-    pid =  fnames{sub}(91:95); %CREST 92:97
+    pid =  fnames{sub}(92:97); %CREST 92:97
     %keyboard
     outliers = table2array(T(:,contains(T.Properties.VariableNames,'motion')));
     transx = table2array(T(:,contains(T.Properties.VariableNames,'trans_x')));
@@ -29,10 +29,10 @@ for sub = 1:length(fnames)
 
     if nanmean(T.framewise_displacement) > 0.5 
         pid_exclude_list{ex1,1} = pid;
-        pid_exclude_list{ex1,2} = 'ses-1_mid_run-01';
+        pid_exclude_list{ex1,2} = 'ses-1_mid_run-02';
         ex1 = ex1 + 1;
     end
 
-    save_name = fullfile(savedir,strcat('sub-',pid,'_ses-1_mid_run-01_confounds.mat'));
+    save_name = fullfile(savedir,strcat('sub-',pid,'_ses-1_mid_run-02_confounds.mat'));
     save(save_name,"R")
 end

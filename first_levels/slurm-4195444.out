@@ -1,0 +1,90 @@
+
+                                                                              < M A T L A B (R) >
+                                                                    Copyright 1984-2020 The MathWorks, Inc.
+                                                                    R2020b (9.9.0.1467703) 64-bit (glnxa64)
+                                                                                August 26, 2020
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+[Warning: Function iscolumn has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function ismatrix has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isrow has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function narginchk has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isequaln has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function contains has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function endsWith has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function newline has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function startsWith has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isfile has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+[Warning: Function isfolder has the same name as a MATLAB builtin. We suggest you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath (line 86)] 
+Preparing 1st level model for sub-100173 / Initialising batch system... done.
+
+
+------------------------------------------------------------------------
+18-Sep-2025 10:33:24 - Running job #1
+------------------------------------------------------------------------
+18-Sep-2025 10:33:24 - Running 'fMRI model specification'
+
+SPM12: spm_fMRI_design (v7210)                     10:33:24 - 18/09/2025
+========================================================================
+Saving fMRI design                      :               ...SPM.mat saved
+
+SPM12: spm_fmri_spm_ui (v7018)                     10:33:25 - 18/09/2025
+========================================================================
+Mapping files                           :                        ...done
+Calculating globals                     :                        ...done
+Saving SPM configuration                :               ...SPM.mat saved
+Saving SPM configuration                :               ...SPM.mat saved
+Completed                               :          10:33:39 - 18/09/2025
+18-Sep-2025 10:33:39 - Done    'fMRI model specification'
+18-Sep-2025 10:33:39 - Running 'Model estimation'
+
+SPM12: spm_spm (v7120)                             10:33:39 - 18/09/2025
+========================================================================
+Chunk   1/5                             :                  ...processing                       ...doneChunk   2/5                             :                  ...processing                       ...doneChunk   3/5                             :                  ...processing                       ...doneChunk   4/5                             :                  ...processing                       ...doneChunk   5/5                             :                  ...processing                       ...done
+Spatial non-sphericity (over scans)     :      ...estimating derivatives ...writing resels/voxel image                       ...done
+Saving SPM.mat                          :                     ...writing                       ...done
+Completed                               :          10:34:20 - 18/09/2025
+Done
+18-Sep-2025 10:34:20 - Done    'Model estimation'
+18-Sep-2025 10:34:20 - Running 'Contrast Manager'
+
+SPM12: spm_contrasts.m                             10:34:20 - 18/09/2025
+========================================================================
+Contrasts folder                        :         ./ses-1/outcome/run-01
+Deleting contrasts                      :                        ...done
+	contrast image  1               :                   ...computing       ...written con_0001.nii
+	spm{T} image  1                 :                   ...computing      ...written spmT_0001.nii
+	contrast image  2               :                   ...computing       ...written con_0002.nii
+	spm{T} image  2                 :                   ...computing      ...written spmT_0002.nii
+	contrast image  3               :                   ...computing       ...written con_0003.nii
+	spm{T} image  3                 :                   ...computing      ...written spmT_0003.nii
+	Saving SPM.mat                  :                     ...writing              ...SPM.mat saved
+Completed                               :          10:34:21 - 18/09/2025
+18-Sep-2025 10:34:21 - Done    'Contrast Manager'
+18-Sep-2025 10:34:21 - Done
+

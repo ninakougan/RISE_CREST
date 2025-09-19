@@ -5,9 +5,9 @@
 % we're in BIDS format... Maybe I can actually make this more dynamic. 
 
 scriptdir = '/home/nck1870/scripts/RISE_CREST/first_levels';
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
+basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
 % What run of your task are you looking at?
-run = 2;
+run = 1;
 % What session appears in your raw filenames when in BIDS format?
 ses = 1;
 % Do you want to overwrite previously estimated first levels or just add to
@@ -15,7 +15,7 @@ ses = 1;
 overwrite = 0;
 
 % rest, consumption, anticipation
-contrast = 'outcome'; % anticipation, outcome, chatroom
+contrast = 'anticipation'; % anticipation, outcome, chatroom
 
 %%
 fnames = filenames(fullfile(basedir,strcat('/smoothed_data/ssub*ses-',num2str(ses),'*mid*run-0',num2str(run),'*')));
@@ -25,7 +25,7 @@ if overwrite == 0
     counter = 1;
     for sub = 1:length(fnames)
         
-        curr_sub = fnames{sub}(92:96);
+        curr_sub = fnames{sub}(93:98);
         %keyboard
 
         if isempty(find(contains(fl_list,curr_sub)))
@@ -49,7 +49,7 @@ for sub = 1:length(new_list)
      '#SBATCH -p short\n'...
      '#SBATCH -t 00:20:00\n'...  
      '#SBATCH --mem=20G\n\n'...
-     'matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath(''' repodir ''')); run_sub_firstlevel_outcome(' num2str(ids) '); quit"\n\n'];
+     'matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath(''' repodir ''')); run_sub_firstlevel_anticipation(' num2str(ids) '); quit"\n\n'];
    
      scriptfile = fullfile(scriptdir, 'first_level_script.sh');
      fout = fopen(scriptfile, 'w');

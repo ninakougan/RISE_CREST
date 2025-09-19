@@ -2,19 +2,19 @@ function run_sub_firstlevel_anticipation(PID)
 %% var set up
 if nargin==0 % defaults just for testing 
     % Define some 
-    PID = "50001"; 
+    PID = "100001"; 
     
 end
 
 overwrite = 1;
 ses = 1;
-run = 2;
+run = 1;
 ndummies = 0;
 
 contrast = 'anticipation'; % outcome
 
 % Define some paths
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
+basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
 
 preproc_dir = fullfile(basedir, '/smoothed_data');
 

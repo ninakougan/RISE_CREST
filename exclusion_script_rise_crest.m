@@ -1,8 +1,8 @@
 % define directories where your .tsv files are. Matlab does not like tsv
 % extension so it may be necessary to rename the files to a txt extension. 
 
-basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
-studydir = 'rise'; % rise crest
+basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
+studydir = 'crest'; % rise crest
 studytask = 'mid'; % chatroom mid
 
 % assign a variable to contain all filenames. I'm using the 'filenames'
@@ -90,6 +90,6 @@ final.Properties.VariableNames{9} = 'spike_percentage>20%';
 final.Properties.VariableNames{10} = 'spike_percentage>30%';
 
 temp_fname = fullfile(basedir,strcat(studydir,'_',studytask,'_exclusions.txt'));
-keyboard
+%keyboard
 
 writetable(final,temp_fname)
