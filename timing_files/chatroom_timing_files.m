@@ -4,7 +4,7 @@
 
 bids_files = 1; %do you want to make bids events files?     
 spm_files  = 1; %do you want to make spm events files? 
-sanity_check = 1; 
+sanity_check = 1; %check for missing/incorrect responses
 
 study = 'crest';    % rise or crest
 ses   = 1;  % 1, 2, or 3
