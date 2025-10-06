@@ -9,14 +9,15 @@ spm_files = 1; % spm files
 sanity_check = 0; % behavioral sanity check for missing/incorrect responses
 
 % which study and session
-study   = 'rise';   % rise or crest
+study   = 'crest';   % rise or crest
 session = 1;        % 1, 2, or 3
 
 % where's the data?
-basedir = fullfile('/Users/ninakougan/Documents/acnl/studies', study, 'data'); % /projects/b1108
+basedir = fullfile('/projects/b1108/studies', study, 'data'); %  /Users/ninakougan/Documents/acnl
 bidsdir = fullfile(basedir, 'raw/neuroimaging/bids');
 behdir = fullfile(basedir, 'raw/neuroimaging/behavioral');
-procdir = fullfile(basedir, 'processed', 'neuroimaging');
+procdir = fullfile(basedir, 'processed', 'neuroimaging', 'fmriprep', ['ses-' num2str(session)]);
+%keyboard
 
 %% PsychToolbox CSV Files
 if PTB_bids_files == 1;
@@ -106,7 +107,7 @@ if EP_bids_files == 1;
         eprefix = 'T5';
     end
 
-    eprime_file = fullfile(behdir, sprintf('%s_%s_chatroom_eprime_output.xlsx', upper(study), eprefix)); 
+    eprime_file = fullfile(behdir, sprintf('%s_%s_chatroom_eprime_output.txt', upper(study), eprefix)); 
     
     scan_offset = 4.05;  %one TR plus a 2 second delay, based off Busra's notes bc eprime doesn't track
 

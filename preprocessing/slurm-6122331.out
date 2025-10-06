@@ -1,0 +1,126 @@
+
+------------------------------------------------------------------------
+       Segmentation violation detected at Mon Oct  6 16:28:24 2025
+------------------------------------------------------------------------
+Architecture     : glnxa64
+Processor ID     : Intel(R) Xeon(R) Gold 6230R CPU @ 2.10GHz
+Host Name        : qnode0026
+Locale           : en_US
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'GTP_7' id 23000112543488
+
+Register State (from fault):
+  RAX = f0d2716f861e7290  RBX = 0000000000000000
+  RCX = 0000000000000072  RDX = f0d2716f861f9334
+  RSP = 000014eb21899d20  RBP = 000014eaf8055fb0
+  RSI = 0000000000000000  RDI = ca86d9447229b7c9
+
+   R8 = 755ff626bf2b2bdb   R9 = 000014eaf8055fe0
+  R10 = 0000000000000000  R11 = 0000000000000007
+  R12 = 000014eb35bb0390  R13 = 000014eb21899e10
+  R14 = 000014eb21899e00  R15 = 000014eaf8055f70
+
+  RIP = 000014eb35e36975  EFL = 0000000000010286
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x000014eb35e36975 /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/libCppMicroServices.so.3.8.3+00481653 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10shared_ptrIvEESaISA_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSC_18_Mod_range_hashingENSC_20_Default_ranged_hashENSC_20_Prime_rehash_policyENSC_17_Hashtable_traitsILb1ELb0ELb1EEEE4findERS7_+00000053
+[  1] 0x000014eb35e3cf5a /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/libCppMicroServices.so.3.8.3+00507738
+[  2] 0x000014eb35e3ee14 /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/libCppMicroServices.so.3.8.3+00515604
+[  3] 0x000014eb35e36e8d /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/libCppMicroServices.so.3.8.3+00482957
+[  4] 0x000014eb35e354cd /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/libCppMicroServices.so.3.8.3+00476365 _ZNK16cppmicroservices18ServiceObjectsBase10GetServiceEv+00000125
+[  5] 0x000014eb215f199b /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/spf/framework/agent/spf/framework/libmwagentspfframework.so+00309659
+[  6] 0x000014eb215ff4eb /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/spf/framework/agent/spf/framework/libmwagentspfframework.so+00365803
+[  7] 0x000014eb216017fd /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/spf/framework/agent/spf/framework/libmwagentspfframework.so+00374781
+[  8] 0x000014eb216039c8 /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/spf/framework/agent/spf/framework/libmwagentspfframework.so+00383432
+[  9] 0x000014eb35a588c3 /gpfs/home/nck1870/.MathWorks/ServiceHost/-mw_shared_installs/v2024.7.0.6/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00903363
+[ 10] 0x000014eb35ba91ca                             /lib64/libpthread.so.0+00033226
+[ 11] 0x000014eb355bd8d3                                   /lib64/libc.so.6+00235731 clone+00000067
+
+
+** This crash report has been written to /home/nck1870/.MathWorks/ServiceHost/qnode0026/logs/MathWorksServiceHost_crash_1564452.log **
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2024 The MathWorks, Inc.
+             R2024a Update 6 (24.1.0.2689473) 64-bit (glnxa64)
+                               July 29, 2024
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+[Warning: Function iscolumn has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function ismatrix has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function isrow has the same name as a MATLAB built-in. We suggest you
+rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function narginchk has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function isequaln has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function istable has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function contains has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function endsWith has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function newline has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function startsWith has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function isfile has the same name as a MATLAB built-in. We suggest you
+rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+[Warning: Function isfolder has the same name as a MATLAB built-in. We suggest
+you rename the function to avoid a potential name conflict.] 
+[> In path (line 109)
+In addpath>doPathAddition (line 126)
+In addpath (line 90)] 
+Initialising batch system... done.
+
+
+------------------------------------------------------------------------
+06-Oct-2025 16:29:41 - Running job #1
+------------------------------------------------------------------------
+06-Oct-2025 16:29:41 - Running 'Smooth'
+06-Oct-2025 16:31:20 - Done    'Smooth'
+06-Oct-2025 16:31:20 - Done
+

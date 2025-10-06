@@ -28,10 +28,10 @@ matlabbatch{3}.spm.stats.con.consess{1}.tcon.name = 'AcceptedVsRejected';
 matlabbatch{3}.spm.stats.con.consess{1}.tcon.weights = [-1 1];
 matlabbatch{3}.spm.stats.con.consess{1}.tcon.sessrep = 'none';
 matlabbatch{3}.spm.stats.con.consess{2}.tcon.name = 'AcceptedVsNeutral';
-matlabbatch{3}.spm.stats.con.consess{2}.tcon.weights = [0 1 -1];
+matlabbatch{3}.spm.stats.con.consess{2}.tcon.weights = [0 1 0 0 0 0 -1];
 matlabbatch{3}.spm.stats.con.consess{2}.tcon.sessrep = 'none';
 matlabbatch{3}.spm.stats.con.consess{3}.tcon.name = 'RejectedVsNeutral';
-matlabbatch{3}.spm.stats.con.consess{3}.tcon.weights = [1 0 -1];
+matlabbatch{3}.spm.stats.con.consess{3}.tcon.weights = [1 0 0 0 0 0 -1];
 matlabbatch{3}.spm.stats.con.consess{3}.tcon.sessrep = 'none';
 
 

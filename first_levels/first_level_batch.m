@@ -15,17 +15,17 @@ ses = 1;
 overwrite = 0;
 
 % rest, consumption, anticipation
-contrast = 'anticipation'; % anticipation, outcome, chatroom
+contrast = 'chatroom'; % anticipation, outcome, chatroom
 
 %%
-fnames = filenames(fullfile(basedir,strcat('/smoothed_data/ssub*ses-',num2str(ses),'*mid*run-0',num2str(run),'*')));
+fnames = filenames(fullfile(basedir,strcat('/smoothed_data/ssub*ses-',num2str(ses),'*chatroom*run-0',num2str(run),'*')));
 
 if overwrite == 0
     fl_list = filenames(fullfile(basedir,'/fl/sub-*/',strcat('ses-',num2str(ses),'/'),contrast,strcat('run-0',num2str(run)),'SPM.mat'));
     counter = 1;
     for sub = 1:length(fnames)
         
-        curr_sub = fnames{sub}(93:98);
+        curr_sub = fnames{sub}(93:98); %92:96 rise
         %keyboard
 
         if isempty(find(contains(fl_list,curr_sub)))
@@ -49,7 +49,7 @@ for sub = 1:length(new_list)
      '#SBATCH -p short\n'...
      '#SBATCH -t 00:20:00\n'...  
      '#SBATCH --mem=20G\n\n'...
-     'matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath(''' repodir ''')); run_sub_firstlevel_anticipation(' num2str(ids) '); quit"\n\n'];
+     'matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath(''' repodir ''')); run_sub_firstlevel_chatroom(' num2str(ids) '); quit"\n\n'];
    
      scriptfile = fullfile(scriptdir, 'first_level_script.sh');
      fout = fopen(scriptfile, 'w');
