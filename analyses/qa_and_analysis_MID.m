@@ -7,16 +7,16 @@ if remake_data_obj == 1
 
     cd(fldir)
     
-    fmidant_s1_run1_c1 = filenames(fullfile('sub-*/ses-1/anticipation/run-01/con_0001.nii'));
-    fmidant_s1_run2_c1 = filenames(fullfile('sub-*/ses-1/anticipation/run-02/con_0001.nii'));
+    fmidant_s1_run1_c1 = filenames(fullfile('sub-*/',strcat('ses-',num2str(ses),'/anticipation/run-01/con_0001.nii'));
+    fmidant_s1_run2_c1 = filenames(fullfile('sub-*/',strcat('ses-',num2str(ses),'/anticipation/run-02/con_0001.nii'));
 
-    fmidant_s1_run1_c2 = filenames(fullfile('sub-*/ses-1/anticipation/run-01/con_0002.nii'));
-    fmidant_s1_run2_c2 = filenames(fullfile('sub-*/ses-1/anticipation/run-02/con_0002.nii'));
+    fmidant_s1_run1_c2 = filenames(fullfile('sub-*/',strcat('ses-',num2str(ses),'anticipation/run-01/con_0002.nii'));
+    fmidant_s1_run2_c2 = filenames(fullfile('sub-*/',strcat('ses-',num2str(ses),'/anticipation/run-02/con_0002.nii'));
 
-    fmidant_s1_run1_c3 = filenames(fullfile('sub-*/ses-1/anticipation/run-01/con_0003.nii'));
-    fmidant_s1_run2_c3 = filenames(fullfile('sub-*/ses-1/anticipation/run-02/con_0003.nii'));
+    fmidant_s1_run1_c3 = filenames(fullfile('sub-*/',strcat('ses-',num2str(ses),'anticipation/run-01/con_0003.nii'));
+    fmidant_s1_run2_c3 = filenames(fullfile('sub-*/',strcat('ses-',num2str(ses),'/anticipation/run-02/con_0003.nii'));
     
-    fmidout_s1_run1_c1  = filenames(fullfile('sub-*/ses-1/outcome/run-01/con_0001.nii'));
+    fmidout_s1_run1_c1  = filenames(fullfile('sub-*/',strcat('ses-',num2str(ses),'/outcome/run-01/con_0001.nii'));
     fmidout_s1_run2_c1  = filenames(fullfile('sub-*/ses-1/outcome/run-02/con_0001.nii'));
 
     fmidout_s1_run1_c2  = filenames(fullfile('sub-*/ses-1/outcome/run-01/con_0002.nii'));
