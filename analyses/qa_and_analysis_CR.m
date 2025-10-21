@@ -1,8 +1,8 @@
-study = rise %rise or crest
+study = 'crest'; %rise or crest
 ses = 1; % 1,2,3
 
 
-fldir = '/projects/b1108/studies/', study,'/data/processed/neuroimaging/fmriprep/ses-', num2str(ses),'/fl';
+fldir = fullfile('/projects/b1108/studies/', study, strcat('/data/processed/neuroimaging/fmriprep/ses-', num2str(ses),'/fl'));
 %datadir = '/Users/ninakougan/Documents/rise';
 
 remake_data_obj = 1;
@@ -81,61 +81,61 @@ redo_regions = 1;
 if redo_regions == 1
 
     % chatroom accrej
-    T_chats1accrej = [];
+    T_chatsaccrej = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/GitHub/RISE_CREST/rois/acc_rej/*.nii'));
+    all_regions = filenames(fullfile('/home/nck1870/scripts/RISE_CREST/rois/acc_rej/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
         temp_region = extract_roi_averages(final_data_chatroom_accrej, roi);
-        T_chats1accrej = [T_chats1accrej, temp_region.dat];
+        T_chatsaccrej = [T_chatsaccrej, temp_region.dat];
         names{r} = name;
     end
-    T_chats1accrej = array2table(T_chats1accrej);
-    T_chats1accrej.Properties.VariableNames = names;
-    T_chats1accrej = [cell2table(pid_chat_accrej'), T_chats1accrej];
-    T_chats1accrej.Properties.VariableNames{1} = 'PID';
-    save T_chats1accrej.mat T_chats1accrej
+    T_chatsaccrej = array2table(T_chatsaccrej);
+    T_chatsaccrej.Properties.VariableNames = names;
+    T_chatsaccrej = [cell2table(pid_chat_accrej), T_chatsaccrej];
+    T_chatsaccrej.Properties.VariableNames{1} = 'PID';
+    save T_chatsaccrej.mat T_chatsaccrej
 
     % chatroom acc
-    T_chats1acc = [];
+    T_chatsacc = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/GitHub/RISE_CREST/rois/acceptance/*.nii'));
+    all_regions = filenames(fullfile('/home/nck1870/scripts/RISE_CREST/rois/acceptance/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
         temp_region = extract_roi_averages(final_data_chatroom_acc, roi);
-        T_chats1acc = [T_chats1acc, temp_region.dat];
+        T_chatsacc = [T_chatsacc, temp_region.dat];
         names{r} = name;
     end
-    T_chats1acc = array2table(T_chats1acc);
-    T_chats1acc.Properties.VariableNames = names;
-    T_chats1acc = [cell2table(pid_chat_acc'), T_chats1acc];
-    T_chats1acc.Properties.VariableNames{1} = 'PID';
-    save T_chats1acc.mat T_chats1acc
+    T_chatsacc = array2table(T_chatsacc);
+    T_chatsacc.Properties.VariableNames = names;
+    T_chatsacc = [cell2table(pid_chat_acc), T_chatsacc];
+    T_chatsacc.Properties.VariableNames{1} = 'PID';
+    save T_chatsacc.mat T_chatsacc
 
     % chatroom rej
-    T_chats1rej = [];
+    T_chatsrej = [];
     names = [];
-    all_regions = filenames(fullfile('/Users/ninakougan/Documents/GitHub/RISE_CREST/rois/rejection/*.nii'));
+    all_regions = filenames(fullfile('/home/nck1870/scripts/RISE_CREST/rois/rejection/*.nii'));
     for r = 1:length(all_regions)
         [filepath,name,ext] = fileparts(all_regions{r});
         roi = fmri_data(all_regions{r});
         temp_region = extract_roi_averages(final_data_chatroom_rej, roi);
-        T_chats1rej = [T_chats1rej, temp_region.dat];
+        T_chatsrej = [T_chatsrej, temp_region.dat];
         names{r} = name;
     end
-    T_chats1rej = array2table(T_chats1rej);
-    T_chats1rej.Properties.VariableNames = names;
-    T_chats1rej = [cell2table(pid_chat_rej'), T_chats1rej];
-    T_chats1rej.Properties.VariableNames{1} = 'PID';
-    save T_chats1rej.mat T_chats1rej
+    T_chatsrej = array2table(T_chatsrej);
+    T_chatsrej.Properties.VariableNames = names;
+    T_chatsrej = [cell2table(pid_chat_rej), T_chatsrej];
+    T_chatsrej.Properties.VariableNames{1} = 'PID';
+    save T_chatsrej.mat T_chatsrej
 
     %%
     % AAL3 atlas for all
     clear names
-    atl = fmri_data('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/aal3/AAL3v1.nii');
-    labels = readtable('/projects/b1108/studies/rise/data/processed/neuroimaging/roi/aal3/AAL3v1.nii.txt');
+    atl = fmri_data('/home/nck1870/scripts/RISE_CREST/rois/aal3/AAL3v1.nii');
+    labels = readtable('/home/nck1870/scripts/RISE_CREST/rois/aal3/AAL3v1.nii.txt');
     labels(isnan(labels.Var3),:) = [];
 
     aal_chat_accrej = extract_roi_averages(final_data_chatroom_accrej, atl);
@@ -151,17 +151,17 @@ if redo_regions == 1
 
     T_aal_chat_accrej = array2table(T_aal_chat_accrej);
     T_aal_chat_accrej.Properties.VariableNames = names;
-    T_aal_chat_accrej = [cell2table(pid_chat_accrej'), T_aal_chat_accrej];
+    T_aal_chat_accrej = [cell2table(pid_chat_accrej), T_aal_chat_accrej];
     T_aal_chat_accrej.Properties.VariableNames{1} = 'PID';
 
     T_aal_chat_acc = array2table(T_aal_chat_acc);
     T_aal_chat_acc.Properties.VariableNames = names;
-    T_aal_chat_acc = [cell2table(pid_chat_acc'), T_aal_chat_acc];
+    T_aal_chat_acc = [cell2table(pid_chat_acc), T_aal_chat_acc];
     T_aal_chat_acc.Properties.VariableNames{1} = 'PID';
 
     T_aal_chat_rej = array2table(T_aal_chat_rej);
     T_aal_chat_rej.Properties.VariableNames = names;
-    T_aal_chat_rej = [cell2table(pid_chat_rej'), T_aal_chat_rej];
+    T_aal_chat_rej = [cell2table(pid_chat_rej), T_aal_chat_rej];
     T_aal_chat_rej.Properties.VariableNames{1} = 'PID';
 
     % ---------- AAL3 prefix + merge onto custom ROI tables ----------
@@ -179,13 +179,13 @@ if redo_regions == 1
 
     rv = @(T) T.Properties.VariableNames(~strcmp(T.Properties.VariableNames,'PID')); % all but PID
 
-    T_chats1accrej = innerjoin(T_chats1accrej, T_aal_chat_accrej, ...
+    T_chatsaccrej = innerjoin(T_chatsaccrej, T_aal_chat_accrej, ...
         'Keys', 'PID', 'RightVariables', rv(T_aal_chat_accrej));
 
-    T_chats1acc = innerjoin(T_chats1acc, T_aal_chat_acc, ...
+    T_chatsacc = innerjoin(T_chatsacc, T_aal_chat_acc, ...
         'Keys', 'PID', 'RightVariables', rv(T_aal_chat_acc));
 
-    T_chats1rej = innerjoin(T_chats1rej, T_aal_chat_rej, ...
+    T_chatsrej = innerjoin(T_chatsrej, T_aal_chat_rej, ...
         'Keys', 'PID', 'RightVariables', rv(T_aal_chat_rej));
 
     save T_aal_chat_accrej.mat T_aal_chat_accrej
@@ -194,10 +194,10 @@ if redo_regions == 1
 end
 
 % write out to csvs
-writetable(T_aal_chat_acc,    'AAL_chat_acc.txt',    'Delimiter','\t');
-writetable(T_aal_chat_rej,    'AAL_chat_rej.txt',    'Delimiter','\t');
-writetable(T_aal_chat_accrej, 'AAL_chat_accrej.txt', 'Delimiter','\t');
+%writetable(T_aal_chat_acc,    'AAL_chat_acc.txt',    'Delimiter','\t');
+%writetable(T_aal_chat_rej,    'AAL_chat_rej.txt',    'Delimiter','\t');
+%writetable(T_aal_chat_accrej, 'AAL_chat_accrej.txt', 'Delimiter','\t');
 
-writetable(T_chats1acc,       'chat_acc.txt',        'Delimiter','\t');
-writetable(T_chats1rej,       'chat_rej.txt',        'Delimiter','\t');
-writetable(T_chats1accrej,    'chat_accrej.txt',     'Delimiter','\t');
+writetable(T_chatsacc,       'chat_acc.txt',        'Delimiter','\t');
+writetable(T_chatsrej,       'chat_rej.txt',        'Delimiter','\t');
+writetable(T_chatsaccrej,    'chat_accrej.txt',     'Delimiter','\t');
