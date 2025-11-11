@@ -3,13 +3,13 @@
 
 basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
 studydir = 'crest'; % rise crest
-studytask = 'mid'; % chatroom mid
+studytask = 'chatroom'; % chatroom mid
 
 % assign a variable to contain all filenames. I'm using the 'filenames'
 % command that comes with Tor's tools. There are other ways to do wildcards
 % in matlab that you can use if needed
 cd(fullfile(basedir, '/raw_confounds'))
-fnames = filenames(fullfile('*.txt'));
+fnames = filenames(fullfile('*chatroom*.txt'));
 %keyboard
 
 % need to grab the subject ID, the session, and the task

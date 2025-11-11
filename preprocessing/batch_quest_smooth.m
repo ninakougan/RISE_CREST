@@ -3,7 +3,7 @@ scriptdir = '/home/nck1870/scripts/RISE_CREST/preprocessing';
 repodir = '/home/nck1870/repos';
 
 % next is where the preprocessed data is
-directories = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
+directories = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
 
 % What run of your task are you looking at?
 run = 1;
@@ -19,7 +19,7 @@ ID_length = 6;
 %keyboard
 file_list = filenames(fullfile(directories,strcat('*/ses-',num2str(ses),'/func/sub*chatroom_run-0',num2str(run),'*preproc_bold.nii')));
 for i = 1:length(file_list)
-    sublist{i} = file_list{i}(100:105); %98:102 rise, 
+    sublist{i} = file_list{i}(98:102); %98:102 rise, 100:105 crest
 end
 
 %keyboard

@@ -1,5 +1,5 @@
-basedir = '/projects/b1108/studies/crest/data/raw/neuroimaging/behavioral';
-savedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1/timing_files';
+basedir = '/projects/b1108/studies/rise/data/raw/neuroimaging/behavioral';
+savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/spm_timing_files';
 
 mid = 1;
 chat = 0;
@@ -80,7 +80,7 @@ if mid == 1
     for sub = 1:length(fnames)
         % Load in the text file
         txt = readtable(fnames{sub});
-        pid{sub} =  fnames{sub}(68:73); % RISE %(72:77);% CREST (71:75); %
+        pid{sub} =  fnames{sub}(67:71); % RISE %(67:71);% CREST (68:73); %
         %keyboard
 
         if isempty(txt) == 0
@@ -142,7 +142,7 @@ if mid == 1
                 onsets{5} = tgt_on1';
                 durations{1} = ones(1,length(onsets{1})).*4;durations{2} = ones(1,length(onsets{2})).*4;
                 durations{3} = ones(1,length(onsets{3})).*4;durations{4} = ones(1,length(onsets{4})).*4;
-                durations{5} = ones(1,length(onsets{5})).*4;
+                durations{5} = ones(1,length(onsets{5})).*2;
                 names{1} = 'GainAnticipation';names{2} = 'Gain0Anticipation';
                 names{3} = 'LossAnticipation';names{4} = 'Loss0Anticipation';
                 names{5} = 'Motor';
@@ -158,7 +158,7 @@ if mid == 1
                 onsets{5} = tgt_on2';
                 durations{1} = ones(1,length(onsets{1})).*4;durations{2} = ones(1,length(onsets{2})).*4;
                 durations{3} = ones(1,length(onsets{3})).*4;durations{4} = ones(1,length(onsets{4})).*4;
-                durations{5} = ones(1,length(onsets{5})).*4;
+                durations{5} = ones(1,length(onsets{5})).*2;
                 names{1} = 'GainAnticipation';names{2} = 'Gain0Anticipation';
                 names{3} = 'LossAnticipation';names{4} = 'Loss0Anticipation';
                 names{5} = 'Motor';

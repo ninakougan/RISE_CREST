@@ -2,7 +2,7 @@ function run_sub_firstlevel_chatroom(PID)
 %% var set up
 if nargin==0 % defaults just for testing 
     % Define some 
-    PID = "100001"; 
+    PID = "50001"; 
     
 end
 
@@ -13,7 +13,7 @@ ndummies = 0;
 
 
 % Define some paths
-basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
 
 preproc_dir = fullfile(basedir,'smoothed_data/');
 

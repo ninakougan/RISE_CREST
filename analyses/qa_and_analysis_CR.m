@@ -1,6 +1,7 @@
-study = 'crest'; %rise or crest
+study = 'rise'; %rise or crest
 ses = 1; % 1,2,3
 
+whole_brain = 0;
 
 fldir = fullfile('/projects/b1108/studies/', study, strcat('/data/processed/neuroimaging/fmriprep/ses-', num2str(ses),'/fl'));
 %datadir = '/Users/ninakougan/Documents/rise';
@@ -62,18 +63,19 @@ else
     load(fullfile(datadir, "pids_rej.mat"));    % pid_chat_rej
 end
 
-%% whole brain for chatroom
-final_data_chatroom_accrej.X = ones(size(final_data_chatroom_accrej.dat,2),1);
-final_data_chatroom_acc.X    = ones(size(final_data_chatroom_acc.dat,2),1);
-final_data_chatroom_rej.X    = ones(size(final_data_chatroom_rej.dat,2),1);
+if whole_brain == 1;
+    final_data_chatroom_accrej.X = ones(size(final_data_chatroom_accrej.dat,2),1);
+    final_data_chatroom_acc.X    = ones(size(final_data_chatroom_acc.dat,2),1);
+    final_data_chatroom_rej.X    = ones(size(final_data_chatroom_rej.dat,2),1);
 
-stat_chatroom_accrej = regress(final_data_chatroom_accrej);
-stat_chatroom_acc    = regress(final_data_chatroom_acc);
-stat_chatroom_rej    = regress(final_data_chatroom_rej);
+    stat_chatroom_accrej = regress(final_data_chatroom_accrej);
+    stat_chatroom_acc    = regress(final_data_chatroom_acc);
+    stat_chatroom_rej    = regress(final_data_chatroom_rej);
 
-thresh_chatroom_accrej = threshold(stat_chatroom_accrej.t, 0.05, 'fdr', 'k', 10);
-thresh_chatroom_acc    = threshold(stat_chatroom_acc.t,    0.05, 'fdr', 'k', 10);
-thresh_chatroom_rej    = threshold(stat_chatroom_rej.t,    0.05, 'fdr', 'k', 10);
+    thresh_chatroom_accrej = threshold(stat_chatroom_accrej.t, 0.05, 'fdr', 'k', 10);
+    thresh_chatroom_acc    = threshold(stat_chatroom_acc.t,    0.05, 'fdr', 'k', 10);
+    thresh_chatroom_rej    = threshold(stat_chatroom_rej.t,    0.05, 'fdr', 'k', 10);
+end
 
 %%
 redo_regions = 1;
@@ -179,7 +181,9 @@ if redo_regions == 1
 
     rv = @(T) T.Properties.VariableNames(~strcmp(T.Properties.VariableNames,'PID')); % all but PID
 
-    T_chatsaccrej = innerjoin(T_chatsaccrej, T_aal_chat_accrej, ...
+    
+%{
+ T_chatsaccrej = innerjoin(T_chatsaccrej, T_aal_chat_accrej, ...
         'Keys', 'PID', 'RightVariables', rv(T_aal_chat_accrej));
 
     T_chatsacc = innerjoin(T_chatsacc, T_aal_chat_acc, ...
@@ -190,7 +194,8 @@ if redo_regions == 1
 
     save T_aal_chat_accrej.mat T_aal_chat_accrej
     save T_aal_chat_acc.mat    T_aal_chat_acc
-    save T_aal_chat_rej.mat    T_aal_chat_rej
+    save T_aal_chat_rej.mat    T_aal_chat_rej 
+%}
 end
 
 % write out to csvs

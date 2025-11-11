@@ -5,7 +5,7 @@
 % we're in BIDS format... Maybe I can actually make this more dynamic. 
 
 scriptdir = '/home/nck1870/scripts/RISE_CREST/first_levels';
-basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1';
 % What run of your task are you looking at?
 run = 1;
 % What session appears in your raw filenames when in BIDS format?
@@ -25,7 +25,7 @@ if overwrite == 0
     counter = 1;
     for sub = 1:length(fnames)
         
-        curr_sub = fnames{sub}(93:98); %92:96 rise
+        curr_sub = fnames{sub}(92:96); %92:96 rise, 93:98 crest
         %keyboard
 
         if isempty(find(contains(fl_list,curr_sub)))

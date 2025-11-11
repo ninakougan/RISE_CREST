@@ -1,5 +1,5 @@
-basedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1/raw_confounds/';
-savedir = '/projects/b1108/studies/crest/data/processed/neuroimaging/fmriprep/ses-1/spm_confounds/';
+basedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/raw_confounds/';
+savedir = '/projects/b1108/studies/rise/data/processed/neuroimaging/fmriprep/ses-1/spm_confounds/';
 
 fnames = filenames(fullfile(strcat(basedir,'sub*ses-1*chatroom*run-01*txt')));
 %keyboard
@@ -8,7 +8,7 @@ ex1 = 33;
 for sub = 1:length(fnames)
     T = readtable(fnames{sub}, 'Delimiter', '\t');
     
-    pid =  fnames{sub}(92:97); %CREST 92:97 RISE 91:95
+    pid =  fnames{sub}(91:95); %CREST 92:97 RISE 91:95
     %keyboard
     outliers = table2array(T(:,contains(T.Properties.VariableNames,'motion')));
     transx = table2array(T(:,contains(T.Properties.VariableNames,'trans_x')));
