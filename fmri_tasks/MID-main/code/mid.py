@@ -479,7 +479,7 @@ def show_stim(stim, duration):
     t_start = globalClock.getTime()
     routineTimer.reset()
     routineTimer.addTime(duration)
-    event.clearEvents(eventType='keyboard')
+    #event.clearEvents(eventType='keyboard')
     rt = None
     while routineTimer.getTime() > 0:
         key = get_keypress()
