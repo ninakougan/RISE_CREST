@@ -9,7 +9,8 @@ library(readxl)
 library(dplyr)
 
 # Set root for where you have the behavioral csvs
-root_dir <- "/Users/ninakougan/Library/CloudStorage/OneDrive-NorthwesternUniversity/Documents/projects/rise:crest/fyp/data/beh"
+#root_dir <- "/Users/ninakougan/Documents/acnl/studies/crest/behavioral/"
+root_dir <- "/Users/ninakougan/Documents/acnl/studies/rise/data/raw/neuroimaging/behavioral"
 
 # Will delete and overwrite previously generated output
 overwrite <- 1
