@@ -182,7 +182,7 @@ if redo_regions == 1
     rv = @(T) T.Properties.VariableNames(~strcmp(T.Properties.VariableNames,'PID')); % all but PID
 
     
-%{
+{
  T_chatsaccrej = innerjoin(T_chatsaccrej, T_aal_chat_accrej, ...
         'Keys', 'PID', 'RightVariables', rv(T_aal_chat_accrej));
 
@@ -195,13 +195,13 @@ if redo_regions == 1
     save T_aal_chat_accrej.mat T_aal_chat_accrej
     save T_aal_chat_acc.mat    T_aal_chat_acc
     save T_aal_chat_rej.mat    T_aal_chat_rej 
-%}
+}
 end
 
-% write out to csvs
-%writetable(T_aal_chat_acc,    'AAL_chat_acc.txt',    'Delimiter','\t');
-%writetable(T_aal_chat_rej,    'AAL_chat_rej.txt',    'Delimiter','\t');
-%writetable(T_aal_chat_accrej, 'AAL_chat_accrej.txt', 'Delimiter','\t');
+write out to csvs
+writetable(T_aal_chat_acc,    'AAL_t1chat_acc.txt',    'Delimiter','\t');
+writetable(T_aal_chat_rej,    'AAL_t1chat_rej.txt',    'Delimiter','\t');
+writetable(T_aal_chat_accrej, 'AAL_t1chat_accrej.txt', 'Delimiter','\t');
 
 writetable(T_chatsacc,       'chat_acc.txt',        'Delimiter','\t');
 writetable(T_chatsrej,       'chat_rej.txt',        'Delimiter','\t');

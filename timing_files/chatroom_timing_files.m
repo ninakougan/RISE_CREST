@@ -1,6 +1,6 @@
 %% RISE and CREST Chatroom Timing Files for BIDS and SPM
 %% Author: Nina Kougan (ninakougan@u.northwestern.edu)
-%% Last Updated: 1/02/2026
+%% Last Updated: 1/17/2026
 
 % what do you want to do
 PTB_bids_files = 1; % psychtoolbox files
@@ -10,11 +10,11 @@ sanity_check = 0; % behavioral sanity check for missing/incorrect responses
 %%sanity check still WIP -- would not recommend using rn!
 
 %which study and session
-study   = 'crest';   % rise or crest
+study   = 'rise';   % rise or crest
 session = 1;        % 1, 2, or 3
 
-%where's the data?
-basedir = fullfile('/projects/b1108/studies', study, 'data'); %  /Users/ninakougan/Documents/acnl
+%wheres the data?
+basedir = fullfile('/Users/avloaner/Documents', study, 'data'); %  /Users/ninakougan/Documents/acnl
 bidsdir = fullfile(basedir, 'raw/neuroimaging/bids');
 behdir = fullfile(basedir, 'raw/neuroimaging/behavioral');
 procdir = fullfile(basedir, 'processed', 'neuroimaging', 'fmriprep', ['ses-' num2str(session)]);
