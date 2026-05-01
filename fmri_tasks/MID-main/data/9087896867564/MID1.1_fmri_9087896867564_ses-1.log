@@ -1,0 +1,444 @@
+14.1079 	WARNING 	Monitor specification not found. Creating a temporary one...
+14.1188 	WARNING 	Requested an unavailable screen number - using first available.
+15.2799 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+15.2803 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x17126ec50>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x17126ecb0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x171237df0>, multiSample=False, name='window1', numSamples=2, pos=(464, 258), screen=2, size=array([1600, 1200]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=False, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+15.2803 	EXP 	window1: backgroundImage = None
+15.2804 	EXP 	window1: backgroundFit = 'cover'
+15.2831 	EXP 	window1: Attempting to measure frame rate of screen (2) ...
+15.2831 	EXP 	window1: recordFrameIntervals = False
+15.3631 	EXP 	window1: recordFrameIntervals = True
+16.2133 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+16.2478 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.  , -0.25]), rgb=UNKNOWN, text='Press the button to continue.', units='height', win=Window(...), wrapWidth=1)
+16.2500 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+16.2549 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=0.8888888888888888)
+16.2606 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0. , 0.1]), rgb=UNKNOWN, text='Hello World', units='height', win=Window(...), wrapWidth=0.8888888888888888)
+16.2687 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=0.8888888888888888)
+16.2714 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='The task will begin momentarily. Get ready...', units='height', win=Window(...), wrapWidth=1)
+16.2734 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=0.8888888888888888)
+16.2877 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, image='../stimuli/reward_low.png', interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.3, 0.3]), texRes=128, units='height', win=Window(...))
+16.2926 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, image='../stimuli/reward_high.png', interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.3, 0.3]), texRes=128, units='height', win=Window(...))
+16.2974 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, image='../stimuli/reward_neut.png', interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.3, 0.3]), texRes=128, units='height', win=Window(...))
+16.3023 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, image='../stimuli/loss_low.png', interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.3, 0.3]), texRes=128, units='height', win=Window(...))
+16.3068 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, image='../stimuli/loss_high.png', interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.3, 0.3]), texRes=128, units='height', win=Window(...))
+16.3124 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, image='../stimuli/loss_neut.png', interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.3, 0.3]), texRes=128, units='height', win=Window(...))
+16.3143 	EXP 	Created unnamed Polygon = Polygon(__class__=<class 'psychopy.visual.polygon.Polygon'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.5, name='unnamed Polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), units='height', vertices=ndarray(...), win=Window(...))
+16.3171 	EXP 	Created trial_feedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='trial_feedback', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Trial:', units='height', win=Window(...), wrapWidth=1)
+16.3192 	EXP 	Created exp_feedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='exp_feedback', opacity=1, ori=0, pos=array([ 0.    , -0.0625]), rgb=UNKNOWN, text='Total:', units='height', win=Window(...), wrapWidth=1)
+16.3227 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+16.3240 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Get ready', units='height', win=Window(...), wrapWidth=1)
+16.3257 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Please wait\n\n', units='height', win=Window(...), wrapWidth=1)
+16.3823 	WARNING 	t of last frame was 169.13ms (=1/5)
+26.4015 	WARNING 	t of last frame was 21.36ms (=1/46)
+26.4015 	EXP 	unnamed TextStim: height = 0.04
+26.4015 	EXP 	unnamed TextStim: height = 0.04
+26.4015 	EXP 	unnamed TextStim: height = 0.04
+26.4015 	EXP 	unnamed TextStim: text = 'Welcome!'
+27.6251 	DATA 	Keypress: 1
+27.6565 	WARNING 	t of last frame was 1254.97ms (=1/0)
+27.6565 	EXP 	unnamed TextStim: height = 0.04
+27.6565 	EXP 	unnamed TextStim: height = 0.04
+27.6565 	EXP 	unnamed TextStim: height = 0.04
+27.6565 	EXP 	unnamed TextStim: text = 'First you will see a cross in the middle of the screen, like this:\n\n+\n\nThis means you should focus on the screen and get ready to play. '
+27.7655 	DATA 	Keypress: 1
+27.7721 	EXP 	Created unnamed Polygon = Polygon(__class__=<class 'psychopy.visual.polygon.Polygon'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.5, name='unnamed Polygon', opacity=1, ori=0.0, pos=array([0. , 0.1]), size=array([1., 1.]), units='height', vertices=ndarray(...), win=Window(...))
+27.7823 	WARNING 	t of last frame was 125.83ms (=1/7)
+27.7823 	EXP 	unnamed TextStim: height = 0.04
+27.7823 	EXP 	unnamed TextStim: height = 0.04
+27.7823 	EXP 	unnamed TextStim: height = 0.04
+27.7823 	EXP 	unnamed TextStim: text = 'Next, a small solid WHITE TRIANGLE will appear on the screen:\n\n \n\n \n\n \n\nPress the button as fast as you can when you see the solid white triangle. '
+27.9280 	DATA 	Keypress: 1
+27.9607 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+27.9607 	EXP 	unnamed TextStim: height = 0.04
+27.9607 	EXP 	unnamed TextStim: height = 0.04
+27.9607 	EXP 	unnamed TextStim: height = 0.04
+27.9607 	EXP 	unnamed TextStim: text = 'Any Questions?\n\nPlease ask them now.'
+28.0546 	DATA 	Keypress: 1
+28.6081 	DATA 	Keypress: return
+32.2425 	DATA 	Keypress: equal
+37.2672 	EXP 	unnamed Polygon: autoDraw = True
+37.2672 	EXP 	unnamed Polygon: autoDraw = True
+37.2759 	EXP 	unnamed Polygon: autoDraw = True
+37.2784 	EXP 	unnamed Polygon: autoDraw = True
+37.2925 	EXP 	unnamed Polygon: autoDraw = True
+37.3009 	EXP 	unnamed Polygon: autoDraw = True
+37.3035 	EXP 	unnamed Polygon: autoDraw = True
+37.3177 	EXP 	unnamed Polygon: autoDraw = True
+37.3259 	EXP 	unnamed Polygon: autoDraw = True
+37.3288 	EXP 	unnamed Polygon: autoDraw = True
+37.3427 	EXP 	unnamed Polygon: autoDraw = True
+37.3507 	EXP 	unnamed Polygon: autoDraw = True
+37.3535 	EXP 	unnamed Polygon: autoDraw = True
+37.3676 	EXP 	unnamed Polygon: autoDraw = True
+37.3758 	EXP 	unnamed Polygon: autoDraw = True
+37.3792 	EXP 	unnamed Polygon: autoDraw = True
+37.3928 	EXP 	unnamed Polygon: autoDraw = True
+37.4009 	EXP 	unnamed Polygon: autoDraw = True
+37.4040 	EXP 	unnamed Polygon: autoDraw = True
+37.4178 	EXP 	unnamed Polygon: autoDraw = True
+37.4258 	EXP 	unnamed Polygon: autoDraw = True
+37.4291 	EXP 	unnamed Polygon: autoDraw = True
+37.4430 	EXP 	unnamed Polygon: autoDraw = True
+37.4512 	EXP 	unnamed Polygon: autoDraw = True
+37.4543 	EXP 	unnamed Polygon: autoDraw = True
+37.4675 	EXP 	unnamed Polygon: autoDraw = True
+37.4760 	EXP 	unnamed Polygon: autoDraw = True
+37.4802 	EXP 	unnamed Polygon: autoDraw = True
+37.4929 	EXP 	unnamed Polygon: autoDraw = True
+37.5010 	EXP 	unnamed Polygon: autoDraw = True
+37.5029 	DATA 	Keypress: 1
+37.5062 	EXP 	unnamed Polygon: autoDraw = True
+37.5175 	EXP 	unnamed Polygon: autoDraw = True
+37.5256 	EXP 	unnamed Polygon: autoDraw = True
+37.5280 	EXP 	unnamed Polygon: autoDraw = True
+37.5428 	EXP 	unnamed Polygon: autoDraw = True
+37.5513 	EXP 	unnamed Polygon: autoDraw = True
+37.5542 	EXP 	unnamed Polygon: autoDraw = True
+37.5677 	EXP 	unnamed Polygon: autoDraw = True
+37.5760 	EXP 	unnamed Polygon: autoDraw = True
+37.5788 	EXP 	unnamed Polygon: autoDraw = True
+37.5931 	EXP 	unnamed Polygon: autoDraw = True
+37.6012 	EXP 	unnamed Polygon: autoDraw = True
+37.6035 	EXP 	unnamed Polygon: autoDraw = True
+37.6176 	EXP 	unnamed Polygon: autoDraw = True
+37.6256 	EXP 	unnamed Polygon: autoDraw = True
+37.6283 	EXP 	unnamed Polygon: autoDraw = True
+37.6427 	EXP 	unnamed Polygon: autoDraw = True
+37.6513 	EXP 	unnamed Polygon: autoDraw = True
+37.6536 	EXP 	unnamed Polygon: autoDraw = True
+37.6677 	EXP 	unnamed Polygon: autoDraw = True
+37.6758 	EXP 	unnamed Polygon: autoDraw = True
+37.6789 	EXP 	unnamed Polygon: autoDraw = True
+37.6927 	EXP 	unnamed Polygon: autoDraw = True
+37.7009 	EXP 	unnamed Polygon: autoDraw = True
+37.7048 	EXP 	unnamed Polygon: autoDraw = True
+37.7177 	EXP 	unnamed Polygon: autoDraw = True
+37.7260 	EXP 	unnamed Polygon: autoDraw = True
+37.7300 	EXP 	unnamed Polygon: autoDraw = True
+37.7428 	EXP 	unnamed Polygon: autoDraw = True
+37.7509 	EXP 	unnamed Polygon: autoDraw = True
+37.7550 	EXP 	unnamed Polygon: autoDraw = True
+37.7663 	EXP 	unnamed Polygon: autoDraw = False
+47.5561 	EXP 	unnamed Polygon: autoDraw = True
+47.5561 	EXP 	unnamed Polygon: autoDraw = True
+47.5676 	EXP 	unnamed Polygon: autoDraw = True
+47.5757 	EXP 	unnamed Polygon: autoDraw = True
+47.5799 	EXP 	unnamed Polygon: autoDraw = True
+47.5927 	EXP 	unnamed Polygon: autoDraw = True
+47.6008 	EXP 	unnamed Polygon: autoDraw = True
+47.6052 	EXP 	unnamed Polygon: autoDraw = True
+47.6180 	EXP 	unnamed Polygon: autoDraw = True
+47.6259 	EXP 	unnamed Polygon: autoDraw = True
+47.6302 	EXP 	unnamed Polygon: autoDraw = True
+47.6428 	EXP 	unnamed Polygon: autoDraw = True
+47.6509 	EXP 	unnamed Polygon: autoDraw = True
+47.6545 	EXP 	unnamed Polygon: autoDraw = True
+47.6685 	EXP 	unnamed Polygon: autoDraw = True
+47.6758 	EXP 	unnamed Polygon: autoDraw = True
+47.6791 	EXP 	unnamed Polygon: autoDraw = True
+47.6928 	EXP 	unnamed Polygon: autoDraw = True
+47.7008 	EXP 	unnamed Polygon: autoDraw = True
+47.7037 	EXP 	unnamed Polygon: autoDraw = True
+47.7180 	EXP 	unnamed Polygon: autoDraw = True
+47.7258 	EXP 	unnamed Polygon: autoDraw = True
+47.7301 	EXP 	unnamed Polygon: autoDraw = True
+47.7427 	EXP 	unnamed Polygon: autoDraw = True
+47.7508 	EXP 	unnamed Polygon: autoDraw = True
+47.7551 	EXP 	unnamed Polygon: autoDraw = True
+47.7677 	EXP 	unnamed Polygon: autoDraw = True
+47.7758 	EXP 	unnamed Polygon: autoDraw = True
+47.7801 	EXP 	unnamed Polygon: autoDraw = True
+47.7927 	EXP 	unnamed Polygon: autoDraw = True
+47.8011 	EXP 	unnamed Polygon: autoDraw = True
+47.8055 	EXP 	unnamed Polygon: autoDraw = True
+47.8181 	EXP 	unnamed Polygon: autoDraw = True
+47.8258 	EXP 	unnamed Polygon: autoDraw = True
+47.8299 	EXP 	unnamed Polygon: autoDraw = True
+47.8427 	EXP 	unnamed Polygon: autoDraw = True
+47.8466 	DATA 	Keypress: 1
+47.8509 	EXP 	unnamed Polygon: autoDraw = True
+47.8545 	EXP 	unnamed Polygon: autoDraw = True
+47.8677 	EXP 	unnamed Polygon: autoDraw = True
+47.8758 	EXP 	unnamed Polygon: autoDraw = True
+47.8789 	EXP 	unnamed Polygon: autoDraw = True
+47.8928 	EXP 	unnamed Polygon: autoDraw = True
+47.9009 	EXP 	unnamed Polygon: autoDraw = True
+47.9064 	EXP 	unnamed Polygon: autoDraw = True
+47.9178 	EXP 	unnamed Polygon: autoDraw = True
+47.9259 	EXP 	unnamed Polygon: autoDraw = True
+47.9297 	EXP 	unnamed Polygon: autoDraw = True
+47.9427 	EXP 	unnamed Polygon: autoDraw = True
+47.9509 	EXP 	unnamed Polygon: autoDraw = True
+47.9554 	EXP 	unnamed Polygon: autoDraw = True
+47.9677 	EXP 	unnamed Polygon: autoDraw = True
+47.9761 	EXP 	unnamed Polygon: autoDraw = True
+47.9800 	EXP 	unnamed Polygon: autoDraw = True
+47.9928 	EXP 	unnamed Polygon: autoDraw = True
+48.0008 	EXP 	unnamed Polygon: autoDraw = True
+48.0049 	EXP 	unnamed Polygon: autoDraw = True
+48.0177 	EXP 	unnamed Polygon: autoDraw = True
+48.0258 	EXP 	unnamed Polygon: autoDraw = True
+48.0297 	EXP 	unnamed Polygon: autoDraw = True
+48.0426 	EXP 	unnamed Polygon: autoDraw = True
+48.0508 	EXP 	unnamed Polygon: autoDraw = True
+48.0591 	EXP 	unnamed Polygon: autoDraw = False
+55.7873 	EXP 	unnamed Polygon: autoDraw = True
+55.7873 	EXP 	unnamed Polygon: autoDraw = True
+55.7913 	EXP 	unnamed Polygon: autoDraw = True
+55.8048 	EXP 	unnamed Polygon: autoDraw = True
+55.8131 	EXP 	unnamed Polygon: autoDraw = True
+55.8162 	EXP 	unnamed Polygon: autoDraw = True
+55.8298 	EXP 	unnamed Polygon: autoDraw = True
+55.8381 	EXP 	unnamed Polygon: autoDraw = True
+55.8414 	EXP 	unnamed Polygon: autoDraw = True
+55.8549 	EXP 	unnamed Polygon: autoDraw = True
+55.8632 	EXP 	unnamed Polygon: autoDraw = True
+55.8660 	EXP 	unnamed Polygon: autoDraw = True
+55.8802 	EXP 	unnamed Polygon: autoDraw = True
+55.8884 	EXP 	unnamed Polygon: autoDraw = True
+55.8925 	EXP 	unnamed Polygon: autoDraw = True
+55.9053 	EXP 	unnamed Polygon: autoDraw = True
+55.9136 	EXP 	unnamed Polygon: autoDraw = True
+55.9173 	EXP 	unnamed Polygon: autoDraw = True
+55.9306 	EXP 	unnamed Polygon: autoDraw = True
+55.9385 	EXP 	unnamed Polygon: autoDraw = True
+55.9425 	EXP 	unnamed Polygon: autoDraw = True
+55.9553 	EXP 	unnamed Polygon: autoDraw = True
+55.9635 	EXP 	unnamed Polygon: autoDraw = True
+55.9685 	EXP 	unnamed Polygon: autoDraw = True
+55.9803 	EXP 	unnamed Polygon: autoDraw = True
+55.9884 	EXP 	unnamed Polygon: autoDraw = True
+55.9923 	EXP 	unnamed Polygon: autoDraw = True
+56.0055 	EXP 	unnamed Polygon: autoDraw = True
+56.0136 	EXP 	unnamed Polygon: autoDraw = True
+56.0171 	EXP 	unnamed Polygon: autoDraw = True
+56.0308 	EXP 	unnamed Polygon: autoDraw = True
+56.0349 	DATA 	Keypress: 1
+56.0382 	EXP 	unnamed Polygon: autoDraw = True
+56.0421 	EXP 	unnamed Polygon: autoDraw = True
+56.0548 	EXP 	unnamed Polygon: autoDraw = True
+56.0631 	EXP 	unnamed Polygon: autoDraw = True
+56.0668 	EXP 	unnamed Polygon: autoDraw = True
+56.0798 	EXP 	unnamed Polygon: autoDraw = True
+56.0887 	EXP 	unnamed Polygon: autoDraw = True
+56.0933 	EXP 	unnamed Polygon: autoDraw = True
+56.1058 	EXP 	unnamed Polygon: autoDraw = True
+56.1136 	EXP 	unnamed Polygon: autoDraw = True
+56.1174 	EXP 	unnamed Polygon: autoDraw = True
+56.1306 	EXP 	unnamed Polygon: autoDraw = True
+56.1382 	EXP 	unnamed Polygon: autoDraw = True
+56.1413 	EXP 	unnamed Polygon: autoDraw = True
+56.1557 	EXP 	unnamed Polygon: autoDraw = True
+56.1635 	EXP 	unnamed Polygon: autoDraw = True
+56.1670 	EXP 	unnamed Polygon: autoDraw = True
+56.1799 	EXP 	unnamed Polygon: autoDraw = True
+56.1889 	EXP 	unnamed Polygon: autoDraw = True
+56.1911 	EXP 	unnamed Polygon: autoDraw = True
+56.2053 	EXP 	unnamed Polygon: autoDraw = True
+56.2134 	EXP 	unnamed Polygon: autoDraw = True
+56.2164 	EXP 	unnamed Polygon: autoDraw = True
+56.2303 	EXP 	unnamed Polygon: autoDraw = True
+56.2384 	EXP 	unnamed Polygon: autoDraw = True
+56.2427 	EXP 	unnamed Polygon: autoDraw = True
+56.2552 	EXP 	unnamed Polygon: autoDraw = True
+56.2634 	EXP 	unnamed Polygon: autoDraw = True
+56.2674 	EXP 	unnamed Polygon: autoDraw = True
+56.2803 	EXP 	unnamed Polygon: autoDraw = True
+56.2882 	EXP 	unnamed Polygon: autoDraw = False
+67.6762 	DATA 	Keypress: 1
+77.7300 	EXP 	unnamed TextStim: height = 0.04
+77.7300 	EXP 	unnamed TextStim: height = 0.04
+77.7300 	EXP 	unnamed TextStim: height = 0.04
+77.7300 	EXP 	unnamed TextStim: text = 'Instructions...\n\nYour goal is to make as much money as possible.\n\nRemember:\nWIN CIRCLES = win money\nLOSE SQUARES = lose money\n\nQUICKLY press the button with your pointer finger when you see the solid white triangle.\n\nYou will get feedback on whether you pressed the button in time and if you won or lost money.'
+78.8752 	DATA 	Keypress: 1
+78.8774 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.65,  0.15]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+78.8821 	EXP 	Created unnamed ImageStim = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, image='../stimuli/reward_high.png', interpolate=False, mask=None, maskParams=None, name='unnamed ImageStim', opacity=1, ori=0.0, pos=array([-0.35,  0.15]), size=array([0.2, 0.2]), texRes=128, units='height', win=Window(...))
+78.8831 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.15,  0.15]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+78.8838 	EXP 	Created unnamed Polygon = Polygon(__class__=<class 'psychopy.visual.polygon.Polygon'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.5, name='unnamed Polygon', opacity=1, ori=0.0, pos=array([0.15, 0.15]), size=array([1., 1.]), units='height', vertices=ndarray(...), win=Window(...))
+78.8846 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0.35, 0.15]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+78.8875 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0.65, 0.15]), rgb=UNKNOWN, text='Hit!\n+$5.00', units='height', win=Window(...), wrapWidth=1)
+78.8876 	WARNING 	TextStim.alignHoriz is deprecated. Use alignText and anchorHoriz attributes instead
+78.8897 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.65, -0.15]), rgb=UNKNOWN, text='Pay attention', units='height', win=Window(...), wrapWidth=0.1)
+78.8898 	WARNING 	TextStim.alignHoriz is deprecated. Use alignText and anchorHoriz attributes instead
+78.8921 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.35, -0.15]), rgb=UNKNOWN, text="Cue: don't respond yet", units='height', win=Window(...), wrapWidth=0.1)
+78.8922 	WARNING 	TextStim.alignHoriz is deprecated. Use alignText and anchorHoriz attributes instead
+78.8932 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.15, -0.15]), rgb=UNKNOWN, text='Pay attention', units='height', win=Window(...), wrapWidth=0.1)
+78.8933 	WARNING 	TextStim.alignHoriz is deprecated. Use alignText and anchorHoriz attributes instead
+78.8955 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.15, -0.15]), rgb=UNKNOWN, text='Respond when solid triangle is on screen', units='height', win=Window(...), wrapWidth=0.1)
+78.8956 	WARNING 	TextStim.alignHoriz is deprecated. Use alignText and anchorHoriz attributes instead
+78.8967 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.35, -0.15]), rgb=UNKNOWN, text='Pay attention', units='height', win=Window(...), wrapWidth=0.1)
+78.8968 	WARNING 	TextStim.alignHoriz is deprecated. Use alignText and anchorHoriz attributes instead
+78.8980 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, draggable=False, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.65, -0.15]), rgb=UNKNOWN, text='Feedback', units='height', win=Window(...), wrapWidth=0.1)
+79.3737 	DATA 	Keypress: 1
+79.6623 	DATA 	Keypress: 1
+80.3263 	DATA 	Keypress: return
+81.6258 	DATA 	Keypress: equal
+81.7449 	DATA 	Keypress: equal
+91.2230 	EXP 	unnamed Polygon: autoDraw = True
+91.2230 	EXP 	unnamed Polygon: autoDraw = True
+91.2341 	EXP 	unnamed Polygon: autoDraw = True
+91.2431 	EXP 	unnamed Polygon: autoDraw = True
+91.2457 	EXP 	unnamed Polygon: autoDraw = True
+91.2500 	EXP 	unnamed Polygon: autoDraw = True
+91.2642 	EXP 	unnamed Polygon: autoDraw = True
+91.2845 	EXP 	unnamed Polygon: autoDraw = True
+91.2883 	EXP 	unnamed Polygon: autoDraw = True
+91.2921 	EXP 	unnamed Polygon: autoDraw = True
+91.3054 	EXP 	unnamed Polygon: autoDraw = True
+91.3136 	EXP 	unnamed Polygon: autoDraw = True
+91.3159 	DATA 	Keypress: 1
+91.3181 	EXP 	unnamed Polygon: autoDraw = True
+91.3298 	EXP 	unnamed Polygon: autoDraw = True
+91.3392 	EXP 	unnamed Polygon: autoDraw = True
+91.3557 	EXP 	unnamed Polygon: autoDraw = True
+91.3634 	EXP 	unnamed Polygon: autoDraw = True
+91.3665 	EXP 	unnamed Polygon: autoDraw = True
+91.3799 	EXP 	unnamed Polygon: autoDraw = True
+91.3888 	EXP 	unnamed Polygon: autoDraw = True
+91.3906 	EXP 	unnamed Polygon: autoDraw = True
+91.4048 	EXP 	unnamed Polygon: autoDraw = True
+91.4143 	EXP 	unnamed Polygon: autoDraw = True
+91.4307 	EXP 	unnamed Polygon: autoDraw = True
+91.4381 	EXP 	unnamed Polygon: autoDraw = True
+91.4416 	EXP 	unnamed Polygon: autoDraw = True
+91.4561 	EXP 	unnamed Polygon: autoDraw = True
+91.4631 	EXP 	unnamed Polygon: autoDraw = True
+91.4667 	EXP 	unnamed Polygon: autoDraw = True
+91.4809 	EXP 	unnamed Polygon: autoDraw = True
+91.4881 	EXP 	unnamed Polygon: autoDraw = False
+92.9706 	EXP 	trial_feedback: height = 0.09
+92.9706 	EXP 	trial_feedback: height = 0.09
+92.9706 	EXP 	trial_feedback: height = 0.09
+92.9706 	EXP 	trial_feedback: text = 'Hit!\n$0.00'
+92.9706 	EXP 	trial_feedback: autoDraw = True
+94.9504 	EXP 	trial_feedback: autoDraw = False
+94.9718 	EXP 	trial_feedback: autoDraw = False
+94.9718 	EXP 	exp_feedback: autoDraw = False
+101.3521 	EXP 	unnamed Polygon: autoDraw = True
+101.3521 	EXP 	unnamed Polygon: autoDraw = True
+101.3633 	EXP 	unnamed Polygon: autoDraw = True
+101.3723 	EXP 	unnamed Polygon: autoDraw = True
+101.3745 	EXP 	unnamed Polygon: autoDraw = True
+101.3890 	EXP 	unnamed Polygon: autoDraw = True
+101.3968 	EXP 	unnamed Polygon: autoDraw = True
+101.4002 	EXP 	unnamed Polygon: autoDraw = True
+101.4136 	EXP 	unnamed Polygon: autoDraw = True
+101.4218 	EXP 	unnamed Polygon: autoDraw = True
+101.4253 	EXP 	unnamed Polygon: autoDraw = True
+101.4387 	EXP 	unnamed Polygon: autoDraw = True
+101.4467 	EXP 	unnamed Polygon: autoDraw = True
+101.4502 	EXP 	unnamed Polygon: autoDraw = True
+101.4636 	EXP 	unnamed Polygon: autoDraw = True
+101.4718 	EXP 	unnamed Polygon: autoDraw = True
+101.4756 	EXP 	unnamed Polygon: autoDraw = True
+101.4886 	EXP 	unnamed Polygon: autoDraw = True
+101.4968 	EXP 	unnamed Polygon: autoDraw = True
+101.5010 	EXP 	unnamed Polygon: autoDraw = True
+101.5136 	EXP 	unnamed Polygon: autoDraw = True
+101.5217 	EXP 	unnamed Polygon: autoDraw = True
+101.5254 	EXP 	unnamed Polygon: autoDraw = True
+101.5386 	EXP 	unnamed Polygon: autoDraw = True
+101.5467 	EXP 	unnamed Polygon: autoDraw = True
+101.5519 	EXP 	unnamed Polygon: autoDraw = True
+101.5638 	EXP 	unnamed Polygon: autoDraw = True
+101.5720 	EXP 	unnamed Polygon: autoDraw = True
+101.5757 	EXP 	unnamed Polygon: autoDraw = True
+101.5886 	EXP 	unnamed Polygon: autoDraw = True
+101.5924 	DATA 	Keypress: 1
+101.5966 	EXP 	unnamed Polygon: autoDraw = True
+101.6006 	EXP 	unnamed Polygon: autoDraw = True
+101.6078 	EXP 	unnamed Polygon: autoDraw = False
+103.0091 	EXP 	trial_feedback: text = 'Hit!\n$0.00'
+103.0091 	EXP 	trial_feedback: autoDraw = True
+105.0050 	EXP 	trial_feedback: autoDraw = False
+105.0218 	EXP 	trial_feedback: autoDraw = False
+105.0218 	EXP 	exp_feedback: autoDraw = False
+111.1478 	EXP 	unnamed Polygon: autoDraw = True
+111.1478 	EXP 	unnamed Polygon: autoDraw = True
+111.1549 	EXP 	unnamed Polygon: autoDraw = True
+111.1576 	EXP 	unnamed Polygon: autoDraw = True
+111.1716 	EXP 	unnamed Polygon: autoDraw = True
+111.1798 	EXP 	unnamed Polygon: autoDraw = True
+111.1827 	EXP 	unnamed Polygon: autoDraw = True
+111.1976 	EXP 	unnamed Polygon: autoDraw = True
+111.2051 	EXP 	unnamed Polygon: autoDraw = True
+111.2086 	EXP 	unnamed Polygon: autoDraw = True
+111.2219 	EXP 	unnamed Polygon: autoDraw = True
+111.2302 	EXP 	unnamed Polygon: autoDraw = True
+111.2335 	EXP 	unnamed Polygon: autoDraw = True
+111.2469 	EXP 	unnamed Polygon: autoDraw = True
+111.2551 	EXP 	unnamed Polygon: autoDraw = True
+111.2595 	EXP 	unnamed Polygon: autoDraw = True
+111.2719 	EXP 	unnamed Polygon: autoDraw = True
+111.2801 	EXP 	unnamed Polygon: autoDraw = True
+111.2845 	EXP 	unnamed Polygon: autoDraw = True
+111.2969 	EXP 	unnamed Polygon: autoDraw = True
+111.3051 	EXP 	unnamed Polygon: autoDraw = True
+111.3095 	EXP 	unnamed Polygon: autoDraw = True
+111.3220 	EXP 	unnamed Polygon: autoDraw = True
+111.3302 	EXP 	unnamed Polygon: autoDraw = True
+111.3346 	EXP 	unnamed Polygon: autoDraw = True
+111.3469 	EXP 	unnamed Polygon: autoDraw = True
+111.3551 	EXP 	unnamed Polygon: autoDraw = True
+111.3600 	EXP 	unnamed Polygon: autoDraw = True
+111.3719 	EXP 	unnamed Polygon: autoDraw = True
+111.3804 	EXP 	unnamed Polygon: autoDraw = True
+111.3911 	DATA 	Keypress: 1
+111.3937 	EXP 	unnamed Polygon: autoDraw = False
+113.0256 	EXP 	trial_feedback: height = 0.09
+113.0256 	EXP 	trial_feedback: height = 0.09
+113.0256 	EXP 	trial_feedback: height = 0.09
+113.0256 	EXP 	trial_feedback: text = 'Miss!\n-$0.00'
+113.0256 	EXP 	trial_feedback: autoDraw = True
+115.0091 	EXP 	trial_feedback: autoDraw = False
+115.0301 	EXP 	trial_feedback: autoDraw = False
+115.0301 	EXP 	exp_feedback: autoDraw = False
+123.0937 	EXP 	unnamed Polygon: autoDraw = True
+123.0937 	EXP 	unnamed Polygon: autoDraw = True
+123.1007 	EXP 	unnamed Polygon: autoDraw = True
+123.1029 	EXP 	unnamed Polygon: autoDraw = True
+123.1174 	EXP 	unnamed Polygon: autoDraw = True
+123.1192 	DATA 	Keypress: 1
+123.1257 	EXP 	unnamed Polygon: autoDraw = True
+123.1282 	EXP 	unnamed Polygon: autoDraw = True
+123.1424 	EXP 	unnamed Polygon: autoDraw = True
+123.1522 	EXP 	unnamed Polygon: autoDraw = True
+123.1681 	EXP 	unnamed Polygon: autoDraw = True
+123.1758 	EXP 	unnamed Polygon: autoDraw = True
+123.1798 	EXP 	unnamed Polygon: autoDraw = True
+123.1927 	EXP 	unnamed Polygon: autoDraw = True
+123.2009 	EXP 	unnamed Polygon: autoDraw = True
+123.2051 	EXP 	unnamed Polygon: autoDraw = True
+123.2178 	EXP 	unnamed Polygon: autoDraw = True
+123.2259 	EXP 	unnamed Polygon: autoDraw = True
+123.2294 	EXP 	unnamed Polygon: autoDraw = True
+123.2429 	EXP 	unnamed Polygon: autoDraw = True
+123.2509 	EXP 	unnamed Polygon: autoDraw = True
+123.2543 	EXP 	unnamed Polygon: autoDraw = True
+123.2678 	EXP 	unnamed Polygon: autoDraw = True
+123.2759 	EXP 	unnamed Polygon: autoDraw = True
+123.2792 	EXP 	unnamed Polygon: autoDraw = True
+123.2927 	EXP 	unnamed Polygon: autoDraw = True
+123.3009 	EXP 	unnamed Polygon: autoDraw = True
+123.3048 	EXP 	unnamed Polygon: autoDraw = True
+123.3178 	EXP 	unnamed Polygon: autoDraw = True
+123.3259 	EXP 	unnamed Polygon: autoDraw = True
+123.3299 	EXP 	unnamed Polygon: autoDraw = True
+123.3428 	EXP 	unnamed Polygon: autoDraw = True
+123.3507 	EXP 	unnamed Polygon: autoDraw = False
+125.3047 	EXP 	trial_feedback: height = 0.09
+125.3047 	EXP 	trial_feedback: height = 0.09
+125.3047 	EXP 	trial_feedback: height = 0.09
+125.3047 	EXP 	trial_feedback: text = 'Hit!\n$0.00'
+125.3047 	EXP 	trial_feedback: autoDraw = True
+127.2931 	EXP 	trial_feedback: autoDraw = False
+127.3011 	EXP 	trial_feedback: autoDraw = False
+127.3011 	EXP 	exp_feedback: autoDraw = False
+128.3743 	DATA 	Keypress: escape
+128.3748 	WARNING 	Escape pressed, exiting early!
+128.3749 	WARNING 	Total earnings: 0.0

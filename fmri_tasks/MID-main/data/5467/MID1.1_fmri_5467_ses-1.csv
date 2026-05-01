@@ -1,0 +1,3 @@
+﻿thisRow.t,notes,subid,session,run,trial.system.time,trial.number,trial.type,Tgt.OnsetTime,trial.rt,trial.target_dur,Fix_after_target.OnsetTime,Fix_after_target.Duration,Fix_ITI.OnsetTime,Fix_ITI.Duration,time.trial,time.global,Winnings,trial.reward,participant,session,fMRI? (yes or no),fMRI trigger on TTL? (yes or no),fMRI reverse screen? (yes or no),start run (0-2),task screen,date,expName,frameRate,
+,,5467,1,0,Thu Apr 30 13:58:17 2026,1,loss.low,5.0079236250021495,0.21378245900268666,0.5,5.523342790998868,3.7862175409973133,9.319492374997935,2,6.312423082999885,11.319678916988778,0,,5467,1,yes,no,no,0,2,2026-04-30_13h57.58.574,MID1.1,None,
+,,5467,1,0,Thu Apr 30 13:58:24 2026,2,loss.low,11.320443374992465,,0.48,11.81730295799207,,,,,,,-1.5,,1,,,,,,,,,
